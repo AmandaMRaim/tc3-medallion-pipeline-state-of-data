@@ -1,6 +1,13 @@
 """
-Etapa local (documentação, não altera Silver) — Dicionário de correspondência
+Etapa PySpark (documentação, não altera Silver) — Dicionário de correspondência
 de colunas entre as 3 edições da pesquisa State of Data Brazil.
+
+Nota sobre o motor de execução: a comparação em si (difflib.SequenceMatcher
+sobre ~400 NOMES de coluna) é uma operação de metadado pequena e single-node
+— não tem "dado de respondente" nenhum envolvido, então não há ganho real em
+rodar isso em Spark. A única parte que usa Spark é a leitura da lista de
+colunas de cada edição (`carrega_colunas`), já que o Silver agora é gravado
+como diretório Spark (part-*.csv) pelos scripts 01/02/03.
 
 Constatação ao comparar os headers já padronizados (Silver, ver scripts
 01/02/03): 2024-2025 e 2025-2026 têm o texto das perguntas quase idêntico
@@ -45,11 +52,13 @@ from pathlib import Path
 
 import pandas as pd
 
+from _lib_padroniza_colunas import cria_spark_session
+
 BASE_DIR = Path(__file__).resolve().parent.parent
-ARQUIVOS_SILVER = {
-    "2023-2024": BASE_DIR / "Silver" / "2023-2024" / "state-of-data-brazil-2023-2024_colunas_limpas.csv",
-    "2024-2025": BASE_DIR / "Silver" / "2024-2025" / "state-of-data-brazil-2024-2025_colunas_limpas.csv",
-    "2025-2026": BASE_DIR / "Silver" / "2025-2026" / "state-of-data-brazil-2025-2026_colunas_limpas.csv",
+DIRETORIOS_SILVER = {
+    "2023-2024": BASE_DIR / "Silver" / "2023-2024" / "state-of-data-brazil-2023-2024_colunas_limpas",
+    "2024-2025": BASE_DIR / "Silver" / "2024-2025" / "state-of-data-brazil-2024-2025_colunas_limpas",
+    "2025-2026": BASE_DIR / "Silver" / "2025-2026" / "state-of-data-brazil-2025-2026_colunas_limpas",
 }
 ARQUIVO_SAIDA = BASE_DIR / "Silver" / "_documentacao" / "dicionario_correspondencia_colunas.csv"
 
@@ -57,8 +66,8 @@ EDICAO_BASE = "2024-2025"
 LIMIAR_SIMILARIDADE_FUZZY = 0.60  # abaixo disso, não sugere — fica "sem_correspondencia"
 
 
-def carrega_colunas(arquivo: Path) -> list[str]:
-    return pd.read_csv(arquivo, dtype=str, nrows=1).columns.tolist()
+def carrega_colunas(spark, diretorio: Path) -> list:
+    return spark.read.option("header", True).csv(str(diretorio)).columns
 
 
 def classifica_confianca(metodo: str, score: float) -> str:
@@ -129,7 +138,9 @@ def casa_edicao(base_cols: list[str], outra_cols: list[str]):
 
 
 def main() -> None:
-    colunas = {ano: carrega_colunas(arq) for ano, arq in ARQUIVOS_SILVER.items()}
+    spark = cria_spark_session("monta_dicionario_correspondencia")
+
+    colunas = {ano: carrega_colunas(spark, diretorio) for ano, diretorio in DIRETORIOS_SILVER.items()}
     for ano, cols in colunas.items():
         print(f"{ano}: {len(cols)} colunas")
 
@@ -182,6 +193,8 @@ def main() -> None:
 
     print(f"\nTotal de linhas no dicionário: {len(dicionario)}")
     print(f"Dicionário gravado em: {ARQUIVO_SAIDA}")
+
+    spark.stop()
 
 
 if __name__ == "__main__":

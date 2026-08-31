@@ -1,5 +1,5 @@
 """
-Etapa local (Bronze -> Silver) — Padronização do header da edição 2023-2024.
+Etapa PySpark (Bronze -> Silver) — Padronização do header da edição 2023-2024.
 
 O CSV bruto dessa edição traz os nomes de coluna como string de tupla
 Python, ex: "('P1_a ', 'Idade')" (código, descrição). Diferente das
@@ -23,7 +23,8 @@ Este script (lógica de agrupamento compartilhada em _lib_padroniza_colunas.py):
      outras edições.
 
   3. Detecta grupos pai/filhas multi-select (mesma regra: pai existe como
-     coluna E filhas têm valores estritamente binários).
+     coluna E filhas têm valores estritamente binários — checado via
+     collect_set no Spark).
 
   4. Detecta o grupo "alias" P3_f / P4_l — mesma pergunta sobre tipo de
      uso de IA generativa, respondida por públicos mutuamente exclusivos
@@ -40,26 +41,32 @@ Este script (lógica de agrupamento compartilhada em _lib_padroniza_colunas.py):
      (texto concatenado); para colunas fora de grupo, mantém a descrição
      limpa da tupla.
 
-LÊ o Bronze (sem alterá-lo) e ESCREVE o resultado em Silver.
+LÊ o Bronze (sem alterá-lo) e ESCREVE o resultado em Silver como um
+diretório Spark (part-*.csv dentro) — é assim que sai de um Glue Job de
+verdade, e é assim que os próximos scripts leem de volta.
 
-Uso:
+Uso (local, fora do Glue):
     python scripts/01_padroniza_colunas_2023_2024.py
+
+Uso no AWS Glue Job: cole o corpo do script num Glue Job PySpark,
+substituindo `cria_spark_session(...)` pela SparkSession do GlueContext
+(ver comentário em _lib_padroniza_colunas.cria_spark_session).
 """
 
 import re
 from pathlib import Path
 
-import pandas as pd
-
 from _lib_padroniza_colunas import (
     aplica_coalesce_alias,
     constroi_dataframe_final,
+    cria_spark_session,
     identifica_grupos_base,
+    le_csv_bruto,
 )
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 ARQUIVO_ORIGINAL = BASE_DIR / "Bronze" / "2023-2024" / "state-of-data-brazil-2023-2024.csv"
-ARQUIVO_LIMPO = BASE_DIR / "Silver" / "2023-2024" / "state-of-data-brazil-2023-2024_colunas_limpas.csv"
+DIRETORIO_SAIDA = BASE_DIR / "Silver" / "2023-2024" / "state-of-data-brazil-2023-2024_colunas_limpas"
 
 # Captura (codigo, descricao) da tupla: "('P1_a ', 'Idade')" -> ("P1_a", "Idade")
 PADRAO_TUPLA = re.compile(r"^\(\s*'(.*?)'\s*,\s*'(.*?)'\s*\)$")
@@ -74,12 +81,12 @@ CORRECOES_TUPLA_MALFORMADA = {
 # preenchimento nunca se sobrepõe). Notação com "." para reaproveitar a
 # lógica compartilhada. O coalesce só funde as opções com texto EXATO
 # igual entre os dois grupos — ver nota no docstring sobre P3_f_4/P4_l_4.
-GRUPOS_ALIAS: list[tuple[str, ...]] = [
+GRUPOS_ALIAS = [
     ("P3.f", "P4.l"),  # tipo de uso de IA generativa na empresa: gestor vs. não-gestor
 ]
 
 
-def parseia_coluna_tupla(nome_original: str) -> tuple:
+def parseia_coluna_tupla(nome_original: str):
     """Extrai (codigo, descricao) de uma coluna no formato tupla Python."""
     if nome_original in CORRECOES_TUPLA_MALFORMADA:
         return CORRECOES_TUPLA_MALFORMADA[nome_original]
@@ -91,13 +98,15 @@ def parseia_coluna_tupla(nome_original: str) -> tuple:
 
 
 def main() -> None:
-    print(f"Lendo: {ARQUIVO_ORIGINAL}")
-    df = pd.read_csv(ARQUIVO_ORIGINAL, dtype=str, low_memory=False)
+    spark = cria_spark_session("padroniza_colunas_2023_2024")
 
-    colunas_originais = df.columns.tolist()
+    print(f"Lendo: {ARQUIVO_ORIGINAL}")
+    df = le_csv_bruto(spark, ARQUIVO_ORIGINAL)
+
+    colunas_originais = df.columns
 
     # parsed no formato esperado pela lib: coluna_original -> (prefixo_com_pontos, descricao)
-    parsed: dict[str, tuple] = {}
+    parsed = {}
     for col in colunas_originais:
         codigo, descricao = parseia_coluna_tupla(col)
         prefixo = codigo.replace("_", ".") if codigo else None
@@ -112,10 +121,13 @@ def main() -> None:
 
     df_final = constroi_dataframe_final(df, grupos, parsed, correcoes_manuais={})
 
-    ARQUIVO_LIMPO.parent.mkdir(parents=True, exist_ok=True)
-    df_final.to_csv(ARQUIVO_LIMPO, index=False)
+    DIRETORIO_SAIDA.parent.mkdir(parents=True, exist_ok=True)
+    df_final.coalesce(1).write.mode("overwrite").option("header", True).csv(str(DIRETORIO_SAIDA))
+
     print(f"\nColunas originais: {len(colunas_originais)} | Colunas finais: {len(df_final.columns)}")
-    print(f"Arquivo gravado em Silver: {ARQUIVO_LIMPO}")
+    print(f"Diretório gravado em Silver: {DIRETORIO_SAIDA}")
+
+    spark.stop()
 
 
 if __name__ == "__main__":

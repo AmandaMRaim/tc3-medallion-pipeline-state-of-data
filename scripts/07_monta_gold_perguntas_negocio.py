@@ -1,43 +1,32 @@
 """
-Etapa local (Gold, base -> Gold por pergunta de negócio) — State of Data Brazil.
+Etapa PySpark (Gold base -> Gold por pergunta de negócio) — State of Data Brazil.
 
-Parte de Gold/state_of_data_unificado.csv (base longa, um respondente por
-linha, as 3 edições unificadas — ver script 06) e gera uma tabela Gold
+Parte de Gold/state_of_data_unificado (base longa gravada pelo script 06,
+um respondente por linha, as 3 edições unificadas) e gera uma tabela Gold
 pequena e pré-agregada para cada pergunta de negócio do desafio:
 
-  1. gold_01_estrutura_mercado.csv
+  1. gold_01_estrutura_mercado
      Como está estruturado o mercado brasileiro de Dados?
-     (cargo, senioridade, situação de trabalho, modelo de trabalho,
-     região, setor, porte de empresa — contagem e % por edição)
 
-  2. gold_02_perfis_valorizados.csv
+  2. gold_02_perfis_valorizados
      Quais perfis profissionais são mais valorizados pelo mercado?
-     (cargo x senioridade x faixa salarial — contagem e % por edição)
 
-  3. gold_03_diversidade_genero.csv
+  3. gold_03_diversidade_genero
      Qual é o cenário de diversidade de gênero nas carreiras de dados?
-     (gênero x cargo x senioridade x faixa salarial x cor/raça/etnia)
 
-  4. gold_04_adocao_tecnologias.csv
+  4. gold_04_adocao_tecnologias
      Quais tecnologias apresentam maior adoção entre os profissionais?
-     (linguagens, bancos de dados, cloud, ferramentas de BI e ETL —
-     % de adoção sobre a população elegível, por edição)
 
-  5. gold_05_adocao_ia.csv
+  5. gold_05_adocao_ia
      Qual é o índice de adoção de IA e seu impacto?
-     (prioridade de IA generativa na empresa, uso de ChatGPT/Copilot,
-     tipo de uso de IA na empresa, motivos para não usar)
 
-  6. gold_06_diferencas_regiao_senioridade_modelo.csv
+  6. gold_06_diferencas_regiao_senioridade_modelo
      Existem diferenças relevantes entre regiões, senioridades ou
-     modelos de trabalho? (faixa salarial cruzada com região x
-     senioridade x modelo de trabalho)
+     modelos de trabalho?
 
-  7. gold_07_oportunidades_desafios.csv
+  7. gold_07_oportunidades_desafios
      Quais oportunidades e desafios podem ser identificados para
-     empresas que desejam investir em Dados e IA? (desafios como
-     gestor, motivos de insatisfação, critérios de escolha de emprego,
-     motivos para não usar IA — sinais do lado de quem contrata/retém)
+     empresas que desejam investir em Dados e IA?
 
 Todas as tabelas de multi-select calculam "% de adoção" sobre a
 população ELEGÍVEL (quem respondeu aquele grupo de pergunta), não sobre
@@ -45,46 +34,57 @@ a base toda — ver Silver/_documentacao/dicionario_nulos.csv sobre por que
 isso importa (nulo em grupo multi-select = pergunta não exibida, não
 "não selecionou").
 
-Uso:
+Cada tabela final é pequena (dezenas a poucas centenas de linhas — já é
+uma AGREGAÇÃO), então é gravada com `coalesce(1)` para sair como um único
+arquivo `part-*.csv` dentro do diretório, mais fácil de abrir/conferir.
+
+Uso (local, fora do Glue):
     python scripts/07_monta_gold_perguntas_negocio.py
 """
 
+from functools import reduce
 from pathlib import Path
 
-import pandas as pd
+from pyspark.sql import DataFrame
+from pyspark.sql import functions as F
+
+from _lib_padroniza_colunas import col_seguro, cria_spark_session
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-ARQUIVO_BASE = BASE_DIR / "Gold" / "state_of_data_unificado.csv"
+DIRETORIO_BASE = BASE_DIR / "Gold" / "state_of_data_unificado"
 DIR_SAIDA = BASE_DIR / "Gold" / "perguntas_negocio"
 
 
-def carrega_base() -> pd.DataFrame:
-    print(f"Lendo base unificada: {ARQUIVO_BASE}")
-    return pd.read_csv(ARQUIVO_BASE, dtype=str, low_memory=False)
+def uniao(dfs: list) -> DataFrame:
+    return reduce(lambda a, b: a.unionByName(b, allowMissingColumns=True), dfs)
 
 
-def distribuicao_categorica(df: pd.DataFrame, colunas: list[str], dimensoes: list[str] = ("edicao",)) -> pd.DataFrame:
-    """Contagem e % (dentro de cada combinação de `dimensoes`) para uma ou mais colunas categóricas.
+def distribuicao_categorica(df: DataFrame, colunas: list, dimensoes: list = ("edicao",)) -> DataFrame:
+    """Contagem e % (dentro de cada combinação de `dimensoes`, calculado
+    separadamente por coluna categórica) para uma ou mais colunas.
 
-    Retorna formato longo: dimensoes..., variavel, valor, contagem, pct_na_dimensao.
+    Retorna formato longo: dimensoes..., variavel, valor, contagem, total_respondentes, pct_na_dimensao.
     Linhas nulas na coluna categórica são ignoradas (não fazem parte da distribuição).
     """
+    dimensoes = list(dimensoes)
     partes = []
     for coluna in colunas:
-        sub = df[[*dimensoes, coluna]].dropna(subset=[coluna]).copy()
-        sub = sub.rename(columns={coluna: "valor"})
-        sub["variavel"] = coluna
+        sub = (
+            df.select(*dimensoes, col_seguro(coluna).alias("valor"))
+            .filter(F.col("valor").isNotNull())
+            .withColumn("variavel", F.lit(coluna))
+        )
+        contagem = sub.groupBy(*dimensoes, "variavel", "valor").agg(F.count(F.lit(1)).alias("contagem"))
+        total = sub.groupBy(*dimensoes).agg(F.count(F.lit(1)).alias("total_respondentes"))
+        resultado = contagem.join(total, on=dimensoes, how="inner").withColumn(
+            "pct_na_dimensao", F.round(F.col("contagem") / F.col("total_respondentes") * 100, 1)
+        )
+        partes.append(resultado)
 
-        contagem = sub.groupby([*dimensoes, "variavel", "valor"]).size().reset_index(name="contagem")
-        total_dimensao = sub.groupby(list(dimensoes)).size().reset_index(name="total_respondentes")
-        contagem = contagem.merge(total_dimensao, on=list(dimensoes))
-        contagem["pct_na_dimensao"] = (contagem["contagem"] / contagem["total_respondentes"] * 100).round(1)
-        partes.append(contagem)
-
-    return pd.concat(partes, ignore_index=True)
+    return uniao(partes)
 
 
-def desmancha_grupo_multiselect(df: pd.DataFrame, prefixo: str, dimensoes: list[str] = ("edicao",)) -> pd.DataFrame:
+def desmancha_grupo_multiselect(df: DataFrame, prefixo: str, dimensoes: list = ("edicao",)) -> DataFrame:
     """"Desmancha" um grupo de colunas binárias (0/1) de multi-select em formato longo.
 
     % de adoção calculado sobre a população ELEGÍVEL (quem tem pelo menos
@@ -93,33 +93,33 @@ def desmancha_grupo_multiselect(df: pd.DataFrame, prefixo: str, dimensoes: list[
 
     Retorna: dimensoes..., opcao, elegiveis, selecionaram, pct_adocao.
     """
+    dimensoes = list(dimensoes)
     colunas_grupo = [c for c in df.columns if c.startswith(prefixo)]
     if not colunas_grupo:
         raise ValueError(f"Nenhuma coluna encontrada com o prefixo '{prefixo}'")
 
-    elegivel = df[colunas_grupo].notna().any(axis=1)
-    base_elegivel = df.loc[elegivel, [*dimensoes, *colunas_grupo]].copy()
+    elegivel = F.coalesce(*[col_seguro(c) for c in colunas_grupo]).isNotNull()
+    base_elegivel = df.filter(elegivel)
 
-    elegiveis_por_dimensao = base_elegivel.groupby(list(dimensoes)).size().reset_index(name="elegiveis")
+    elegiveis_por_dimensao = base_elegivel.groupBy(*dimensoes).agg(F.count(F.lit(1)).alias("elegiveis"))
 
     linhas = []
     for coluna in colunas_grupo:
         opcao = coluna[len(prefixo):]
-        numerica = pd.to_numeric(base_elegivel[coluna], errors="coerce").fillna(0)
-        tmp = base_elegivel[list(dimensoes)].copy()
-        tmp["selecionou"] = numerica
-        agrupado = tmp.groupby(list(dimensoes))["selecionou"].sum().reset_index(name="selecionaram")
-        agrupado["opcao"] = opcao
+        numerica = F.coalesce(col_seguro(coluna).cast("double"), F.lit(0.0))
+        agrupado = base_elegivel.groupBy(*dimensoes).agg(F.sum(numerica).alias("selecionaram")).withColumn(
+            "opcao", F.lit(opcao)
+        )
         linhas.append(agrupado)
 
-    resultado = pd.concat(linhas, ignore_index=True)
-    resultado = resultado.merge(elegiveis_por_dimensao, on=list(dimensoes))
-    resultado["pct_adocao"] = (resultado["selecionaram"] / resultado["elegiveis"] * 100).round(1)
+    resultado = uniao(linhas).join(elegiveis_por_dimensao, on=dimensoes, how="inner")
+    resultado = resultado.withColumn("pct_adocao", F.round(F.col("selecionaram") / F.col("elegiveis") * 100, 1))
     colunas_ordem = [*dimensoes, "opcao", "elegiveis", "selecionaram", "pct_adocao"]
-    return resultado[colunas_ordem].sort_values([*dimensoes, "pct_adocao"], ascending=[True] * len(dimensoes) + [False])
+    ordenacao = [F.col(d).asc() for d in dimensoes] + [F.col("pct_adocao").desc()]
+    return resultado.select(*colunas_ordem).orderBy(*ordenacao)
 
 
-def gold_01_estrutura_mercado(df: pd.DataFrame) -> pd.DataFrame:
+def gold_01_estrutura_mercado(df: DataFrame) -> DataFrame:
     colunas = [
         "cargo_atual", "nivel", "situacao_de_trabalho", "modelo_de_trabalho_atual",
         "regiao_onde_mora", "setor", "numero_de_funcionarios",
@@ -128,20 +128,20 @@ def gold_01_estrutura_mercado(df: pd.DataFrame) -> pd.DataFrame:
     return distribuicao_categorica(df, colunas, dimensoes=["edicao"])
 
 
-def gold_02_perfis_valorizados(df: pd.DataFrame) -> pd.DataFrame:
+def gold_02_perfis_valorizados(df: DataFrame) -> DataFrame:
     dimensoes = ["edicao", "cargo_atual", "nivel"]
     dimensoes = [c for c in dimensoes if c in df.columns]
     return distribuicao_categorica(df, ["faixa_salarial"], dimensoes=dimensoes)
 
 
-def gold_03_diversidade_genero(df: pd.DataFrame) -> pd.DataFrame:
+def gold_03_diversidade_genero(df: DataFrame) -> DataFrame:
     dimensoes = ["edicao", "genero"]
     dimensoes = [c for c in dimensoes if c in df.columns]
     colunas = [c for c in ["cargo_atual", "nivel", "faixa_salarial", "cor_raca_etnia"] if c in df.columns]
     return distribuicao_categorica(df, colunas, dimensoes=dimensoes)
 
 
-def gold_04_adocao_tecnologias(df: pd.DataFrame) -> pd.DataFrame:
+def gold_04_adocao_tecnologias(df: DataFrame) -> DataFrame:
     grupos = {
         "linguagem_de_programacao": "linguagem_de_programacao_dia_a_dia_",
         "banco_de_dados": "banco_de_dados_dia_a_dia_",
@@ -158,19 +158,21 @@ def gold_04_adocao_tecnologias(df: pd.DataFrame) -> pd.DataFrame:
     partes = []
     for categoria, prefixo in grupos.items():
         sub = desmancha_grupo_multiselect(df, prefixo, dimensoes=["edicao"])
-        sub = sub[sub["elegiveis"] > 0]  # descarta edições onde o grupo nem existe
-        sub.insert(0, "categoria", categoria)
+        sub = sub.filter(F.col("elegiveis") > 0)  # descarta edições onde o grupo nem existe
+        sub = sub.withColumn("categoria", F.lit(categoria))
         partes.append(sub)
-    return pd.concat(partes, ignore_index=True)
+    return uniao(partes)
 
 
-def gold_05_adocao_ia(df: pd.DataFrame) -> pd.DataFrame:
+def gold_05_adocao_ia(df: DataFrame) -> DataFrame:
     partes = []
 
     if "ai_generativa_e_llm_e_uma_prioridade" in df.columns:
         sub = distribuicao_categorica(df, ["ai_generativa_e_llm_e_uma_prioridade"], dimensoes=["edicao"])
-        sub.insert(0, "categoria", "ia_generativa_prioridade_na_empresa")
-        partes.append(sub.rename(columns={"variavel": "variavel_original"}))
+        sub = sub.withColumnRenamed("variavel", "variavel_original").withColumn(
+            "categoria", F.lit("ia_generativa_prioridade_na_empresa")
+        )
+        partes.append(sub)
 
     grupos = {
         "uso_pessoal_chatgpt_copilot": "usa_chatgpt_ou_copilot_no_trabalho_",
@@ -179,19 +181,22 @@ def gold_05_adocao_ia(df: pd.DataFrame) -> pd.DataFrame:
     }
     for categoria, prefixo in grupos.items():
         sub = desmancha_grupo_multiselect(df, prefixo, dimensoes=["edicao"])
-        sub.insert(0, "categoria", categoria)
+        sub = sub.withColumn("categoria", F.lit(categoria))
         partes.append(sub)
 
-    return pd.concat(partes, ignore_index=True)
+    # Mistura de esquemas de propósito (distribuicao_categorica x desmancha
+    # multiselect) — colunas que só existem num dos dois ficam nulas no
+    # outro (allowMissingColumns=True em uniao()), igual fazia o pd.concat.
+    return uniao(partes)
 
 
-def gold_06_diferencas_regiao_senioridade_modelo(df: pd.DataFrame) -> pd.DataFrame:
+def gold_06_diferencas_regiao_senioridade_modelo(df: DataFrame) -> DataFrame:
     dimensoes = ["edicao", "regiao_onde_mora", "nivel", "modelo_de_trabalho_atual"]
     dimensoes = [c for c in dimensoes if c in df.columns]
     return distribuicao_categorica(df, ["faixa_salarial"], dimensoes=dimensoes)
 
 
-def gold_07_oportunidades_desafios(df: pd.DataFrame) -> pd.DataFrame:
+def gold_07_oportunidades_desafios(df: DataFrame) -> DataFrame:
     grupos = {
         "desafios_como_gestor": "desafios_como_gestor_",
         "motivo_insatisfacao_profissional": "motivo_insatisfacao_",
@@ -201,32 +206,38 @@ def gold_07_oportunidades_desafios(df: pd.DataFrame) -> pd.DataFrame:
     partes = []
     for categoria, prefixo in grupos.items():
         sub = desmancha_grupo_multiselect(df, prefixo, dimensoes=["edicao"])
-        sub.insert(0, "categoria", categoria)
+        sub = sub.withColumn("categoria", F.lit(categoria))
         partes.append(sub)
-    return pd.concat(partes, ignore_index=True)
+    return uniao(partes)
 
 
 TABELAS = {
-    "gold_01_estrutura_mercado.csv": gold_01_estrutura_mercado,
-    "gold_02_perfis_valorizados.csv": gold_02_perfis_valorizados,
-    "gold_03_diversidade_genero.csv": gold_03_diversidade_genero,
-    "gold_04_adocao_tecnologias.csv": gold_04_adocao_tecnologias,
-    "gold_05_adocao_ia.csv": gold_05_adocao_ia,
-    "gold_06_diferencas_regiao_senioridade_modelo.csv": gold_06_diferencas_regiao_senioridade_modelo,
-    "gold_07_oportunidades_desafios.csv": gold_07_oportunidades_desafios,
+    "gold_01_estrutura_mercado": gold_01_estrutura_mercado,
+    "gold_02_perfis_valorizados": gold_02_perfis_valorizados,
+    "gold_03_diversidade_genero": gold_03_diversidade_genero,
+    "gold_04_adocao_tecnologias": gold_04_adocao_tecnologias,
+    "gold_05_adocao_ia": gold_05_adocao_ia,
+    "gold_06_diferencas_regiao_senioridade_modelo": gold_06_diferencas_regiao_senioridade_modelo,
+    "gold_07_oportunidades_desafios": gold_07_oportunidades_desafios,
 }
 
 
 def main() -> None:
-    df = carrega_base()
+    spark = cria_spark_session("monta_gold_perguntas_negocio")
+
+    print(f"Lendo base unificada: {DIRETORIO_BASE}")
+    df = spark.read.option("header", True).csv(str(DIRETORIO_BASE))
+
     DIR_SAIDA.mkdir(parents=True, exist_ok=True)
 
-    for nome_arquivo, funcao in TABELAS.items():
-        print(f"\nGerando {nome_arquivo} ...")
+    for nome_diretorio, funcao in TABELAS.items():
+        print(f"\nGerando {nome_diretorio} ...")
         tabela = funcao(df)
-        caminho = DIR_SAIDA / nome_arquivo
-        tabela.to_csv(caminho, index=False)
-        print(f"  {len(tabela)} linhas -> {caminho}")
+        caminho = DIR_SAIDA / nome_diretorio
+        tabela.coalesce(1).write.mode("overwrite").option("header", True).csv(str(caminho))
+        print(f"  {tabela.count()} linhas -> {caminho}")
+
+    spark.stop()
 
 
 if __name__ == "__main__":

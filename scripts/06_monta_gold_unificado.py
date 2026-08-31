@@ -1,11 +1,20 @@
 """
-Etapa local (Silver -> Gold) — Dataset unificado das 3 edições.
+Etapa PySpark (Silver -> Gold) — Dataset unificado das 3 edições.
 
 Usa o dicionário de correspondência (Silver/_documentacao/
 dicionario_correspondencia_colunas.csv, gerado pelo script 05 e revisado
-manualmente) para unir 2023-2024 + 2024-2025 + 2025-2026 em uma única
-tabela longa (uma linha por respondente, coluna "edicao" identificando a
-origem).
+manualmente — arquivo pequeno de metadado, lido com pandas mesmo nesta
+versão PySpark, ver nota abaixo) para unir 2023-2024 + 2024-2025 +
+2025-2026 em uma única tabela longa (uma linha por respondente, coluna
+"edicao" identificando a origem).
+
+Nota sobre o motor de execução: o dicionário de correspondência é uma
+tabela de METADADO pequena (uma linha por coluna, não por respondente) e
+é editada manualmente numa planilha durante a revisão — por isso continua
+sendo lida/gravada com pandas como um único CSV "achatado", em vez de um
+diretório Spark particionado (ruim pra abrir/editar à mão). Já a leitura
+das 3 bases Silver, o `select`/alias por edição e a união final SÃO
+operações sobre dado de respondente de verdade — isso sim roda em Spark.
 
 Política de confiança — SÓ usa uma correspondência entre edições quando:
   - metodo == "exato" (nomes idênticos), ou
@@ -17,30 +26,31 @@ Política de confiança — SÓ usa uma correspondência entre edições quando:
 Qualquer correspondência marcada "rejeitado_manual", ou fuzzy de
 confiança média/baixa AINDA NÃO revisada, fica de fora por enquanto: a
 coluna existe na Gold (para não perder o dado das edições que a têm),
-mas fica NULA para a edição cuja correspondência não foi validada. Isso
-é proposital — mais seguro deixar nulo do que juntar dado errado. A
-revisão manual pode ser continuada depois; rodar o script de novo após
-atualizar o dicionário incorpora mais colunas automaticamente.
+mas fica NULA para a edição cuja correspondência não foi validada.
 
-Uso:
+Uso (local, fora do Glue):
     python scripts/06_monta_gold_unificado.py
 """
 
 from pathlib import Path
 
 import pandas as pd
+from pyspark.sql import functions as F
+from pyspark.sql.types import StringType
+
+from _lib_padroniza_colunas import col_seguro, cria_spark_session
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 ARQUIVO_DICIONARIO = BASE_DIR / "Silver" / "_documentacao" / "dicionario_correspondencia_colunas.csv"
-ARQUIVOS_SILVER = {
-    "2023-2024": BASE_DIR / "Silver" / "2023-2024" / "state-of-data-brazil-2023-2024_colunas_limpas.csv",
-    "2024-2025": BASE_DIR / "Silver" / "2024-2025" / "state-of-data-brazil-2024-2025_colunas_limpas.csv",
-    "2025-2026": BASE_DIR / "Silver" / "2025-2026" / "state-of-data-brazil-2025-2026_colunas_limpas.csv",
+DIRETORIOS_SILVER = {
+    "2023-2024": BASE_DIR / "Silver" / "2023-2024" / "state-of-data-brazil-2023-2024_colunas_limpas",
+    "2024-2025": BASE_DIR / "Silver" / "2024-2025" / "state-of-data-brazil-2024-2025_colunas_limpas",
+    "2025-2026": BASE_DIR / "Silver" / "2025-2026" / "state-of-data-brazil-2025-2026_colunas_limpas",
 }
-ARQUIVO_SAIDA = BASE_DIR / "Gold" / "state_of_data_unificado.csv"
+DIRETORIO_SAIDA = BASE_DIR / "Gold" / "state_of_data_unificado"
 
 
-def confiavel(metodo: str, confianca: str, status_revisao) -> bool:
+def confiavel(metodo, confianca, status_revisao) -> bool:
     if status_revisao == "rejeitado_manual":
         return False
     if status_revisao == "aprovado_manual":
@@ -86,6 +96,8 @@ def monta_mapa_colunas(dicionario: pd.DataFrame):
 
 
 def main() -> None:
+    spark = cria_spark_session("monta_gold_unificado")
+
     print(f"Lendo dicionário: {ARQUIVO_DICIONARIO}")
     dicionario = pd.read_csv(ARQUIVO_DICIONARIO)
 
@@ -94,30 +106,38 @@ def main() -> None:
     print(f"Total de colunas canônicas na Gold: {len(colunas_canonicas)}")
 
     partes = []
-    for edicao, arquivo in ARQUIVOS_SILVER.items():
-        print(f"Lendo Silver {edicao}: {arquivo}")
-        df = pd.read_csv(arquivo, dtype=str, low_memory=False)
+    for edicao, diretorio in DIRETORIOS_SILVER.items():
+        print(f"Lendo Silver {edicao}: {diretorio}")
+        df = spark.read.option("header", True).csv(str(diretorio))
 
-        dados_colunas = {"edicao": edicao, "linha_origem_silver": df.index}
         n_preenchidas = 0
+        selecoes = [
+            F.lit(edicao).alias("edicao"),
+            F.monotonically_increasing_id().alias("linha_origem_silver"),
+        ]
         for canonico in colunas_canonicas:
             col_original = mapa[edicao].get(canonico)
             if col_original is not None and col_original in df.columns:
-                dados_colunas[canonico] = df[col_original]
+                selecoes.append(col_seguro(col_original).alias(canonico))
                 n_preenchidas += 1
             else:
-                dados_colunas[canonico] = pd.NA
-        bloco = pd.DataFrame(dados_colunas, index=df.index)
-        print(f"  {edicao}: {n_preenchidas}/{len(colunas_canonicas)} colunas canônicas preenchidas, {len(df)} linhas")
+                selecoes.append(F.lit(None).cast(StringType()).alias(canonico))
+
+        bloco = df.select(*selecoes)
+        print(f"  {edicao}: {n_preenchidas}/{len(colunas_canonicas)} colunas canônicas preenchidas")
         partes.append(bloco)
 
-    gold = pd.concat(partes, ignore_index=True)
+    gold = partes[0]
+    for bloco in partes[1:]:
+        gold = gold.unionByName(bloco)
 
-    ARQUIVO_SAIDA.parent.mkdir(parents=True, exist_ok=True)
-    gold.to_csv(ARQUIVO_SAIDA, index=False)
+    DIRETORIO_SAIDA.parent.mkdir(parents=True, exist_ok=True)
+    gold.write.mode("overwrite").option("header", True).csv(str(DIRETORIO_SAIDA))
 
-    print(f"\nGold final: {len(gold)} linhas, {len(gold.columns)} colunas")
-    print(f"Arquivo gravado em: {ARQUIVO_SAIDA}")
+    print(f"\nGold final: {gold.count()} linhas, {len(gold.columns)} colunas")
+    print(f"Diretório gravado em: {DIRETORIO_SAIDA}")
+
+    spark.stop()
 
 
 if __name__ == "__main__":

@@ -1,0 +1,987 @@
+edicao,cargo_atual,nivel,variavel,valor,contagem,total_respondentes,pct_na_dimensao
+2025-2026,Analista de Dados/Data Analyst,Júnior,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,28,145,19.3
+2025-2026,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Sênior,faixa_salarial,Acima de R$ 40.001/mês,6,42,14.3
+2025-2026,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Júnior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,3,24,12.5
+2025-2026,Analista de Negócios/Business Analyst,Especialista/Staff+,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,1,18,5.6
+2025-2026,Engenheiro de Dados/Data Engineer/Data Architect,Pleno,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,27,109,24.8
+2025-2026,Analytics Engineer,Pleno,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,8,41,19.5
+2025-2026,Arquiteto de Dados/Data Architect,Especialista/Staff+,faixa_salarial,Acima de R$ 40.001/mês,2,13,15.4
+2025-2026,Cientista de Dados/Data Scientist,Sênior,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,2,147,1.4
+2025-2026,Analista de Negócios/Business Analyst,Sênior,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,3,48,6.3
+2025-2026,Analytics Engineer,Pleno,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,1,41,2.4
+2025-2026,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Sênior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,1,41,2.4
+2025-2026,Cientista de Dados/Data Scientist,Especialista/Staff+,faixa_salarial,Acima de R$ 40.001/mês,3,72,4.2
+2025-2026,Professor/Pesquisador,Sênior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,1,6,16.7
+2025-2026,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Especialista/Staff+,faixa_salarial,Acima de R$ 40.001/mês,5,27,18.5
+2025-2026,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Sênior,faixa_salarial,Acima de R$ 40.001/mês,4,41,9.8
+2025-2026,Engenheiro de Dados/Data Engineer/Data Architect,Pleno,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,50,109,45.9
+2025-2026,Cientista de Dados/Data Scientist,Júnior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,19,65,29.2
+2025-2026,Analista de Suporte/Analista Técnico,Sênior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,1,15,6.7
+2025-2026,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Júnior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,4,21,19.0
+2025-2026,Outra Opção,Especialista/Staff+,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,6,22,27.3
+2025-2026,Engenheiro de Dados/Data Engineer/Data Architect,Pleno,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,2,109,1.8
+2025-2026,Engenheiro de Dados/Data Engineer/Data Architect,Pleno,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,3,109,2.8
+2025-2026,Analista de Dados/Data Analyst,Sênior,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,4,184,2.2
+2025-2026,Analytics Engineer,Pleno,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,13,41,31.7
+2025-2026,Analytics Engineer,Júnior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,1,11,9.1
+2025-2026,Engenheiro de Dados/Data Engineer/Data Architect,Júnior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,8,49,16.3
+2025-2026,Cientista de Dados/Data Scientist,Pleno,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,10,140,7.1
+2025-2026,Analista de Suporte/Analista Técnico,Júnior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,2,20,10.0
+2025-2026,Analytics Engineer,Sênior,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,2,59,3.4
+2025-2026,Analista de BI/BI Analyst,Especialista/Staff+,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,5,17,29.4
+2025-2026,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Júnior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,5,21,23.8
+2025-2026,Outra Opção,Júnior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,13,90,14.4
+2025-2026,Analytics Engineer,Especialista/Staff+,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,1,24,4.2
+2025-2026,Analista de Dados/Data Analyst,Pleno,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,1,211,0.5
+2025-2026,Analista de Dados/Data Analyst,Júnior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,6,145,4.1
+2025-2026,Estatístico,Especialista/Staff+,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,1,1,100.0
+2025-2026,Analytics Engineer,Sênior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,20,59,33.9
+2025-2026,Analista de Dados/Data Analyst,Júnior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,28,145,19.3
+2025-2026,Outra Opção,Pleno,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,13,55,23.6
+2025-2026,Arquiteto de Dados/Data Architect,Júnior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,1,2,50.0
+2025-2026,Cientista de Dados/Data Scientist,Sênior,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,41,147,27.9
+2025-2026,Cientista de Dados/Data Scientist,Especialista/Staff+,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,11,72,15.3
+2025-2026,Analista de Negócios/Business Analyst,Pleno,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,1,53,1.9
+2025-2026,Cientista de Dados/Data Scientist,Pleno,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,1,140,0.7
+2025-2026,Analista de Negócios/Business Analyst,Sênior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,23,48,47.9
+2025-2026,Engenheiro de Dados/Data Engineer/Data Architect,Especialista/Staff+,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,18,62,29.0
+2025-2026,Analista de BI/BI Analyst,Júnior,faixa_salarial,Menos de R$ 1.000/mês,3,57,5.3
+2025-2026,Engenheiro de Dados/Data Engineer/Data Architect,Sênior,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,9,182,4.9
+2025-2026,Analista de Suporte/Analista Técnico,Pleno,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,6,20,30.0
+2025-2026,Professor/Pesquisador,Júnior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,1,3,33.3
+2025-2026,Analista de Negócios/Business Analyst,Júnior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,7,22,31.8
+2025-2026,Outras Engenharias (não inclui dev),Especialista/Staff+,faixa_salarial,Acima de R$ 40.001/mês,1,7,14.3
+2025-2026,Analista de BI/BI Analyst,Júnior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,1,57,1.8
+2025-2026,Outras Engenharias (não inclui dev),Especialista/Staff+,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,2,7,28.6
+2025-2026,Engenheiro de Dados/Data Engineer/Data Architect,Júnior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,7,49,14.3
+2025-2026,Cientista de Dados/Data Scientist,Júnior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,5,65,7.7
+2025-2026,Analista de Dados/Data Analyst,Júnior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,42,145,29.0
+2025-2026,Arquiteto de Dados/Data Architect,Especialista/Staff+,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,3,13,23.1
+2025-2026,Analista de Dados/Data Analyst,Especialista/Staff+,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,3,59,5.1
+2025-2026,Outra Opção,Sênior,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,1,39,2.6
+2025-2026,Outra Opção,Pleno,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,10,55,18.2
+2025-2026,Analista de Negócios/Business Analyst,Sênior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,3,48,6.3
+2025-2026,Engenheiro de Dados/Data Engineer/Data Architect,Pleno,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,9,109,8.3
+2025-2026,Analista de Suporte/Analista Técnico,Júnior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,10,20,50.0
+2025-2026,Engenheiro de Dados/Data Engineer/Data Architect,Júnior,faixa_salarial,Menos de R$ 1.000/mês,1,49,2.0
+2025-2026,Analytics Engineer,Especialista/Staff+,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,10,24,41.7
+2025-2026,Cientista de Dados/Data Scientist,Especialista/Staff+,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,3,72,4.2
+2025-2026,Analista de Suporte/Analista Técnico,Júnior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,3,20,15.0
+2025-2026,Analista de Dados/Data Analyst,Pleno,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,58,211,27.5
+2025-2026,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Sênior,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,3,41,7.3
+2025-2026,Cientista de Dados/Data Scientist,Júnior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,4,65,6.2
+2025-2026,Arquiteto de Dados/Data Architect,Especialista/Staff+,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,4,13,30.8
+2025-2026,Engenheiro de Dados/Data Engineer/Data Architect,Júnior,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,4,49,8.2
+2025-2026,Analista de Negócios/Business Analyst,Sênior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,5,48,10.4
+2025-2026,Cientista de Dados/Data Scientist,Pleno,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,21,140,15.0
+2025-2026,Analista de Negócios/Business Analyst,Júnior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,9,22,40.9
+2025-2026,Analista de BI/BI Analyst,Júnior,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,9,57,15.8
+2025-2026,Analytics Engineer,Especialista/Staff+,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,2,24,8.3
+2025-2026,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Júnior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,2,21,9.5
+2025-2026,Arquiteto de Dados/Data Architect,Especialista/Staff+,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,1,13,7.7
+2025-2026,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Pleno,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,1,16,6.3
+2025-2026,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),Sênior,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,2,19,10.5
+2025-2026,Analytics Engineer,Especialista/Staff+,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,5,24,20.8
+2025-2026,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Especialista/Staff+,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,2,14,14.3
+2025-2026,Estatístico,Júnior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,1,4,25.0
+2025-2026,Analista de Dados/Data Analyst,Especialista/Staff+,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,1,59,1.7
+2025-2026,Outra Opção,Especialista/Staff+,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,5,22,22.7
+2025-2026,Analista de Suporte/Analista Técnico,Sênior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,2,15,13.3
+2025-2026,Engenheiro de Dados/Data Engineer/Data Architect,Júnior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,2,49,4.1
+2025-2026,Cientista de Dados/Data Scientist,Sênior,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,8,147,5.4
+2025-2026,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Pleno,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,2,27,7.4
+2025-2026,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Pleno,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,3,27,11.1
+2025-2026,Analytics Engineer,Júnior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,2,11,18.2
+2025-2026,Engenheiro de Dados/Data Engineer/Data Architect,Sênior,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,39,182,21.4
+2025-2026,Outra Opção,Júnior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,2,90,2.2
+2025-2026,Professor/Pesquisador,Especialista/Staff+,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,1,3,33.3
+2025-2026,Outra Opção,Especialista/Staff+,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,4,22,18.2
+2025-2026,Engenheiro de Dados/Data Engineer/Data Architect,Pleno,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,1,109,0.9
+2025-2026,Cientista de Dados/Data Scientist,Sênior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,4,147,2.7
+2025-2026,Outras Engenharias (não inclui dev),Pleno,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,1,8,12.5
+2025-2026,Analytics Engineer,Especialista/Staff+,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,2,24,8.3
+2025-2026,Analista de Dados/Data Analyst,Sênior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,31,184,16.8
+2025-2026,Analista de Suporte/Analista Técnico,Pleno,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,1,20,5.0
+2025-2026,Analytics Engineer,Sênior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,4,59,6.8
+2025-2026,Engenheiro de Dados/Data Engineer/Data Architect,Sênior,faixa_salarial,Acima de R$ 40.001/mês,9,182,4.9
+2025-2026,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Sênior,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,5,42,11.9
+2025-2026,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Júnior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,3,24,12.5
+2025-2026,Analista de Suporte/Analista Técnico,Pleno,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,6,20,30.0
+2025-2026,Analista de Negócios/Business Analyst,Especialista/Staff+,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,5,18,27.8
+2025-2026,Analista de BI/BI Analyst,Pleno,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,1,82,1.2
+2025-2026,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Pleno,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,6,27,22.2
+2025-2026,Analytics Engineer,Sênior,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,4,59,6.8
+2025-2026,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Júnior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,4,24,16.7
+2025-2026,Analista de Suporte/Analista Técnico,Sênior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,2,15,13.3
+2025-2026,Analista de Dados/Data Analyst,Especialista/Staff+,faixa_salarial,Acima de R$ 40.001/mês,2,59,3.4
+2025-2026,Analista de Negócios/Business Analyst,Especialista/Staff+,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,5,18,27.8
+2025-2026,Cientista de Dados/Data Scientist,Pleno,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,4,140,2.9
+2025-2026,Analista de Dados/Data Analyst,Júnior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,13,145,9.0
+2025-2026,Analista de Suporte/Analista Técnico,Sênior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,5,15,33.3
+2025-2026,Analytics Engineer,Júnior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,4,11,36.4
+2025-2026,Cientista de Dados/Data Scientist,Pleno,faixa_salarial,Acima de R$ 40.001/mês,1,140,0.7
+2025-2026,Outra Opção,Júnior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,1,90,1.1
+2025-2026,Outra Opção,Pleno,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,11,55,20.0
+2025-2026,Analista de BI/BI Analyst,Júnior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,9,57,15.8
+2025-2026,Outras Engenharias (não inclui dev),Sênior,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,1,6,16.7
+2025-2026,Outras Engenharias (não inclui dev),Pleno,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,4,8,50.0
+2025-2026,Outra Opção,Sênior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,5,39,12.8
+2025-2026,Analista de Dados/Data Analyst,Pleno,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,21,211,10.0
+2025-2026,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Júnior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,1,21,4.8
+2025-2026,Analista de Dados/Data Analyst,Especialista/Staff+,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,2,59,3.4
+2025-2026,Analista de BI/BI Analyst,Sênior,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,2,59,3.4
+2025-2026,Analista de BI/BI Analyst,Especialista/Staff+,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,5,17,29.4
+2025-2026,Analista de Dados/Data Analyst,Sênior,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,5,184,2.7
+2025-2026,Cientista de Dados/Data Scientist,Pleno,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,32,140,22.9
+2025-2026,Analista de Dados/Data Analyst,Especialista/Staff+,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,16,59,27.1
+2025-2026,Outra Opção,Sênior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,11,39,28.2
+2025-2026,Cientista de Dados/Data Scientist,Sênior,faixa_salarial,Acima de R$ 40.001/mês,3,147,2.0
+2025-2026,Outra Opção,Sênior,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,2,39,5.1
+2025-2026,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Júnior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,2,24,8.3
+2025-2026,Outras Engenharias (não inclui dev),Júnior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,1,5,20.0
+2025-2026,Cientista de Dados/Data Scientist,Especialista/Staff+,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,20,72,27.8
+2025-2026,Outra Opção,Sênior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,2,39,5.1
+2025-2026,Professor/Pesquisador,Especialista/Staff+,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,1,3,33.3
+2025-2026,Analista de Negócios/Business Analyst,Júnior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,3,22,13.6
+2025-2026,Analista de Dados/Data Analyst,Sênior,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,12,184,6.5
+2025-2026,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Sênior,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,8,42,19.0
+2025-2026,Analista de Negócios/Business Analyst,Júnior,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,2,22,9.1
+2025-2026,Analytics Engineer,Pleno,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,5,41,12.2
+2025-2026,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Especialista/Staff+,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,8,27,29.6
+2025-2026,Outra Opção,Pleno,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,1,55,1.8
+2025-2026,Outra Opção,Sênior,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,2,39,5.1
+2025-2026,Cientista de Dados/Data Scientist,Júnior,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,10,65,15.4
+2025-2026,Cientista de Dados/Data Scientist,Sênior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,1,147,0.7
+2025-2026,Analista de BI/BI Analyst,Sênior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,23,59,39.0
+2025-2026,Analista de BI/BI Analyst,Pleno,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,9,82,11.0
+2025-2026,Outra Opção,Pleno,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,10,55,18.2
+2025-2026,Analista de Dados/Data Analyst,Especialista/Staff+,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,12,59,20.3
+2025-2026,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),Especialista/Staff+,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,2,10,20.0
+2025-2026,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Pleno,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,9,27,33.3
+2025-2026,Estatístico,Sênior,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,1,1,100.0
+2025-2026,Analista de Dados/Data Analyst,Pleno,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,57,211,27.0
+2025-2026,Analista de Dados/Data Analyst,Pleno,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,4,211,1.9
+2025-2026,Engenheiro de Dados/Data Engineer/Data Architect,Especialista/Staff+,faixa_salarial,Acima de R$ 40.001/mês,8,62,12.9
+2025-2026,Analista de Negócios/Business Analyst,Pleno,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,2,53,3.8
+2025-2026,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),Sênior,faixa_salarial,Acima de R$ 40.001/mês,2,19,10.5
+2025-2026,Engenheiro de Dados/Data Engineer/Data Architect,Pleno,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,2,109,1.8
+2025-2026,Analista de BI/BI Analyst,Júnior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,2,57,3.5
+2025-2026,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Especialista/Staff+,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,2,14,14.3
+2025-2026,Outra Opção,Júnior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,12,90,13.3
+2025-2026,Analista de BI/BI Analyst,Especialista/Staff+,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,2,17,11.8
+2025-2026,Analista de BI/BI Analyst,Pleno,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,28,82,34.1
+2025-2026,Analista de Dados/Data Analyst,Sênior,faixa_salarial,Acima de R$ 40.001/mês,2,184,1.1
+2025-2026,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Júnior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,3,24,12.5
+2025-2026,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Sênior,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,4,41,9.8
+2025-2026,Cientista de Dados/Data Scientist,Júnior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,15,65,23.1
+2025-2026,Analytics Engineer,Sênior,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,5,59,8.5
+2025-2026,Engenheiro de Dados/Data Engineer/Data Architect,Pleno,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,1,109,0.9
+2025-2026,Outra Opção,Sênior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,5,39,12.8
+2025-2026,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Sênior,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,5,42,11.9
+2025-2026,Engenheiro de Dados/Data Engineer/Data Architect,Sênior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,53,182,29.1
+2025-2026,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Júnior,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,5,24,20.8
+2025-2026,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Especialista/Staff+,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,4,27,14.8
+2025-2026,Analista de Negócios/Business Analyst,Sênior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,1,48,2.1
+2025-2026,Professor/Pesquisador,Especialista/Staff+,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,1,3,33.3
+2025-2026,Analista de Negócios/Business Analyst,Especialista/Staff+,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,4,18,22.2
+2025-2026,Analista de Negócios/Business Analyst,Júnior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,1,22,4.5
+2025-2026,Analista de Dados/Data Analyst,Sênior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,28,184,15.2
+2025-2026,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Sênior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,8,42,19.0
+2025-2026,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),Pleno,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,2,4,50.0
+2025-2026,Analista de BI/BI Analyst,Pleno,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,2,82,2.4
+2025-2026,Analista de BI/BI Analyst,Sênior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,1,59,1.7
+2025-2026,Analista de BI/BI Analyst,Pleno,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,13,82,15.9
+2025-2026,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Sênior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,15,41,36.6
+2025-2026,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Sênior,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,2,42,4.8
+2025-2026,Professor/Pesquisador,Pleno,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,1,4,25.0
+2025-2026,Arquiteto de Dados/Data Architect,Sênior,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,2,10,20.0
+2025-2026,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),Especialista/Staff+,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,3,10,30.0
+2025-2026,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Especialista/Staff+,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,3,14,21.4
+2025-2026,Outra Opção,Pleno,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,4,55,7.3
+2025-2026,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Pleno,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,1,16,6.3
+2025-2026,Estatístico,Júnior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,1,4,25.0
+2025-2026,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Especialista/Staff+,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,2,27,7.4
+2025-2026,Engenheiro de Dados/Data Engineer/Data Architect,Sênior,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,6,182,3.3
+2025-2026,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Especialista/Staff+,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,7,27,25.9
+2025-2026,Analista de BI/BI Analyst,Júnior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,3,57,5.3
+2025-2026,Estatístico,Júnior,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,2,4,50.0
+2025-2026,Outras Engenharias (não inclui dev),Especialista/Staff+,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,3,7,42.9
+2025-2026,Analista de BI/BI Analyst,Especialista/Staff+,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,2,17,11.8
+2025-2026,Outras Engenharias (não inclui dev),Sênior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,2,6,33.3
+2025-2026,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),Pleno,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,1,4,25.0
+2025-2026,Outra Opção,Júnior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,19,90,21.1
+2025-2026,Analista de Negócios/Business Analyst,Sênior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,2,48,4.2
+2025-2026,Analista de Dados/Data Analyst,Especialista/Staff+,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,18,59,30.5
+2025-2026,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),Especialista/Staff+,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,1,10,10.0
+2025-2026,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Especialista/Staff+,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,4,14,28.6
+2025-2026,Arquiteto de Dados/Data Architect,Especialista/Staff+,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,2,13,15.4
+2025-2026,Engenheiro de Dados/Data Engineer/Data Architect,Sênior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,50,182,27.5
+2025-2026,Analista de BI/BI Analyst,Pleno,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,25,82,30.5
+2025-2026,Cientista de Dados/Data Scientist,Especialista/Staff+,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,9,72,12.5
+2025-2026,Arquiteto de Dados/Data Architect,Júnior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,1,2,50.0
+2025-2026,Outra Opção,Especialista/Staff+,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,4,22,18.2
+2025-2026,Professor/Pesquisador,Sênior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,2,6,33.3
+2025-2026,Estatístico,Pleno,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,1,3,33.3
+2025-2026,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Júnior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,3,21,14.3
+2025-2026,Analista de BI/BI Analyst,Sênior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,1,59,1.7
+2025-2026,Arquiteto de Dados/Data Architect,Sênior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,4,10,40.0
+2025-2026,Analista de Suporte/Analista Técnico,Sênior,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,1,15,6.7
+2025-2026,Analista de BI/BI Analyst,Júnior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,16,57,28.1
+2025-2026,Analytics Engineer,Júnior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,3,11,27.3
+2025-2026,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Sênior,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,2,41,4.9
+2025-2026,Outra Opção,Sênior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,6,39,15.4
+2025-2026,Outra Opção,Pleno,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,5,55,9.1
+2025-2026,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Júnior,faixa_salarial,Menos de R$ 1.000/mês,2,24,8.3
+2025-2026,Outras Engenharias (não inclui dev),Pleno,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,2,8,25.0
+2025-2026,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Especialista/Staff+,faixa_salarial,Acima de R$ 40.001/mês,1,14,7.1
+2025-2026,Analista de Negócios/Business Analyst,Especialista/Staff+,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,2,18,11.1
+2025-2026,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),Especialista/Staff+,faixa_salarial,Acima de R$ 40.001/mês,1,10,10.0
+2025-2026,Analytics Engineer,Especialista/Staff+,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,1,24,4.2
+2025-2026,Outras Engenharias (não inclui dev),Júnior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,3,5,60.0
+2025-2026,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),Especialista/Staff+,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,1,10,10.0
+2025-2026,Analista de Negócios/Business Analyst,Pleno,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,1,53,1.9
+2025-2026,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Especialista/Staff+,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,1,14,7.1
+2025-2026,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),Sênior,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,2,19,10.5
+2025-2026,Analista de Dados/Data Analyst,Especialista/Staff+,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,4,59,6.8
+2025-2026,Analista de Suporte/Analista Técnico,Júnior,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,3,20,15.0
+2025-2026,Analista de Dados/Data Analyst,Pleno,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,2,211,0.9
+2025-2026,Engenheiro de Dados/Data Engineer/Data Architect,Especialista/Staff+,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,2,62,3.2
+2025-2026,Analista de Dados/Data Analyst,Júnior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,27,145,18.6
+2025-2026,Analytics Engineer,Júnior,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,1,11,9.1
+2025-2026,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),Pleno,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,1,4,25.0
+2025-2026,Estatístico,Pleno,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,1,3,33.3
+2025-2026,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Pleno,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,7,16,43.8
+2025-2026,Engenheiro de Dados/Data Engineer/Data Architect,Especialista/Staff+,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,11,62,17.7
+2025-2026,Cientista de Dados/Data Scientist,Sênior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,36,147,24.5
+2025-2026,Outra Opção,Júnior,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,35,90,38.9
+2025-2026,Cientista de Dados/Data Scientist,Pleno,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,1,140,0.7
+2025-2026,Engenheiro de Dados/Data Engineer/Data Architect,Júnior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,9,49,18.4
+2025-2026,Analista de BI/BI Analyst,Sênior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,4,59,6.8
+2025-2026,Engenheiro de Dados/Data Engineer/Data Architect,Júnior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,18,49,36.7
+2025-2026,Analista de Dados/Data Analyst,Sênior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,3,184,1.6
+2025-2026,Arquiteto de Dados/Data Architect,Sênior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,1,10,10.0
+2025-2026,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Pleno,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,3,16,18.8
+2025-2026,Analista de BI/BI Analyst,Júnior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,14,57,24.6
+2025-2026,Analista de BI/BI Analyst,Especialista/Staff+,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,1,17,5.9
+2025-2026,Analytics Engineer,Sênior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,15,59,25.4
+2025-2026,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Sênior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,8,42,19.0
+2025-2026,Outra Opção,Sênior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,5,39,12.8
+2025-2026,Analista de Negócios/Business Analyst,Pleno,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,15,53,28.3
+2025-2026,Outra Opção,Júnior,faixa_salarial,Menos de R$ 1.000/mês,7,90,7.8
+2025-2026,Engenheiro de Dados/Data Engineer/Data Architect,Pleno,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,1,109,0.9
+2025-2026,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),Especialista/Staff+,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,2,10,20.0
+2025-2026,Analista de Suporte/Analista Técnico,Pleno,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,5,20,25.0
+2025-2026,Outras Engenharias (não inclui dev),Sênior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,2,6,33.3
+2025-2026,Analytics Engineer,Especialista/Staff+,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,3,24,12.5
+2025-2026,Outra Opção,Especialista/Staff+,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,2,22,9.1
+2025-2026,Professor/Pesquisador,Pleno,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,1,4,25.0
+2025-2026,Analista de Negócios/Business Analyst,Sênior,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,1,48,2.1
+2025-2026,Analista de Suporte/Analista Técnico,Júnior,faixa_salarial,Menos de R$ 1.000/mês,2,20,10.0
+2025-2026,Analista de Dados/Data Analyst,Sênior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,9,184,4.9
+2025-2026,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Pleno,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,3,16,18.8
+2025-2026,Analista de Dados/Data Analyst,Sênior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,84,184,45.7
+2025-2026,Cientista de Dados/Data Scientist,Júnior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,10,65,15.4
+2025-2026,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Pleno,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,6,27,22.2
+2025-2026,Analytics Engineer,Pleno,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,14,41,34.1
+2025-2026,Analista de Dados/Data Analyst,Sênior,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,1,184,0.5
+2025-2026,Cientista de Dados/Data Scientist,Sênior,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,5,147,3.4
+2025-2026,Cientista de Dados/Data Scientist,Especialista/Staff+,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,18,72,25.0
+2025-2026,Analista de Dados/Data Analyst,Pleno,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,7,211,3.3
+2025-2026,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Júnior,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,1,21,4.8
+2025-2026,Analista de Dados/Data Analyst,Sênior,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,5,184,2.7
+2025-2026,Analista de Dados/Data Analyst,Pleno,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,2,211,0.9
+2025-2026,Arquiteto de Dados/Data Architect,Especialista/Staff+,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,1,13,7.7
+2025-2026,Outras Engenharias (não inclui dev),Especialista/Staff+,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,1,7,14.3
+2025-2026,Analista de BI/BI Analyst,Sênior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,11,59,18.6
+2025-2026,Analista de Negócios/Business Analyst,Pleno,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,13,53,24.5
+2025-2026,Engenheiro de Dados/Data Engineer/Data Architect,Sênior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,5,182,2.7
+2025-2026,Cientista de Dados/Data Scientist,Especialista/Staff+,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,8,72,11.1
+2025-2026,Outra Opção,Pleno,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,1,55,1.8
+2025-2026,Analista de Negócios/Business Analyst,Especialista/Staff+,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,1,18,5.6
+2025-2026,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),Sênior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,4,19,21.1
+2025-2026,Analista de Negócios/Business Analyst,Pleno,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,20,53,37.7
+2025-2026,Analista de Negócios/Business Analyst,Sênior,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,3,48,6.3
+2025-2026,Cientista de Dados/Data Scientist,Pleno,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,2,140,1.4
+2025-2026,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Sênior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,11,41,26.8
+2025-2026,Engenheiro de Dados/Data Engineer/Data Architect,Especialista/Staff+,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,5,62,8.1
+2025-2026,Engenheiro de Dados/Data Engineer/Data Architect,Sênior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,2,182,1.1
+2025-2026,Engenheiro de Dados/Data Engineer/Data Architect,Especialista/Staff+,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,18,62,29.0
+2025-2026,Arquiteto de Dados/Data Architect,Sênior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,3,10,30.0
+2025-2026,Outra Opção,Júnior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,1,90,1.1
+2025-2026,Analista de Suporte/Analista Técnico,Sênior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,2,15,13.3
+2025-2026,Analytics Engineer,Sênior,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,9,59,15.3
+2025-2026,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Especialista/Staff+,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,1,14,7.1
+2025-2026,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),Sênior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,9,19,47.4
+2025-2026,Engenheiro de Dados/Data Engineer/Data Architect,Pleno,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,13,109,11.9
+2025-2026,Cientista de Dados/Data Scientist,Pleno,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,68,140,48.6
+2025-2026,Analista de Negócios/Business Analyst,Sênior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,7,48,14.6
+2025-2026,Analista de Suporte/Analista Técnico,Sênior,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,1,15,6.7
+2025-2026,Professor/Pesquisador,Pleno,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,1,4,25.0
+2025-2026,Analista de Dados/Data Analyst,Júnior,faixa_salarial,Menos de R$ 1.000/mês,1,145,0.7
+2025-2026,Professor/Pesquisador,Júnior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,1,3,33.3
+2025-2026,Arquiteto de Dados/Data Architect,Pleno,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,3,3,100.0
+2025-2026,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Sênior,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,1,41,2.4
+2025-2026,Cientista de Dados/Data Scientist,Sênior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,47,147,32.0
+2025-2026,Analista de Suporte/Analista Técnico,Sênior,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,1,15,6.7
+2025-2026,Analista de Dados/Data Analyst,Pleno,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,59,211,28.0
+2025-2026,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Júnior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,4,21,19.0
+2025-2026,Analista de Suporte/Analista Técnico,Pleno,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,1,20,5.0
+2025-2026,Engenheiro de Dados/Data Engineer/Data Architect,Sênior,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,9,182,4.9
+2025-2026,Outras Engenharias (não inclui dev),Júnior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,1,5,20.0
+2025-2026,Analista de BI/BI Analyst,Sênior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,17,59,28.8
+2025-2026,Analista de BI/BI Analyst,Pleno,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,3,82,3.7
+2025-2026,Cientista de Dados/Data Scientist,Júnior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,1,65,1.5
+2024-2025,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Pleno,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,2,36,5.6
+2024-2025,Analista de BI/BI Analyst,Sênior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,50,102,49.0
+2024-2025,Analista de Dados/Data Analyst,Júnior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,20,244,8.2
+2024-2025,Estatístico,Pleno,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,2,7,28.6
+2024-2025,Analista de BI/BI Analyst,Júnior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,11,126,8.7
+2024-2025,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Júnior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,1,9,11.1
+2024-2025,Analista de Suporte/Analista Técnico,Júnior,faixa_salarial,Acima de R$ 40.001/mês,1,29,3.4
+2024-2025,Analytics Engineer,Júnior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,7,30,23.3
+2024-2025,Outras Engenharias (não inclui dev),Júnior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,2,6,33.3
+2024-2025,Analista de Dados/Data Analyst,Pleno,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,13,391,3.3
+2024-2025,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),Sênior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,23,61,37.7
+2024-2025,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),Sênior,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,1,61,1.6
+2024-2025,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Sênior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,11,44,25.0
+2024-2025,Analista de Negócios/Business Analyst,Júnior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,4,35,11.4
+2024-2025,Analista de Negócios/Business Analyst,Sênior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,12,83,14.5
+2024-2025,Analista de Suporte/Analista Técnico,Júnior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,2,29,6.9
+2024-2025,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Júnior,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,8,29,27.6
+2024-2025,Engenheiro de Dados/Data Engineer/Data Architect,Sênior,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,50,310,16.1
+2024-2025,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Pleno,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,1,49,2.0
+2024-2025,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Júnior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,2,9,22.2
+2024-2025,Cientista de Dados/Data Scientist,Pleno,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,1,230,0.4
+2024-2025,Outras Engenharias (não inclui dev),Sênior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,2,9,22.2
+2024-2025,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Pleno,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,10,49,20.4
+2024-2025,Analista de Dados/Data Analyst,Sênior,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,4,322,1.2
+2024-2025,Analista de Dados/Data Analyst,Sênior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,11,322,3.4
+2024-2025,Engenheiro de Dados/Data Engineer/Data Architect,Pleno,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,29,211,13.7
+2024-2025,Outras Engenharias (não inclui dev),Júnior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,1,6,16.7
+2024-2025,Analytics Engineer,Pleno,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,3,83,3.6
+2024-2025,Outra Opção,Pleno,faixa_salarial,Menos de R$ 1.000/mês,1,59,1.7
+2024-2025,Engenheiro de Dados/Data Engineer/Data Architect,Pleno,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,5,211,2.4
+2024-2025,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Júnior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,3,9,33.3
+2024-2025,Arquiteto de Dados/Data Architect,Sênior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,2,37,5.4
+2024-2025,Analista de Suporte/Analista Técnico,Sênior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,1,19,5.3
+2024-2025,Analista de Negócios/Business Analyst,Sênior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,3,83,3.6
+2024-2025,Analytics Engineer,Júnior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,10,30,33.3
+2024-2025,Outra Opção,Sênior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,17,60,28.3
+2024-2025,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Júnior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,1,29,3.4
+2024-2025,Engenheiro de Dados/Data Engineer/Data Architect,Júnior,faixa_salarial,Menos de R$ 1.000/mês,3,92,3.3
+2024-2025,Analista de Negócios/Business Analyst,Júnior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,1,35,2.9
+2024-2025,Cientista de Dados/Data Scientist,Júnior,faixa_salarial,Menos de R$ 1.000/mês,1,118,0.8
+2024-2025,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Júnior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,2,9,22.2
+2024-2025,Professor/Pesquisador,Júnior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,1,5,20.0
+2024-2025,Cientista de Dados/Data Scientist,Sênior,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,64,339,18.9
+2024-2025,Analista de Negócios/Business Analyst,Júnior,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,3,35,8.6
+2024-2025,Analytics Engineer,Júnior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,3,30,10.0
+2024-2025,Analista de Dados/Data Analyst,Sênior,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,6,322,1.9
+2024-2025,Arquiteto de Dados/Data Architect,Júnior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,1,1,100.0
+2024-2025,Analista de Negócios/Business Analyst,Pleno,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,19,66,28.8
+2024-2025,Analista de Dados/Data Analyst,Pleno,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,2,391,0.5
+2024-2025,Analista de Suporte/Analista Técnico,Pleno,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,12,31,38.7
+2024-2025,Analista de Dados/Data Analyst,Sênior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,140,322,43.5
+2024-2025,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),Pleno,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,2,15,13.3
+2024-2025,Outras Engenharias (não inclui dev),Pleno,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,3,14,21.4
+2024-2025,Engenheiro de Dados/Data Engineer/Data Architect,Pleno,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,92,211,43.6
+2024-2025,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Pleno,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,1,49,2.0
+2024-2025,Analytics Engineer,Sênior,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,3,115,2.6
+2024-2025,Cientista de Dados/Data Scientist,Sênior,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,31,339,9.1
+2024-2025,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Júnior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,1,29,3.4
+2024-2025,Analytics Engineer,Sênior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,1,115,0.9
+2024-2025,Analista de Dados/Data Analyst,Júnior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,48,244,19.7
+2024-2025,Analytics Engineer,Pleno,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,4,83,4.8
+2024-2025,Analista de BI/BI Analyst,Pleno,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,1,168,0.6
+2024-2025,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),Júnior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,2,4,50.0
+2024-2025,Analytics Engineer,Júnior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,5,30,16.7
+2024-2025,Engenheiro de Dados/Data Engineer/Data Architect,Sênior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,87,310,28.1
+2024-2025,Outra Opção,Júnior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,18,135,13.3
+2024-2025,Analista de BI/BI Analyst,Sênior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,11,102,10.8
+2024-2025,Analista de Suporte/Analista Técnico,Júnior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,13,29,44.8
+2024-2025,Analista de Suporte/Analista Técnico,Pleno,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,7,31,22.6
+2024-2025,Analytics Engineer,Pleno,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,17,83,20.5
+2024-2025,Estatístico,Pleno,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,2,7,28.6
+2024-2025,Analytics Engineer,Júnior,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,1,30,3.3
+2024-2025,Analista de Dados/Data Analyst,Pleno,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,140,391,35.8
+2024-2025,Analista de Suporte/Analista Técnico,Pleno,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,8,31,25.8
+2024-2025,Analista de Dados/Data Analyst,Sênior,faixa_salarial,Acima de R$ 40.001/mês,2,322,0.6
+2024-2025,Analista de BI/BI Analyst,Sênior,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,2,102,2.0
+2024-2025,Engenheiro de Dados/Data Engineer/Data Architect,Júnior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,31,92,33.7
+2024-2025,Analista de BI/BI Analyst,Júnior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,28,126,22.2
+2024-2025,Analista de BI/BI Analyst,Pleno,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,3,168,1.8
+2024-2025,Analytics Engineer,Sênior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,39,115,33.9
+2024-2025,Outra Opção,Pleno,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,9,59,15.3
+2024-2025,Analista de Suporte/Analista Técnico,Sênior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,3,19,15.8
+2024-2025,Cientista de Dados/Data Scientist,Sênior,faixa_salarial,Acima de R$ 40.001/mês,6,339,1.8
+2024-2025,Engenheiro de Dados/Data Engineer/Data Architect,Pleno,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,6,211,2.8
+2024-2025,Analista de Negócios/Business Analyst,Júnior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,7,35,20.0
+2024-2025,Outras Engenharias (não inclui dev),Pleno,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,2,14,14.3
+2024-2025,Analista de Suporte/Analista Técnico,Pleno,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,1,31,3.2
+2024-2025,Analista de Dados/Data Analyst,Júnior,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,34,244,13.9
+2024-2025,Cientista de Dados/Data Scientist,Júnior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,16,118,13.6
+2024-2025,Cientista de Dados/Data Scientist,Pleno,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,24,230,10.4
+2024-2025,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Júnior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,3,29,10.3
+2024-2025,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),Sênior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,19,61,31.1
+2024-2025,Outra Opção,Pleno,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,11,59,18.6
+2024-2025,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Sênior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,12,44,27.3
+2024-2025,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Pleno,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,3,36,8.3
+2024-2025,Analytics Engineer,Pleno,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,1,83,1.2
+2024-2025,Analista de Dados/Data Analyst,Sênior,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,25,322,7.8
+2024-2025,Cientista de Dados/Data Scientist,Sênior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,76,339,22.4
+2024-2025,Analista de Suporte/Analista Técnico,Júnior,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,4,29,13.8
+2024-2025,Engenheiro de Dados/Data Engineer/Data Architect,Pleno,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,22,211,10.4
+2024-2025,Engenheiro de Dados/Data Engineer/Data Architect,Sênior,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,14,310,4.5
+2024-2025,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Sênior,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,2,44,4.5
+2024-2025,Analytics Engineer,Pleno,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,3,83,3.6
+2024-2025,Analista de Suporte/Analista Técnico,Júnior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,1,29,3.4
+2024-2025,Outra Opção,Sênior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,2,60,3.3
+2024-2025,Analista de Suporte/Analista Técnico,Júnior,faixa_salarial,Menos de R$ 1.000/mês,2,29,6.9
+2024-2025,Outra Opção,Sênior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,4,60,6.7
+2024-2025,Engenheiro de Dados/Data Engineer/Data Architect,Júnior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,16,92,17.4
+2024-2025,Engenheiro de Dados/Data Engineer/Data Architect,Sênior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,89,310,28.7
+2024-2025,Analista de Negócios/Business Analyst,Pleno,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,1,66,1.5
+2024-2025,Outra Opção,Pleno,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,12,59,20.3
+2024-2025,Analista de BI/BI Analyst,Pleno,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,20,168,11.9
+2024-2025,Analista de Suporte/Analista Técnico,Júnior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,1,29,3.4
+2024-2025,Engenheiro de Dados/Data Engineer/Data Architect,Júnior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,3,92,3.3
+2024-2025,Analista de BI/BI Analyst,Pleno,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,5,168,3.0
+2024-2025,Engenheiro de Dados/Data Engineer/Data Architect,Júnior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,15,92,16.3
+2024-2025,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Pleno,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,11,49,22.4
+2024-2025,Analytics Engineer,Júnior,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,3,30,10.0
+2024-2025,Engenheiro de Dados/Data Engineer/Data Architect,Sênior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,7,310,2.3
+2024-2025,Analista de Dados/Data Analyst,Júnior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,77,244,31.6
+2024-2025,Outra Opção,Júnior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,41,135,30.4
+2024-2025,Outra Opção,Sênior,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,11,60,18.3
+2024-2025,Analytics Engineer,Sênior,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,24,115,20.9
+2024-2025,Analista de BI/BI Analyst,Pleno,faixa_salarial,Menos de R$ 1.000/mês,1,168,0.6
+2024-2025,Outras Engenharias (não inclui dev),Pleno,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,4,14,28.6
+2024-2025,Outra Opção,Júnior,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,38,135,28.1
+2024-2025,Analista de Negócios/Business Analyst,Júnior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,18,35,51.4
+2024-2025,Outra Opção,Júnior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,11,135,8.1
+2024-2025,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),Júnior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,1,4,25.0
+2024-2025,Analista de Dados/Data Analyst,Sênior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,44,322,13.7
+2024-2025,Cientista de Dados/Data Scientist,Júnior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,33,118,28.0
+2024-2025,Cientista de Dados/Data Scientist,Pleno,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,59,230,25.7
+2024-2025,Cientista de Dados/Data Scientist,Sênior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,9,339,2.7
+2024-2025,Engenheiro de Dados/Data Engineer/Data Architect,Pleno,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,1,211,0.5
+2024-2025,Professor/Pesquisador,Pleno,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,2,7,28.6
+2024-2025,Arquiteto de Dados/Data Architect,Pleno,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,3,10,30.0
+2024-2025,Professor/Pesquisador,Sênior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,2,9,22.2
+2024-2025,Analista de Suporte/Analista Técnico,Pleno,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,1,31,3.2
+2024-2025,Outra Opção,Sênior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,5,60,8.3
+2024-2025,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Pleno,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,1,49,2.0
+2024-2025,Analista de Negócios/Business Analyst,Sênior,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,1,83,1.2
+2024-2025,Analista de Dados/Data Analyst,Júnior,faixa_salarial,Menos de R$ 1.000/mês,3,244,1.2
+2024-2025,Cientista de Dados/Data Scientist,Júnior,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,14,118,11.9
+2024-2025,Analytics Engineer,Pleno,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,34,83,41.0
+2024-2025,Outra Opção,Pleno,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,1,59,1.7
+2024-2025,Analista de Negócios/Business Analyst,Sênior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,12,83,14.5
+2024-2025,Analytics Engineer,Sênior,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,3,115,2.6
+2024-2025,Outra Opção,Júnior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,2,135,1.5
+2024-2025,Analista de Negócios/Business Analyst,Pleno,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,6,66,9.1
+2024-2025,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Sênior,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,3,58,5.2
+2024-2025,Analista de BI/BI Analyst,Júnior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,27,126,21.4
+2024-2025,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Pleno,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,18,36,50.0
+2024-2025,Analista de Negócios/Business Analyst,Pleno,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,18,66,27.3
+2024-2025,Cientista de Dados/Data Scientist,Sênior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,133,339,39.2
+2024-2025,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Sênior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,17,58,29.3
+2024-2025,Professor/Pesquisador,Júnior,faixa_salarial,Menos de R$ 1.000/mês,1,5,20.0
+2024-2025,Arquiteto de Dados/Data Architect,Pleno,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,1,10,10.0
+2024-2025,Analista de BI/BI Analyst,Sênior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,16,102,15.7
+2024-2025,Outra Opção,Sênior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,11,60,18.3
+2024-2025,Engenheiro de Dados/Data Engineer/Data Architect,Júnior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,1,92,1.1
+2024-2025,Arquiteto de Dados/Data Architect,Sênior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,19,37,51.4
+2024-2025,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Pleno,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,15,49,30.6
+2024-2025,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Sênior,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,10,58,17.2
+2024-2025,Cientista de Dados/Data Scientist,Sênior,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,7,339,2.1
+2024-2025,Engenheiro de Dados/Data Engineer/Data Architect,Sênior,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,23,310,7.4
+2024-2025,Cientista de Dados/Data Scientist,Pleno,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,3,230,1.3
+2024-2025,Cientista de Dados/Data Scientist,Pleno,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,6,230,2.6
+2024-2025,Analista de Dados/Data Analyst,Júnior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,5,244,2.0
+2024-2025,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),Sênior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,6,61,9.8
+2024-2025,Analista de BI/BI Analyst,Sênior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,16,102,15.7
+2024-2025,Analista de Negócios/Business Analyst,Pleno,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,1,66,1.5
+2024-2025,Cientista de Dados/Data Scientist,Pleno,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,1,230,0.4
+2024-2025,Analista de BI/BI Analyst,Sênior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,1,102,1.0
+2024-2025,Cientista de Dados/Data Scientist,Pleno,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,114,230,49.6
+2024-2025,Cientista de Dados/Data Scientist,Júnior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,12,118,10.2
+2024-2025,Arquiteto de Dados/Data Architect,Pleno,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,3,10,30.0
+2024-2025,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Pleno,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,7,49,14.3
+2024-2025,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Sênior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,11,44,25.0
+2024-2025,Engenheiro de Dados/Data Engineer/Data Architect,Júnior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,15,92,16.3
+2024-2025,Analista de Dados/Data Analyst,Sênior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,4,322,1.2
+2024-2025,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),Sênior,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,1,61,1.6
+2024-2025,Analista de Dados/Data Analyst,Sênior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,82,322,25.5
+2024-2025,Analista de Suporte/Analista Técnico,Sênior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,3,19,15.8
+2024-2025,Analista de Suporte/Analista Técnico,Júnior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,5,29,17.2
+2024-2025,Analytics Engineer,Sênior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,6,115,5.2
+2024-2025,Outra Opção,Pleno,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,10,59,16.9
+2024-2025,Outra Opção,Júnior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,8,135,5.9
+2024-2025,Analista de BI/BI Analyst,Júnior,faixa_salarial,Menos de R$ 1.000/mês,6,126,4.8
+2024-2025,Analista de BI/BI Analyst,Pleno,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,30,168,17.9
+2024-2025,Analista de Dados/Data Analyst,Pleno,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,2,391,0.5
+2024-2025,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Sênior,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,6,58,10.3
+2024-2025,Analytics Engineer,Sênior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,36,115,31.3
+2024-2025,Engenheiro de Dados/Data Engineer/Data Architect,Pleno,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,2,211,0.9
+2024-2025,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Sênior,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,7,58,12.1
+2024-2025,Estatístico,Pleno,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,1,7,14.3
+2024-2025,Cientista de Dados/Data Scientist,Pleno,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,1,230,0.4
+2024-2025,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Sênior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,9,58,15.5
+2024-2025,Cientista de Dados/Data Scientist,Júnior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,17,118,14.4
+2024-2025,Analista de Negócios/Business Analyst,Pleno,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,5,66,7.6
+2024-2025,Professor/Pesquisador,Júnior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,1,5,20.0
+2024-2025,Analista de Dados/Data Analyst,Pleno,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,112,391,28.6
+2024-2025,Analista de Dados/Data Analyst,Pleno,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,9,391,2.3
+2024-2025,Cientista de Dados/Data Scientist,Júnior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,23,118,19.5
+2024-2025,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Pleno,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,4,36,11.1
+2024-2025,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Júnior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,9,29,31.0
+2024-2025,Analista de Negócios/Business Analyst,Sênior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,40,83,48.2
+2024-2025,Cientista de Dados/Data Scientist,Pleno,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,21,230,9.1
+2024-2025,Analista de Dados/Data Analyst,Pleno,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,5,391,1.3
+2024-2025,Analista de BI/BI Analyst,Sênior,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,6,102,5.9
+2024-2025,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Pleno,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,8,36,22.2
+2024-2025,Estatístico,Júnior,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,2,5,40.0
+2024-2025,Cientista de Dados/Data Scientist,Júnior,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,1,118,0.8
+2024-2025,Arquiteto de Dados/Data Architect,Sênior,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,2,37,5.4
+2024-2025,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),Pleno,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,7,15,46.7
+2024-2025,Analista de BI/BI Analyst,Júnior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,28,126,22.2
+2024-2025,Outra Opção,Pleno,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,7,59,11.9
+2024-2025,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Júnior,faixa_salarial,Menos de R$ 1.000/mês,2,29,6.9
+2024-2025,Engenheiro de Dados/Data Engineer/Data Architect,Sênior,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,25,310,8.1
+2024-2025,Cientista de Dados/Data Scientist,Sênior,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,13,339,3.8
+2024-2025,Outra Opção,Pleno,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,2,59,3.4
+2024-2025,Analista de Dados/Data Analyst,Pleno,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,24,391,6.1
+2024-2025,Outra Opção,Júnior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,8,135,5.9
+2024-2025,Estatístico,Júnior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,1,5,20.0
+2024-2025,Outra Opção,Júnior,faixa_salarial,Menos de R$ 1.000/mês,8,135,5.9
+2024-2025,Analista de Negócios/Business Analyst,Pleno,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,15,66,22.7
+2024-2025,Engenheiro de Dados/Data Engineer/Data Architect,Pleno,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,50,211,23.7
+2024-2025,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),Pleno,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,4,15,26.7
+2024-2025,Outras Engenharias (não inclui dev),Júnior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,1,6,16.7
+2024-2025,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Júnior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,5,29,17.2
+2024-2025,Analista de BI/BI Analyst,Pleno,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,65,168,38.7
+2024-2025,Analista de Dados/Data Analyst,Júnior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,55,244,22.5
+2024-2025,Arquiteto de Dados/Data Architect,Pleno,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,2,10,20.0
+2024-2025,Engenheiro de Dados/Data Engineer/Data Architect,Sênior,faixa_salarial,Acima de R$ 40.001/mês,14,310,4.5
+2024-2025,Analista de BI/BI Analyst,Júnior,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,24,126,19.0
+2024-2025,Analytics Engineer,Pleno,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,20,83,24.1
+2024-2025,Analista de Dados/Data Analyst,Pleno,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,83,391,21.2
+2024-2025,Outras Engenharias (não inclui dev),Pleno,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,3,14,21.4
+2024-2025,Analista de Negócios/Business Analyst,Sênior,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,12,83,14.5
+2024-2025,Engenheiro de Dados/Data Engineer/Data Architect,Júnior,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,7,92,7.6
+2024-2025,Analista de Dados/Data Analyst,Sênior,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,4,322,1.2
+2024-2025,Engenheiro de Dados/Data Engineer/Data Architect,Pleno,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,3,211,1.4
+2024-2025,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),Sênior,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,10,61,16.4
+2024-2025,Outras Engenharias (não inclui dev),Sênior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,1,9,11.1
+2024-2025,Analista de BI/BI Analyst,Pleno,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,43,168,25.6
+2024-2025,Analista de Negócios/Business Analyst,Pleno,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,1,66,1.5
+2024-2025,Professor/Pesquisador,Júnior,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,1,5,20.0
+2024-2025,Analista de Dados/Data Analyst,Júnior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,1,244,0.4
+2024-2025,Professor/Pesquisador,Júnior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,1,5,20.0
+2024-2025,Outras Engenharias (não inclui dev),Sênior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,4,9,44.4
+2024-2025,Estatístico,Pleno,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,2,7,28.6
+2024-2025,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Pleno,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,1,36,2.8
+2024-2025,Analista de Dados/Data Analyst,Pleno,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,1,391,0.3
+2024-2025,Analista de Negócios/Business Analyst,Sênior,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,1,83,1.2
+2024-2025,Outras Engenharias (não inclui dev),Sênior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,1,9,11.1
+2024-2025,Outras Engenharias (não inclui dev),Júnior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,1,6,16.7
+2024-2025,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Sênior,faixa_salarial,Acima de R$ 40.001/mês,1,44,2.3
+2024-2025,Analista de Dados/Data Analyst,Júnior,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,1,244,0.4
+2024-2025,Analista de Suporte/Analista Técnico,Pleno,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,2,31,6.5
+2024-2025,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Sênior,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,4,44,9.1
+2024-2025,Professor/Pesquisador,Sênior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,1,9,11.1
+2024-2025,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Sênior,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,2,44,4.5
+2024-2025,Outra Opção,Pleno,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,2,59,3.4
+2024-2025,Estatístico,Sênior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,4,5,80.0
+2024-2025,Analista de Suporte/Analista Técnico,Sênior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,4,19,21.1
+2024-2025,Analytics Engineer,Pleno,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,1,83,1.2
+2024-2025,Outra Opção,Sênior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,2,60,3.3
+2024-2025,Estatístico,Sênior,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,1,5,20.0
+2024-2025,Analista de BI/BI Analyst,Júnior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,2,126,1.6
+2024-2025,Cientista de Dados/Data Scientist,Júnior,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,1,118,0.8
+2024-2025,Analytics Engineer,Sênior,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,3,115,2.6
+2024-2025,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),Sênior,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,1,61,1.6
+2024-2025,Engenheiro de Dados/Data Engineer/Data Architect,Pleno,faixa_salarial,Menos de R$ 1.000/mês,1,211,0.5
+2024-2025,Outra Opção,Pleno,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,3,59,5.1
+2024-2025,Outra Opção,Pleno,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,1,59,1.7
+2024-2025,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Pleno,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,1,49,2.0
+2024-2025,Outra Opção,Sênior,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,3,60,5.0
+2024-2025,Outra Opção,Sênior,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,1,60,1.7
+2024-2025,Arquiteto de Dados/Data Architect,Sênior,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,4,37,10.8
+2024-2025,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),Pleno,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,2,15,13.3
+2024-2025,Engenheiro de Dados/Data Engineer/Data Architect,Sênior,faixa_salarial,Menos de R$ 1.000/mês,1,310,0.3
+2024-2025,Arquiteto de Dados/Data Architect,Sênior,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,2,37,5.4
+2024-2025,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Sênior,faixa_salarial,Acima de R$ 40.001/mês,5,58,8.6
+2024-2025,Analista de Suporte/Analista Técnico,Sênior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,1,19,5.3
+2024-2025,Outra Opção,Júnior,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,1,135,0.7
+2024-2025,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),Júnior,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,1,4,25.0
+2024-2025,Arquiteto de Dados/Data Architect,Sênior,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,8,37,21.6
+2024-2025,Professor/Pesquisador,Sênior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,2,9,22.2
+2024-2025,Analista de Suporte/Analista Técnico,Sênior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,4,19,21.1
+2024-2025,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Pleno,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,1,49,2.0
+2024-2025,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Sênior,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,1,44,2.3
+2024-2025,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Pleno,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,1,49,2.0
+2024-2025,Outras Engenharias (não inclui dev),Sênior,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,1,9,11.1
+2024-2025,Analista de Negócios/Business Analyst,Júnior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,1,35,2.9
+2024-2025,Engenheiro de Dados/Data Engineer/Data Architect,Júnior,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,1,92,1.1
+2024-2025,Professor/Pesquisador,Sênior,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,2,9,22.2
+2024-2025,Estatístico,Júnior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,2,5,40.0
+2024-2025,Outra Opção,Sênior,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,1,60,1.7
+2024-2025,Professor/Pesquisador,Pleno,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,3,7,42.9
+2024-2025,Professor/Pesquisador,Pleno,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,2,7,28.6
+2024-2025,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Sênior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,1,58,1.7
+2024-2025,Outras Engenharias (não inclui dev),Pleno,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,2,14,14.3
+2024-2025,Professor/Pesquisador,Sênior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,1,9,11.1
+2024-2025,Analista de Negócios/Business Analyst,Sênior,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,2,83,2.4
+2024-2025,Outra Opção,Sênior,faixa_salarial,Acima de R$ 40.001/mês,3,60,5.0
+2024-2025,Arquiteto de Dados/Data Architect,Pleno,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,1,10,10.0
+2024-2025,Analytics Engineer,Júnior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,1,30,3.3
+2024-2025,Analista de Suporte/Analista Técnico,Sênior,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,2,19,10.5
+2024-2025,Analista de Suporte/Analista Técnico,Sênior,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,1,19,5.3
+2024-2025,Professor/Pesquisador,Sênior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,1,9,11.1
+2024-2025,Analista de Negócios/Business Analyst,Júnior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,1,35,2.9
+2024-2025,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Júnior,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,1,9,11.1
+2024-2025,Outras Engenharias (não inclui dev),Júnior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,1,6,16.7
+2023-2024,Analytics Engineer,Pleno,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,20,52,38.5
+2023-2024,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Pleno,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,4,30,13.3
+2023-2024,Analista de Negócios/Business Analyst,Sênior,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,4,83,4.8
+2023-2024,Analista de BI/BI Analyst,Sênior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,12,130,9.2
+2023-2024,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Júnior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,9,28,32.1
+2023-2024,DBA/Administrador de Banco de Dados,Sênior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,7,13,53.8
+2023-2024,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Sênior,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,7,29,24.1
+2023-2024,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Pleno,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,2,30,6.7
+2023-2024,Cientista de Dados/Data Scientist,Pleno,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,37,250,14.8
+2023-2024,Engenheiro de Dados/Arquiteto de Dados/Data Engineer/Data Architect,Sênior,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,16,325,4.9
+2023-2024,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Sênior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,7,51,13.7
+2023-2024,Analytics Engineer,Sênior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,24,69,34.8
+2023-2024,Outra Opção,Sênior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,16,67,23.9
+2023-2024,Outra Opção,Júnior,faixa_salarial,Menos de R$ 1.000/mês,6,122,4.9
+2023-2024,Professor/Pesquisador,Júnior,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,3,6,50.0
+2023-2024,Outras Engenharias (não inclui dev),Júnior,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,3,10,30.0
+2023-2024,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),Sênior,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,4,55,7.3
+2023-2024,Analytics Engineer,Sênior,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,2,69,2.9
+2023-2024,Outra Opção,Júnior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,33,122,27.0
+2023-2024,Outra Opção,Pleno,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,14,73,19.2
+2023-2024,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Pleno,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,3,26,11.5
+2023-2024,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Pleno,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,8,26,30.8
+2023-2024,Professor/Pesquisador,Sênior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,2,13,15.4
+2023-2024,Cientista de Dados/Data Scientist,Sênior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,76,272,27.9
+2023-2024,Analista de BI/BI Analyst,Pleno,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,2,200,1.0
+2023-2024,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Sênior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,2,51,3.9
+2023-2024,Analista de Negócios/Business Analyst,Júnior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,16,43,37.2
+2023-2024,Analytics Engineer,Pleno,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,7,52,13.5
+2023-2024,Outras Engenharias (não inclui dev),Sênior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,4,12,33.3
+2023-2024,Analista de Dados/Data Analyst,Sênior,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,11,270,4.1
+2023-2024,Analista de Dados/Data Analyst,Sênior,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,3,270,1.1
+2023-2024,Engenheiro de Dados/Arquiteto de Dados/Data Engineer/Data Architect,Sênior,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,13,325,4.0
+2023-2024,Outra Opção,Júnior,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,1,122,0.8
+2023-2024,Cientista de Dados/Data Scientist,Júnior,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,20,165,12.1
+2023-2024,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),Júnior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,1,8,12.5
+2023-2024,Outra Opção,Júnior,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,29,122,23.8
+2023-2024,Analista de BI/BI Analyst,Sênior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,33,130,25.4
+2023-2024,Analista de Inteligência de Mercado/Market Intelligence,Júnior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,2,16,12.5
+2023-2024,Analista de Suporte/Analista Técnico,Júnior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,6,26,23.1
+2023-2024,Analista de Suporte/Analista Técnico,Pleno,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,9,31,29.0
+2023-2024,Cientista de Dados/Data Scientist,Pleno,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,9,250,3.6
+2023-2024,Professor/Pesquisador,Pleno,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,2,9,22.2
+2023-2024,Engenheiro de Dados/Arquiteto de Dados/Data Engineer/Data Architect,Pleno,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,41,234,17.5
+2023-2024,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Júnior,faixa_salarial,Menos de R$ 1.000/mês,1,28,3.6
+2023-2024,Analista de Negócios/Business Analyst,Pleno,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,5,69,7.2
+2023-2024,Analytics Engineer,Júnior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,10,18,55.6
+2023-2024,Analista de Dados/Data Analyst,Sênior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,38,270,14.1
+2023-2024,Engenheiro de Dados/Arquiteto de Dados/Data Engineer/Data Architect,Júnior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,25,125,20.0
+2023-2024,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),Pleno,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,8,18,44.4
+2023-2024,Cientista de Dados/Data Scientist,Sênior,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,15,272,5.5
+2023-2024,Analista de Negócios/Business Analyst,Pleno,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,23,69,33.3
+2023-2024,Outra Opção,Júnior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,5,122,4.1
+2023-2024,Analista de Dados/Data Analyst,Júnior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,13,277,4.7
+2023-2024,Cientista de Dados/Data Scientist,Pleno,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,1,250,0.4
+2023-2024,Cientista de Dados/Data Scientist,Pleno,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,4,250,1.6
+2023-2024,Analista de Suporte/Analista Técnico,Pleno,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,9,31,29.0
+2023-2024,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Júnior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,3,16,18.8
+2023-2024,Outras Engenharias (não inclui dev),Pleno,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,1,9,11.1
+2023-2024,Engenheiro de Dados/Arquiteto de Dados/Data Engineer/Data Architect,Pleno,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,89,234,38.0
+2023-2024,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Sênior,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,4,29,13.8
+2023-2024,Analista de Suporte/Analista Técnico,Júnior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,12,26,46.2
+2023-2024,Analista de Dados/Data Analyst,Júnior,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,47,277,17.0
+2023-2024,Engenheiro de Dados/Arquiteto de Dados/Data Engineer/Data Architect,Sênior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,7,325,2.2
+2023-2024,Engenheiro de Dados/Arquiteto de Dados/Data Engineer/Data Architect,Júnior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,38,125,30.4
+2023-2024,Analista de Negócios/Business Analyst,Sênior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,10,83,12.0
+2023-2024,Engenheiro de Dados/Arquiteto de Dados/Data Engineer/Data Architect,Júnior,faixa_salarial,Menos de R$ 1.000/mês,4,125,3.2
+2023-2024,Analista de BI/BI Analyst,Pleno,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,49,200,24.5
+2023-2024,Outra Opção,Pleno,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,2,73,2.7
+2023-2024,Analista de Negócios/Business Analyst,Sênior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,1,83,1.2
+2023-2024,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),Sênior,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,1,55,1.8
+2023-2024,Analista de Dados/Data Analyst,Pleno,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,110,360,30.6
+2023-2024,Engenheiro de Dados/Arquiteto de Dados/Data Engineer/Data Architect,Pleno,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,2,234,0.9
+2023-2024,Professor/Pesquisador,Júnior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,1,6,16.7
+2023-2024,Outra Opção,Sênior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,20,67,29.9
+2023-2024,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Júnior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,5,16,31.3
+2023-2024,Analista de BI/BI Analyst,Pleno,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,2,200,1.0
+2023-2024,Outra Opção,Júnior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,23,122,18.9
+2023-2024,Engenheiro de Dados/Arquiteto de Dados/Data Engineer/Data Architect,Pleno,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,3,234,1.3
+2023-2024,Analista de Negócios/Business Analyst,Júnior,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,5,43,11.6
+2023-2024,Analista de Negócios/Business Analyst,Sênior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,36,83,43.4
+2023-2024,Analista de BI/BI Analyst,Sênior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,55,130,42.3
+2023-2024,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),Pleno,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,1,18,5.6
+2023-2024,Analista de Dados/Data Analyst,Sênior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,141,270,52.2
+2023-2024,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Pleno,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,13,30,43.3
+2023-2024,DBA/Administrador de Banco de Dados,Pleno,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,2,5,40.0
+2023-2024,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Pleno,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,1,30,3.3
+2023-2024,Analista de BI/BI Analyst,Júnior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,39,176,22.2
+2023-2024,Analista de Dados/Data Analyst,Júnior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,62,277,22.4
+2023-2024,Outra Opção,Sênior,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,2,67,3.0
+2023-2024,Analista de Negócios/Business Analyst,Sênior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,23,83,27.7
+2023-2024,Analytics Engineer,Júnior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,1,18,5.6
+2023-2024,Professor/Pesquisador,Júnior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,2,6,33.3
+2023-2024,Analista de Dados/Data Analyst,Sênior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,1,270,0.4
+2023-2024,Analista de BI/BI Analyst,Pleno,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,29,200,14.5
+2023-2024,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),Sênior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,1,55,1.8
+2023-2024,Outras Engenharias (não inclui dev),Júnior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,3,10,30.0
+2023-2024,Analista de Suporte/Analista Técnico,Júnior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,2,26,7.7
+2023-2024,Analista de BI/BI Analyst,Pleno,faixa_salarial,Acima de R$ 40.001/mês,1,200,0.5
+2023-2024,Professor/Pesquisador,Pleno,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,2,9,22.2
+2023-2024,Analista de Dados/Data Analyst,Sênior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,51,270,18.9
+2023-2024,Analista de Suporte/Analista Técnico,Sênior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,5,15,33.3
+2023-2024,Analista de BI/BI Analyst,Pleno,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,2,200,1.0
+2023-2024,Analista de Dados/Data Analyst,Pleno,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,12,360,3.3
+2023-2024,Analista de BI/BI Analyst,Sênior,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,3,130,2.3
+2023-2024,Outra Opção,Júnior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,2,122,1.6
+2023-2024,Professor/Pesquisador,Sênior,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,3,13,23.1
+2023-2024,Analista de Dados/Data Analyst,Pleno,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,4,360,1.1
+2023-2024,Analista de BI/BI Analyst,Sênior,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,3,130,2.3
+2023-2024,Outra Opção,Sênior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,7,67,10.4
+2023-2024,Analista de Dados/Data Analyst,Pleno,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,4,360,1.1
+2023-2024,Analista de Negócios/Business Analyst,Júnior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,12,43,27.9
+2023-2024,Analista de Dados/Data Analyst,Sênior,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,2,270,0.7
+2023-2024,Analista de Dados/Data Analyst,Júnior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,94,277,33.9
+2023-2024,Analista de Suporte/Analista Técnico,Pleno,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,2,31,6.5
+2023-2024,Cientista de Dados/Data Scientist,Júnior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,22,165,13.3
+2023-2024,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Sênior,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,4,51,7.8
+2023-2024,Engenheiro de Dados/Arquiteto de Dados/Data Engineer/Data Architect,Júnior,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,13,125,10.4
+2023-2024,Analista de Dados/Data Analyst,Sênior,faixa_salarial,Acima de R$ 40.001/mês,1,270,0.4
+2023-2024,Estatístico,Pleno,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,3,9,33.3
+2023-2024,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),Sênior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,19,55,34.5
+2023-2024,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Sênior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,1,51,2.0
+2023-2024,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Pleno,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,3,26,11.5
+2023-2024,Cientista de Dados/Data Scientist,Júnior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,23,165,13.9
+2023-2024,DBA/Administrador de Banco de Dados,Sênior,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,1,13,7.7
+2023-2024,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),Pleno,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,4,18,22.2
+2023-2024,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),Júnior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,1,8,12.5
+2023-2024,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Júnior,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,4,28,14.3
+2023-2024,Analista de Inteligência de Mercado/Market Intelligence,Sênior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,1,8,12.5
+2023-2024,Analista de BI/BI Analyst,Pleno,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,8,200,4.0
+2023-2024,Analista de BI/BI Analyst,Júnior,faixa_salarial,Menos de R$ 1.000/mês,4,176,2.3
+2023-2024,Cientista de Dados/Data Scientist,Sênior,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,45,272,16.5
+2023-2024,Analytics Engineer,Sênior,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,10,69,14.5
+2023-2024,Professor/Pesquisador,Pleno,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,2,9,22.2
+2023-2024,Outras Engenharias (não inclui dev),Sênior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,1,12,8.3
+2023-2024,DBA/Administrador de Banco de Dados,Júnior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,1,2,50.0
+2023-2024,Analytics Engineer,Pleno,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,8,52,15.4
+2023-2024,Analista de Suporte/Analista Técnico,Sênior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,4,15,26.7
+2023-2024,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Sênior,faixa_salarial,Acima de R$ 40.001/mês,2,51,3.9
+2023-2024,Cientista de Dados/Data Scientist,Júnior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,23,165,13.9
+2023-2024,Analista de Inteligência de Mercado/Market Intelligence,Júnior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,7,16,43.8
+2023-2024,Engenheiro de Dados/Arquiteto de Dados/Data Engineer/Data Architect,Pleno,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,61,234,26.1
+2023-2024,Analista de Negócios/Business Analyst,Pleno,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,21,69,30.4
+2023-2024,Analista de Dados/Data Analyst,Júnior,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,1,277,0.4
+2023-2024,Outras Engenharias (não inclui dev),Pleno,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,4,9,44.4
+2023-2024,Outras Engenharias (não inclui dev),Pleno,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,1,9,11.1
+2023-2024,Analista de Inteligência de Mercado/Market Intelligence,Sênior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,5,8,62.5
+2023-2024,Engenheiro de Dados/Arquiteto de Dados/Data Engineer/Data Architect,Sênior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,95,325,29.2
+2023-2024,Analista de Negócios/Business Analyst,Sênior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,8,83,9.6
+2023-2024,Analista de Dados/Data Analyst,Pleno,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,13,360,3.6
+2023-2024,Analista de Suporte/Analista Técnico,Sênior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,2,15,13.3
+2023-2024,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Pleno,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,2,26,7.7
+2023-2024,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Pleno,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,4,30,13.3
+2023-2024,Engenheiro de Dados/Arquiteto de Dados/Data Engineer/Data Architect,Júnior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,22,125,17.6
+2023-2024,Outra Opção,Júnior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,19,122,15.6
+2023-2024,Analista de BI/BI Analyst,Júnior,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,45,176,25.6
+2023-2024,Engenheiro de Dados/Arquiteto de Dados/Data Engineer/Data Architect,Sênior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,2,325,0.6
+2023-2024,Cientista de Dados/Data Scientist,Pleno,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,22,250,8.8
+2023-2024,Engenheiro de Dados/Arquiteto de Dados/Data Engineer/Data Architect,Sênior,faixa_salarial,Acima de R$ 40.001/mês,10,325,3.1
+2023-2024,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Sênior,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,3,29,10.3
+2023-2024,Engenheiro de Dados/Arquiteto de Dados/Data Engineer/Data Architect,Júnior,faixa_salarial,de R$ 101/mês a R$ 2.000/mês,1,125,0.8
+2023-2024,Analista de Inteligência de Mercado/Market Intelligence,Júnior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,1,16,6.3
+2023-2024,Analista de BI/BI Analyst,Júnior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,42,176,23.9
+2023-2024,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Júnior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,8,28,28.6
+2023-2024,Estatístico,Sênior,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,2,5,40.0
+2023-2024,Analista de Inteligência de Mercado/Market Intelligence,Júnior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,1,16,6.3
+2023-2024,Analista de Negócios/Business Analyst,Júnior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,2,43,4.7
+2023-2024,Analista de Suporte/Analista Técnico,Júnior,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,6,26,23.1
+2023-2024,Analista de Dados/Data Analyst,Júnior,faixa_salarial,Menos de R$ 1.000/mês,2,277,0.7
+2023-2024,Estatístico,Pleno,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,2,9,22.2
+2023-2024,Analista de Dados/Data Analyst,Pleno,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,1,360,0.3
+2023-2024,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Sênior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,13,51,25.5
+2023-2024,Analista de Inteligência de Mercado/Market Intelligence,Sênior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,1,8,12.5
+2023-2024,Outra Opção,Pleno,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,12,73,16.4
+2023-2024,Economista,Júnior,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,1,1,100.0
+2023-2024,Cientista de Dados/Data Scientist,Sênior,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,6,272,2.2
+2023-2024,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Sênior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,7,29,24.1
+2023-2024,Analista de Negócios/Business Analyst,Pleno,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,2,69,2.9
+2023-2024,Analista de Suporte/Analista Técnico,Sênior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,1,15,6.7
+2023-2024,Analista de Suporte/Analista Técnico,Pleno,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,3,31,9.7
+2023-2024,Outra Opção,Pleno,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,7,73,9.6
+2023-2024,Outra Opção,Pleno,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,1,73,1.4
+2023-2024,Analista de BI/BI Analyst,Sênior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,18,130,13.8
+2023-2024,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),Júnior,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,1,8,12.5
+2023-2024,Estatístico,Pleno,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,3,9,33.3
+2023-2024,Analytics Engineer,Sênior,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,2,69,2.9
+2023-2024,Analista de Inteligência de Mercado/Market Intelligence,Pleno,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,5,15,33.3
+2023-2024,DBA/Administrador de Banco de Dados,Pleno,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,1,5,20.0
+2023-2024,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Pleno,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,8,26,30.8
+2023-2024,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),Júnior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,4,8,50.0
+2023-2024,Outra Opção,Sênior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,5,67,7.5
+2023-2024,Analista de Negócios/Business Analyst,Júnior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,8,43,18.6
+2023-2024,Professor/Pesquisador,Sênior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,4,13,30.8
+2023-2024,Analista de BI/BI Analyst,Júnior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,9,176,5.1
+2023-2024,Analista de BI/BI Analyst,Pleno,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,21,200,10.5
+2023-2024,Analytics Engineer,Sênior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,4,69,5.8
+2023-2024,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Júnior,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,5,16,31.3
+2023-2024,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Sênior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,7,29,24.1
+2023-2024,DBA/Administrador de Banco de Dados,Pleno,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,2,5,40.0
+2023-2024,Analytics Engineer,Pleno,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,2,52,3.8
+2023-2024,Cientista de Dados/Data Scientist,Pleno,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,110,250,44.0
+2023-2024,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Pleno,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,5,30,16.7
+2023-2024,Engenheiro de Dados/Arquiteto de Dados/Data Engineer/Data Architect,Sênior,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,43,325,13.2
+2023-2024,Engenheiro de Dados/Arquiteto de Dados/Data Engineer/Data Architect,Pleno,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,22,234,9.4
+2023-2024,Analista de Dados/Data Analyst,Sênior,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,5,270,1.9
+2023-2024,Engenheiro de Dados/Arquiteto de Dados/Data Engineer/Data Architect,Júnior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,16,125,12.8
+2023-2024,Cientista de Dados/Data Scientist,Pleno,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,63,250,25.2
+2023-2024,Professor/Pesquisador,Pleno,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,1,9,11.1
+2023-2024,Analytics Engineer,Sênior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,21,69,30.4
+2023-2024,Analista de Negócios/Business Analyst,Pleno,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,8,69,11.6
+2023-2024,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),Sênior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,27,55,49.1
+2023-2024,Engenheiro de Dados/Arquiteto de Dados/Data Engineer/Data Architect,Júnior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,5,125,4.0
+2023-2024,Cientista de Dados/Data Scientist,Sênior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,6,272,2.2
+2023-2024,Professor/Pesquisador,Sênior,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,1,13,7.7
+2023-2024,Analista de Dados/Data Analyst,Pleno,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,111,360,30.8
+2023-2024,Outra Opção,Júnior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,4,122,3.3
+2023-2024,Analytics Engineer,Sênior,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,5,69,7.2
+2023-2024,Engenheiro de Dados/Arquiteto de Dados/Data Engineer/Data Architect,Pleno,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,4,234,1.7
+2023-2024,Analytics Engineer,Júnior,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,3,18,16.7
+2023-2024,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Júnior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,5,28,17.9
+2023-2024,Outra Opção,Pleno,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,19,73,26.0
+2023-2024,Analista de Negócios/Business Analyst,Pleno,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,9,69,13.0
+2023-2024,Cientista de Dados/Data Scientist,Sênior,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,10,272,3.7
+2023-2024,Estatístico,Sênior,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,1,5,20.0
+2023-2024,Cientista de Dados/Data Scientist,Júnior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,52,165,31.5
+2023-2024,Analista de Dados/Data Analyst,Sênior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,17,270,6.3
+2023-2024,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Sênior,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,7,51,13.7
+2023-2024,Engenheiro de Dados/Arquiteto de Dados/Data Engineer/Data Architect,Sênior,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,30,325,9.2
+2023-2024,Analista de Dados/Data Analyst,Pleno,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,46,360,12.8
+2023-2024,Analista de BI/BI Analyst,Pleno,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,85,200,42.5
+2023-2024,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Júnior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,2,16,12.5
+2023-2024,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Sênior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,13,51,25.5
+2023-2024,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),Pleno,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,4,18,22.2
+2023-2024,Estatístico,Júnior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,1,7,14.3
+2023-2024,Analista de BI/BI Analyst,Sênior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,1,130,0.8
+2023-2024,Analytics Engineer,Júnior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,2,18,11.1
+2023-2024,DBA/Administrador de Banco de Dados,Sênior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,4,13,30.8
+2023-2024,Engenheiro de Dados/Arquiteto de Dados/Data Engineer/Data Architect,Pleno,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,5,234,2.1
+2023-2024,Engenheiro de Dados/Arquiteto de Dados/Data Engineer/Data Architect,Júnior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,1,125,0.8
+2023-2024,Analista de Inteligência de Mercado/Market Intelligence,Júnior,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,5,16,31.3
+2023-2024,Analista de BI/BI Analyst,Sênior,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,1,130,0.8
+2023-2024,Cientista de Dados/Data Scientist,Júnior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,22,165,13.3
+2023-2024,Analista de Suporte/Analista Técnico,Sênior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,3,15,20.0
+2023-2024,Analista de Inteligência de Mercado/Market Intelligence,Pleno,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,6,15,40.0
+2023-2024,Cientista de Dados/Data Scientist,Sênior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,107,272,39.3
+2023-2024,Outra Opção,Sênior,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,3,67,4.5
+2023-2024,Engenheiro de Dados/Arquiteto de Dados/Data Engineer/Data Architect,Pleno,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,6,234,2.6
+2023-2024,Engenheiro de Dados/Arquiteto de Dados/Data Engineer/Data Architect,Sênior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,1,325,0.3
+2023-2024,Analista de Dados/Data Analyst,Pleno,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,57,360,15.8
+2023-2024,Economista,Sênior,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,1,2,50.0
+2023-2024,Economista,Sênior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,1,2,50.0
+2023-2024,Analytics Engineer,Pleno,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,14,52,26.9
+2023-2024,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),Sênior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,2,55,3.6
+2023-2024,Outra Opção,Pleno,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,7,73,9.6
+2023-2024,Analista de BI/BI Analyst,Júnior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,37,176,21.0
+2023-2024,Cientista de Dados/Data Scientist,Sênior,faixa_salarial,Acima de R$ 40.001/mês,7,272,2.6
+2023-2024,Outra Opção,Sênior,faixa_salarial,Acima de R$ 40.001/mês,3,67,4.5
+2023-2024,Engenheiro de Dados/Arquiteto de Dados/Data Engineer/Data Architect,Sênior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,108,325,33.2
+2023-2024,Analista de Suporte/Analista Técnico,Pleno,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,5,31,16.1
+2023-2024,Outras Engenharias (não inclui dev),Sênior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,1,12,8.3
+2023-2024,Outra Opção,Sênior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,2,67,3.0
+2023-2024,Outras Engenharias (não inclui dev),Pleno,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,1,9,11.1
+2023-2024,Outra Opção,Pleno,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,11,73,15.1
+2023-2024,Analista de Dados/Data Analyst,Júnior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,54,277,19.5
+2023-2024,Estatístico,Júnior,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,3,7,42.9
+2023-2024,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Sênior,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,1,51,2.0
+2023-2024,Economista,Pleno,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,1,2,50.0
+2023-2024,Outras Engenharias (não inclui dev),Sênior,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,1,12,8.3
+2023-2024,Analista de BI/BI Analyst,Sênior,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,1,130,0.8
+2023-2024,Estatístico,Júnior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,1,7,14.3
+2023-2024,Professor/Pesquisador,Sênior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,2,13,15.4
+2023-2024,Outras Engenharias (não inclui dev),Sênior,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,1,12,8.3
+2023-2024,Professor/Pesquisador,Sênior,faixa_salarial,Acima de R$ 40.001/mês,1,13,7.7
+2023-2024,Outra Opção,Sênior,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,2,67,3.0
+2023-2024,Analista de Dados/Data Analyst,Pleno,faixa_salarial,Acima de R$ 40.001/mês,1,360,0.3
+2023-2024,Outras Engenharias (não inclui dev),Júnior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,3,10,30.0
+2023-2024,Analista de Negócios/Business Analyst,Pleno,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,1,69,1.4
+2023-2024,Analista de Inteligência de Mercado/Market Intelligence,Sênior,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,1,8,12.5
+2023-2024,Outras Engenharias (não inclui dev),Júnior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,1,10,10.0
+2023-2024,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Sênior,faixa_salarial,Acima de R$ 40.001/mês,1,29,3.4
+2023-2024,Analytics Engineer,Júnior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,2,18,11.1
+2023-2024,Professor/Pesquisador,Pleno,faixa_salarial,Menos de R$ 1.000/mês,1,9,11.1
+2023-2024,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Júnior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,1,28,3.6
+2023-2024,Outras Engenharias (não inclui dev),Sênior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,1,12,8.3
+2023-2024,Estatístico,Júnior,faixa_salarial,Menos de R$ 1.000/mês,1,7,14.3
+2023-2024,Estatístico,Júnior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,1,7,14.3
+2023-2024,Analista de BI/BI Analyst,Pleno,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,1,200,0.5
+2023-2024,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),Pleno,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,1,18,5.6
+2023-2024,Outras Engenharias (não inclui dev),Sênior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,1,12,8.3
+2023-2024,Cientista de Dados/Data Scientist,Pleno,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,2,250,0.8
+2023-2024,Professor/Pesquisador,Pleno,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,1,9,11.1
+2023-2024,Estatístico,Sênior,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,1,5,20.0
+2023-2024,Estatístico,Sênior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,1,5,20.0
+2023-2024,Analista de Dados/Data Analyst,Pleno,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,1,360,0.3
+2023-2024,Cientista de Dados/Data Scientist,Júnior,faixa_salarial,Menos de R$ 1.000/mês,3,165,1.8
+2023-2024,Analista de Suporte/Analista Técnico,Pleno,faixa_salarial,Menos de R$ 1.000/mês,1,31,3.2
+2023-2024,DBA/Administrador de Banco de Dados,Sênior,faixa_salarial,Acima de R$ 40.001/mês,1,13,7.7
+2023-2024,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Pleno,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,1,30,3.3
+2023-2024,Outras Engenharias (não inclui dev),Pleno,faixa_salarial,Menos de R$ 1.000/mês,1,9,11.1
+2023-2024,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),Júnior,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,1,8,12.5
+2023-2024,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Sênior,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,1,51,2.0
+2023-2024,Analytics Engineer,Pleno,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,1,52,1.9
+2023-2024,Analista de Dados/Data Analyst,Júnior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,2,277,0.7
+2023-2024,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Pleno,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,1,26,3.8
+2023-2024,Analista de Inteligência de Mercado/Market Intelligence,Pleno,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,3,15,20.0
+2023-2024,Analista de BI/BI Analyst,Sênior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,3,130,2.3
+2023-2024,Analista de Inteligência de Mercado/Market Intelligence,Pleno,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,1,15,6.7
+2023-2024,Economista,Pleno,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,1,2,50.0
+2023-2024,Cientista de Dados/Data Scientist,Pleno,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,2,250,0.8
+2023-2024,DBA/Administrador de Banco de Dados,Júnior,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,1,2,50.0
+2023-2024,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),Sênior,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,1,55,1.8
+2023-2024,Analista de Negócios/Business Analyst,Sênior,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,1,83,1.2
+2023-2024,Analista de Suporte/Analista Técnico,Pleno,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,2,31,6.5
+2023-2024,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Júnior,faixa_salarial,Menos de R$ 1.000/mês,1,16,6.3
+2023-2024,Engenheiro de Dados/Arquiteto de Dados/Data Engineer/Data Architect,Pleno,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,1,234,0.4
+2023-2024,Estatístico,Pleno,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,1,9,11.1
+2023-2024,Outras Engenharias (não inclui dev),Sênior,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,2,12,16.7
+2023-2024,Outras Engenharias (não inclui dev),Pleno,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,1,9,11.1
+2023-2024,Outra Opção,Sênior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,7,67,10.4
+2023-2024,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Pleno,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,1,26,3.8
+2023-2024,Analista de Dados/Data Analyst,Júnior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,2,277,0.7
+2023-2024,Analytics Engineer,Sênior,faixa_salarial,de R$ 4.001/mês a R$ 6.000/mês,1,69,1.4
+2025-2026,Outra Opção,Especialista/Staff+,faixa_salarial,Acima de R$ 40.001/mês,1,22,4.5
+2025-2026,Analista de Suporte/Analista Técnico,Pleno,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,1,20,5.0
+2025-2026,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Júnior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,2,24,8.3
+2025-2026,Professor/Pesquisador,Júnior,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,1,3,33.3
+2025-2026,Analista de BI/BI Analyst,Pleno,faixa_salarial,Acima de R$ 40.001/mês,1,82,1.2
+2025-2026,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,Pleno,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,1,27,3.7
+2025-2026,Analista de BI/BI Analyst,Especialista/Staff+,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,1,17,5.9
+2025-2026,Professor/Pesquisador,Sênior,faixa_salarial,de R$ 12.001/mês a R$ 16.000/mês,1,6,16.7
+2025-2026,Estatístico,Pleno,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,1,3,33.3
+2025-2026,Outras Engenharias (não inclui dev),Pleno,faixa_salarial,de R$ 8.001/mês a R$ 12.000/mês,1,8,12.5
+2025-2026,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Júnior,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,1,21,4.8
+2025-2026,Analista de Negócios/Business Analyst,Pleno,faixa_salarial,de R$ 2.001/mês a R$ 3.000/mês,1,53,1.9
+2025-2026,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Pleno,faixa_salarial,de R$ 16.001/mês a R$ 20.000/mês,1,16,6.3
+2025-2026,Engenheiro de Machine Learning/ML Engineer/AI Engineer,Especialista/Staff+,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,1,27,3.7
+2025-2026,Professor/Pesquisador,Pleno,faixa_salarial,de R$ 1.001/mês a R$ 2.000/mês,1,4,25.0
+2025-2026,Outras Engenharias (não inclui dev),Sênior,faixa_salarial,de R$ 6.001/mês a R$ 8.000/mês,1,6,16.7
+2025-2026,Professor/Pesquisador,Sênior,faixa_salarial,de R$ 20.001/mês a R$ 25.000/mês,1,6,16.7
+2025-2026,Analista de BI/BI Analyst,Especialista/Staff+,faixa_salarial,de R$ 25.001/mês a R$ 30.000/mês,1,17,5.9
+2025-2026,Cientista de Dados/Data Scientist,Júnior,faixa_salarial,Menos de R$ 1.000/mês,1,65,1.5
+2025-2026,Analista de Dados/Data Analyst,Especialista/Staff+,faixa_salarial,de R$ 30.001/mês a R$ 40.000/mês,1,59,1.7
+2025-2026,Professor/Pesquisador,Sênior,faixa_salarial,de R$ 3.001/mês a R$ 4.000/mês,1,6,16.7

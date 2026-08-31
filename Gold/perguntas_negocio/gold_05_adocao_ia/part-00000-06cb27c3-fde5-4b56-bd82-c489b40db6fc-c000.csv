@@ -1,0 +1,77 @@
+edicao,variavel_original,valor,contagem,total_respondentes,pct_na_dimensao,categoria,opcao,elegiveis,selecionaram,pct_adocao
+2025-2026,ai_generativa_e_llm_e_uma_prioridade,"Sim, é nossa principal prioridade como empresa (com foco executivo significativo e alocação de orçamento relevante).",155,652,23.8,ia_generativa_prioridade_na_empresa,,,,
+2025-2026,ai_generativa_e_llm_e_uma_prioridade,"Mais ou menos... É uma das várias iniciativas que estamos impulsionando, mas não é uma prioridade (tratam-se de iniciativas isoladas e com pouco foco).",169,652,25.9,ia_generativa_prioridade_na_empresa,,,,
+2025-2026,ai_generativa_e_llm_e_uma_prioridade,"Sim, está entre nossas principais prioridades para os próximos 2-4 anos (com discussões de iniciativas e orçamentos de curto a médio prazo).",240,652,36.8,ia_generativa_prioridade_na_empresa,,,,
+2025-2026,ai_generativa_e_llm_e_uma_prioridade,Não é uma iniciativa que estamos focando e não tem sido uma prioridade.,74,652,11.3,ia_generativa_prioridade_na_empresa,,,,
+2025-2026,ai_generativa_e_llm_e_uma_prioridade,Não sei opinar sobre esse assunto.,14,652,2.1,ia_generativa_prioridade_na_empresa,,,,
+2024-2025,ai_generativa_e_llm_e_uma_prioridade,"Sim, está entre nossas principais prioridades para os próximos 2-4 anos (com discussões de iniciativas e orçamentos de curto a médio prazo).",325,1045,31.1,ia_generativa_prioridade_na_empresa,,,,
+2024-2025,ai_generativa_e_llm_e_uma_prioridade,Não sei opinar sobre esse assunto.,29,1045,2.8,ia_generativa_prioridade_na_empresa,,,,
+2024-2025,ai_generativa_e_llm_e_uma_prioridade,"Mais ou menos... É uma das várias iniciativas que estamos impulsionando, mas não é uma prioridade (tratam-se de iniciativas isoladas e com pouco foco).",301,1045,28.8,ia_generativa_prioridade_na_empresa,,,,
+2024-2025,ai_generativa_e_llm_e_uma_prioridade,"Sim, é nossa principal prioridade como empresa (com foco executivo significativo e alocação de orçamento relevante).",235,1045,22.5,ia_generativa_prioridade_na_empresa,,,,
+2024-2025,ai_generativa_e_llm_e_uma_prioridade,Não é uma iniciativa que estamos focando e não tem sido uma prioridade.,155,1045,14.8,ia_generativa_prioridade_na_empresa,,,,
+2023-2024,,,,,,uso_pessoal_chatgpt_copilot,uso_solucoes_gratuitas_de_ai_generativa_com_foco_em_produtividade,3772,2401.0,63.7
+2023-2024,,,,,,uso_pessoal_chatgpt_copilot,nao_uso_solucoes_de_ai_generativa_com_foco_em_produtividade,3772,744.0,19.7
+2023-2024,,,,,,uso_pessoal_chatgpt_copilot,uso_solucoes_do_tipo_copilot,3772,444.0,11.8
+2023-2024,,,,,,uso_pessoal_chatgpt_copilot,uso_e_pago_pelas_solucoes_de_ai_generativa_com_foco_em_produtividade,3772,261.0,6.9
+2023-2024,,,,,,uso_pessoal_chatgpt_copilot,a_empresa_que_trabalho_paga_pelas_solucoes_de_ai_generativa_com_foco_em_produtividade,3772,240.0,6.4
+2024-2025,,,,,,uso_pessoal_chatgpt_copilot,uso_solucoes_gratuitas_de_ai_generativa_com_foco_em_produtividade,3619,1944.0,53.7
+2024-2025,,,,,,uso_pessoal_chatgpt_copilot,uso_solucoes_do_tipo_copilot,3619,858.0,23.7
+2024-2025,,,,,,uso_pessoal_chatgpt_copilot,a_empresa_que_trabalho_paga_pelas_solucoes_de_ai_generativa_com_foco_em_produtividade,3619,697.0,19.3
+2024-2025,,,,,,uso_pessoal_chatgpt_copilot,uso_e_pago_pelas_solucoes_de_ai_generativa_com_foco_em_produtividade,3619,562.0,15.5
+2024-2025,,,,,,uso_pessoal_chatgpt_copilot,nao_uso_solucoes_de_ai_generativa_com_foco_em_produtividade,3619,237.0,6.5
+2025-2026,,,,,,uso_pessoal_chatgpt_copilot,a_empresa_que_trabalho_paga_pelas_solucoes_de_ai_generativa_com_foco_em_produtividade,2106,892.0,42.4
+2025-2026,,,,,,uso_pessoal_chatgpt_copilot,uso_solucoes_gratuitas_de_ai_generativa_com_foco_em_produtividade,2106,643.0,30.5
+2025-2026,,,,,,uso_pessoal_chatgpt_copilot,uso_solucoes_do_tipo_copilot,2106,628.0,29.8
+2025-2026,,,,,,uso_pessoal_chatgpt_copilot,uso_e_pago_pelas_solucoes_de_ai_generativa_com_foco_em_produtividade,2106,567.0,26.9
+2025-2026,,,,,,uso_pessoal_chatgpt_copilot,nao_uso_solucoes_de_ai_generativa_com_foco_em_produtividade,2106,44.0,2.1
+2023-2024,,,,,,tipo_de_uso_de_ia_na_empresa,colaboradores_usando_ai_generativa_de_forma_independente_e_descentralizada,4634,2026.0,43.7
+2023-2024,,,,,,tipo_de_uso_de_ia_na_empresa,ia_generativa_e_llms_nao_e_prioridade,4634,965.0,20.8
+2023-2024,,,,,,tipo_de_uso_de_ia_na_empresa,ai_generativa_e_llms_para_melhorar_produtos_internos_para_os_colaboradores,4634,816.0,17.6
+2023-2024,,,,,,tipo_de_uso_de_ia_na_empresa,ai_generativa_e_llms_para_melhorar_produtos_externos_para_os_clientes_finais,4634,799.0,17.2
+2023-2024,,,,,,tipo_de_uso_de_ia_na_empresa,desenvolvedores_utilizando_copilots,4634,764.0,16.5
+2023-2024,,,,,,tipo_de_uso_de_ia_na_empresa,nao_sei_opinar_sobre_o_uso_de_ia_generativa_e_llms_na_empresa,4634,654.0,14.1
+2023-2024,,,,,,tipo_de_uso_de_ia_na_empresa,direcionamento_centralizado_do_uso_de_ai_generativa,4634,507.0,10.9
+2023-2024,,,,,,tipo_de_uso_de_ia_na_empresa,ia_generativa_e_llms_como_principal_frente_do_negocio,4634,199.0,4.3
+2024-2025,,,,,,tipo_de_uso_de_ia_na_empresa,colaboradores_usando_ai_generativa_de_forma_independente_e_descentralizada,4619,2206.0,47.8
+2024-2025,,,,,,tipo_de_uso_de_ia_na_empresa,ai_generativa_e_llms_para_melhorar_produtos_externos_para_os_clientes_finais,4619,1418.0,30.7
+2024-2025,,,,,,tipo_de_uso_de_ia_na_empresa,ai_generativa_e_llms_para_melhorar_produtos_internos_para_os_colaboradores,4619,1369.0,29.6
+2024-2025,,,,,,tipo_de_uso_de_ia_na_empresa,desenvolvedores_utilizando_copilots,4619,1307.0,28.3
+2024-2025,,,,,,tipo_de_uso_de_ia_na_empresa,direcionamento_centralizado_do_uso_de_ai_generativa,4619,996.0,21.6
+2024-2025,,,,,,tipo_de_uso_de_ia_na_empresa,ia_generativa_e_llms_nao_e_prioridade,4619,532.0,11.5
+2024-2025,,,,,,tipo_de_uso_de_ia_na_empresa,ia_generativa_e_llms_como_principal_frente_do_negocio,4619,358.0,7.8
+2024-2025,,,,,,tipo_de_uso_de_ia_na_empresa,nao_sei_opinar_sobre_o_uso_de_ia_generativa_e_llms_na_empresa,4619,336.0,7.3
+2025-2026,,,,,,tipo_de_uso_de_ia_na_empresa,colaboradores_usando_ai_generativa_de_forma_independente_e_descentralizada,2722,1329.0,48.8
+2025-2026,,,,,,tipo_de_uso_de_ia_na_empresa,direcionamento_centralizado_do_uso_de_ai_generativa,2722,988.0,36.3
+2025-2026,,,,,,tipo_de_uso_de_ia_na_empresa,desenvolvedores_utilizando_copilots,2722,949.0,34.9
+2025-2026,,,,,,tipo_de_uso_de_ia_na_empresa,ai_generativa_e_llms_para_melhorar_produtos_internos_para_os_colaboradores,2722,873.0,32.1
+2025-2026,,,,,,tipo_de_uso_de_ia_na_empresa,ai_generativa_e_llms_para_melhorar_produtos_externos_para_os_clientes_finais,2722,848.0,31.2
+2025-2026,,,,,,tipo_de_uso_de_ia_na_empresa,ia_generativa_e_llms_como_principal_frente_do_negocio,2722,295.0,10.8
+2025-2026,,,,,,tipo_de_uso_de_ia_na_empresa,ia_generativa_e_llms_nao_e_prioridade,2722,180.0,6.6
+2025-2026,,,,,,tipo_de_uso_de_ia_na_empresa,nao_sei_opinar_sobre_o_uso_de_ia_generativa_e_llms_na_empresa,2722,88.0,3.2
+2023-2024,,,,,,motivos_para_nao_usar_ia,falta_de_compreensao_dos_casos_de_uso,823,303.0,36.8
+2023-2024,,,,,,motivos_para_nao_usar_ia,falta_de_expertise_ou_falta_de_recursos,823,286.0,34.8
+2023-2024,,,,,,motivos_para_nao_usar_ia,preocupacoes_com_seguranca_e_privacidade_de_dados,823,262.0,31.8
+2023-2024,,,,,,motivos_para_nao_usar_ia,dados_da_empresa_nao_estao_prontos_para_uso_de_ia_generativa,823,252.0,30.6
+2023-2024,,,,,,motivos_para_nao_usar_ia,falta_de_confiabilidade_das_saidas_alucinacao_dos_modelos,823,129.0,15.7
+2023-2024,,,,,,motivos_para_nao_usar_ia,retorno_sobre_investimento_roi_nao_comprovado_de_ia_generativa,823,126.0,15.3
+2023-2024,,,,,,motivos_para_nao_usar_ia,preocupacoes_com_propriedade_intelectual,823,121.0,14.7
+2023-2024,,,,,,motivos_para_nao_usar_ia,incerteza_em_relacao_a_regulamentacao,823,119.0,14.5
+2023-2024,,,,,,motivos_para_nao_usar_ia,alta_direcao_da_empresa_nao_ve_valor_ou_nao_ve_como_prioridade,823,89.0,10.8
+2024-2025,,,,,,motivos_para_nao_usar_ia,falta_de_compreensao_dos_casos_de_uso,974,334.0,34.3
+2024-2025,,,,,,motivos_para_nao_usar_ia,falta_de_expertise_ou_falta_de_recursos,974,328.0,33.7
+2024-2025,,,,,,motivos_para_nao_usar_ia,preocupacoes_com_seguranca_e_privacidade_de_dados,974,314.0,32.2
+2024-2025,,,,,,motivos_para_nao_usar_ia,dados_da_empresa_nao_estao_prontos_para_uso_de_ia_generativa,974,289.0,29.7
+2024-2025,,,,,,motivos_para_nao_usar_ia,retorno_sobre_investimento_roi_nao_comprovado_de_ia_generativa,974,249.0,25.6
+2024-2025,,,,,,motivos_para_nao_usar_ia,falta_de_confiabilidade_das_saidas_alucinacao_dos_modelos,974,173.0,17.8
+2024-2025,,,,,,motivos_para_nao_usar_ia,incerteza_em_relacao_a_regulamentacao,974,124.0,12.7
+2024-2025,,,,,,motivos_para_nao_usar_ia,preocupacoes_com_propriedade_intelectual,974,123.0,12.6
+2024-2025,,,,,,motivos_para_nao_usar_ia,alta_direcao_da_empresa_nao_ve_valor_ou_nao_ve_como_prioridade,974,88.0,9.0
+2025-2026,,,,,,motivos_para_nao_usar_ia,falta_de_expertise_ou_falta_de_recursos,587,228.0,38.8
+2025-2026,,,,,,motivos_para_nao_usar_ia,dados_da_empresa_nao_estao_prontos_para_uso_de_ia_generativa,587,216.0,36.8
+2025-2026,,,,,,motivos_para_nao_usar_ia,falta_de_compreensao_dos_casos_de_uso,587,188.0,32.0
+2025-2026,,,,,,motivos_para_nao_usar_ia,retorno_sobre_investimento_roi_nao_comprovado_de_ia_generativa,587,167.0,28.4
+2025-2026,,,,,,motivos_para_nao_usar_ia,preocupacoes_com_seguranca_e_privacidade_de_dados,587,163.0,27.8
+2025-2026,,,,,,motivos_para_nao_usar_ia,falta_de_confiabilidade_das_saidas_alucinacao_dos_modelos,587,100.0,17.0
+2025-2026,,,,,,motivos_para_nao_usar_ia,incerteza_em_relacao_a_regulamentacao,587,58.0,9.9
+2025-2026,,,,,,motivos_para_nao_usar_ia,preocupacoes_com_propriedade_intelectual,587,54.0,9.2
+2025-2026,,,,,,motivos_para_nao_usar_ia,alta_direcao_da_empresa_nao_ve_valor_ou_nao_ve_como_prioridade,587,44.0,7.5

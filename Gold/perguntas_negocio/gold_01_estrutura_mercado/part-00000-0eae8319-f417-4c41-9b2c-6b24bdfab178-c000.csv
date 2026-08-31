@@ -1,0 +1,196 @@
+edicao,variavel,valor,contagem,total_respondentes,pct_na_dimensao
+2025-2026,cargo_atual,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),33,2501,1.3
+2025-2026,cargo_atual,Professor/Pesquisador,16,2501,0.6
+2025-2026,cargo_atual,Estatístico,9,2501,0.4
+2025-2026,cargo_atual,Cientista de Dados/Data Scientist,424,2501,17.0
+2025-2026,cargo_atual,Analytics Engineer,135,2501,5.4
+2025-2026,cargo_atual,Engenheiro de Machine Learning/ML Engineer/AI Engineer,106,2501,4.2
+2025-2026,cargo_atual,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,106,2501,4.2
+2025-2026,cargo_atual,Analista de BI/BI Analyst,215,2501,8.6
+2025-2026,cargo_atual,Outras Engenharias (não inclui dev),26,2501,1.0
+2025-2026,cargo_atual,Outra Opção,206,2501,8.2
+2025-2026,cargo_atual,Engenheiro de Dados/Data Engineer/Data Architect,402,2501,16.1
+2025-2026,cargo_atual,Arquiteto de Dados/Data Architect,28,2501,1.1
+2025-2026,cargo_atual,Analista de Suporte/Analista Técnico,55,2501,2.2
+2025-2026,cargo_atual,Analista de Negócios/Business Analyst,141,2501,5.6
+2025-2026,cargo_atual,Analista de Dados/Data Analyst,599,2501,24.0
+2024-2025,cargo_atual,Arquiteto de Dados/Data Architect,48,3818,1.3
+2024-2025,cargo_atual,Analista de Dados/Data Analyst,957,3818,25.1
+2024-2025,cargo_atual,Analista de Negócios/Business Analyst,184,3818,4.8
+2024-2025,cargo_atual,Outras Engenharias (não inclui dev),29,3818,0.8
+2024-2025,cargo_atual,Cientista de Dados/Data Scientist,687,3818,18.0
+2024-2025,cargo_atual,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),80,3818,2.1
+2024-2025,cargo_atual,Analytics Engineer,228,3818,6.0
+2024-2025,cargo_atual,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,122,3818,3.2
+2024-2025,cargo_atual,Outra Opção,254,3818,6.7
+2024-2025,cargo_atual,Analista de Suporte/Analista Técnico,79,3818,2.1
+2024-2025,cargo_atual,Analista de BI/BI Analyst,396,3818,10.4
+2024-2025,cargo_atual,Engenheiro de Dados/Data Engineer/Data Architect,613,3818,16.1
+2024-2025,cargo_atual,Professor/Pesquisador,21,3818,0.6
+2024-2025,cargo_atual,Estatístico,17,3818,0.4
+2024-2025,cargo_atual,Engenheiro de Machine Learning/ML Engineer/AI Engineer,103,3818,2.7
+2023-2024,cargo_atual,Cientista de Dados/Data Scientist,687,3857,17.8
+2023-2024,cargo_atual,Engenheiro de Dados/Arquiteto de Dados/Data Engineer/Data Architect,684,3857,17.7
+2023-2024,cargo_atual,Economista,5,3857,0.1
+2023-2024,cargo_atual,Outra Opção,262,3857,6.8
+2023-2024,cargo_atual,Data Product Manager/ Product Manager (PM/APM/DPM/GPM/PO),81,3857,2.1
+2023-2024,cargo_atual,Analista de Suporte/Analista Técnico,72,3857,1.9
+2023-2024,cargo_atual,DBA/Administrador de Banco de Dados,20,3857,0.5
+2023-2024,cargo_atual,Engenheiro de Machine Learning/ML Engineer/AI Engineer,75,3857,1.9
+2023-2024,cargo_atual,Outras Engenharias (não inclui dev),31,3857,0.8
+2023-2024,cargo_atual,Analista de Inteligência de Mercado/Market Intelligence,39,3857,1.0
+2023-2024,cargo_atual,Analista de Negócios/Business Analyst,195,3857,5.1
+2023-2024,cargo_atual,Professor/Pesquisador,28,3857,0.7
+2023-2024,cargo_atual,Estatístico,21,3857,0.5
+2023-2024,cargo_atual,Analytics Engineer,139,3857,3.6
+2023-2024,cargo_atual,Analista de Dados/Data Analyst,907,3857,23.5
+2023-2024,cargo_atual,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,105,3857,2.7
+2023-2024,cargo_atual,Analista de BI/BI Analyst,506,3857,13.1
+2025-2026,nivel,Sênior,858,2501,34.3
+2025-2026,nivel,Júnior,518,2501,20.7
+2025-2026,nivel,Pleno,776,2501,31.0
+2025-2026,nivel,Especialista/Staff+,349,2501,14.0
+2024-2025,nivel,Pleno,1377,3818,36.1
+2024-2025,nivel,Júnior,868,3818,22.7
+2024-2025,nivel,Sênior,1573,3818,41.2
+2023-2024,nivel,Sênior,1419,3857,36.8
+2023-2024,nivel,Pleno,1392,3857,36.1
+2023-2024,nivel,Júnior,1046,3857,27.1
+2025-2026,situacao_de_trabalho,Trabalho na área Acadêmica/Pesquisador,44,3495,1.3
+2025-2026,situacao_de_trabalho,Somente Estudante (pós-graduação),22,3495,0.6
+2025-2026,situacao_de_trabalho,Prefiro não informar,18,3495,0.5
+2025-2026,situacao_de_trabalho,"Desempregado, buscando recolocação",167,3495,4.8
+2025-2026,situacao_de_trabalho,Freelancer,37,3495,1.1
+2025-2026,situacao_de_trabalho,Servidor Público,123,3495,3.5
+2025-2026,situacao_de_trabalho,Vivo fora do Brasil e trabalho para empresa de fora do Brasil,66,3495,1.9
+2025-2026,situacao_de_trabalho,Empregado (CLT),2279,3495,65.2
+2025-2026,situacao_de_trabalho,Vivo no Brasil e trabalho remoto para empresa de fora do Brasil,141,3495,4.0
+2025-2026,situacao_de_trabalho,Desempregado e não estou buscando recolocação,10,3495,0.3
+2025-2026,situacao_de_trabalho,Somente Estudante (graduação),34,3495,1.0
+2025-2026,situacao_de_trabalho,Estagiário,126,3495,3.6
+2025-2026,situacao_de_trabalho,Empreendedor ou Empregado (CNPJ),428,3495,12.2
+2024-2025,situacao_de_trabalho,Vivo fora do Brasil e trabalho para empresa de fora do Brasil,77,5217,1.5
+2024-2025,situacao_de_trabalho,"Desempregado, buscando recolocação",205,5217,3.9
+2024-2025,situacao_de_trabalho,Somente Estudante (graduação),68,5217,1.3
+2024-2025,situacao_de_trabalho,Prefiro não informar,16,5217,0.3
+2024-2025,situacao_de_trabalho,Empreendedor ou Empregado (CNPJ),494,5217,9.5
+2024-2025,situacao_de_trabalho,Empregado (CLT),3783,5217,72.5
+2024-2025,situacao_de_trabalho,Estagiário,186,5217,3.6
+2024-2025,situacao_de_trabalho,Vivo no Brasil e trabalho remoto para empresa de fora do Brasil,131,5217,2.5
+2024-2025,situacao_de_trabalho,Desempregado e não estou buscando recolocação,11,5217,0.2
+2024-2025,situacao_de_trabalho,Servidor Público,124,5217,2.4
+2024-2025,situacao_de_trabalho,Somente Estudante (pós-graduação),25,5217,0.5
+2024-2025,situacao_de_trabalho,Freelancer,41,5217,0.8
+2024-2025,situacao_de_trabalho,Trabalho na área Acadêmica/Pesquisador,56,5217,1.1
+2025-2026,modelo_de_trabalho_atual,Modelo híbrido flexível (o funcionário tem liberdade para escolher quando estar no escritório presencialmente),631,3228,19.5
+2025-2026,modelo_de_trabalho_atual,Modelo híbrido com dias fixos de trabalho presencial,645,3228,20.0
+2025-2026,modelo_de_trabalho_atual,Modelo 100% remoto,1282,3228,39.7
+2025-2026,modelo_de_trabalho_atual,Modelo 100% presencial,670,3228,20.8
+2024-2025,modelo_de_trabalho_atual,Modelo híbrido flexível (o funcionário tem liberdade para escolher quando estar no escritório presencialmente),999,4863,20.5
+2024-2025,modelo_de_trabalho_atual,Modelo híbrido com dias fixos de trabalho presencial,850,4863,17.5
+2024-2025,modelo_de_trabalho_atual,Modelo 100% presencial,792,4863,16.3
+2024-2025,modelo_de_trabalho_atual,Modelo 100% remoto,2222,4863,45.7
+2025-2026,regiao_onde_mora,Sudeste,2171,3370,64.4
+2025-2026,regiao_onde_mora,Sul,540,3370,16.0
+2025-2026,regiao_onde_mora,Nordeste,380,3370,11.3
+2025-2026,regiao_onde_mora,Centro-oeste,231,3370,6.9
+2025-2026,regiao_onde_mora,Norte,48,3370,1.4
+2024-2025,regiao_onde_mora,Nordeste,516,5075,10.2
+2024-2025,regiao_onde_mora,Norte,64,5075,1.3
+2024-2025,regiao_onde_mora,Sudeste,3132,5075,61.7
+2024-2025,regiao_onde_mora,Centro-oeste,332,5075,6.5
+2024-2025,regiao_onde_mora,Sul,1031,5075,20.3
+2023-2024,regiao_onde_mora,Centro-oeste,344,5169,6.7
+2023-2024,regiao_onde_mora,Sudeste,3173,5169,61.4
+2023-2024,regiao_onde_mora,Norte,83,5169,1.6
+2023-2024,regiao_onde_mora,Nordeste,608,5169,11.8
+2023-2024,regiao_onde_mora,Sul,961,5169,18.6
+2025-2026,setor,Indústria,238,3228,7.4
+2025-2026,setor,Varejo,181,3228,5.6
+2025-2026,setor,Setor Imobiliário/ Construção Civil,46,3228,1.4
+2025-2026,setor,Marketing,93,3228,2.9
+2025-2026,setor,Entretenimento ou Esportes,43,3228,1.3
+2025-2026,setor,Seguros ou Previdência,43,3228,1.3
+2025-2026,setor,Setor de Energia,58,3228,1.8
+2025-2026,setor,Finanças ou Bancos,598,3228,18.5
+2025-2026,setor,Setor Farmaceutico,17,3228,0.5
+2025-2026,setor,Área da Saúde,128,3228,4.0
+2025-2026,setor,Tecnologia/Fábrica de Software,563,3228,17.4
+2025-2026,setor,Outra Opção,243,3228,7.5
+2025-2026,setor,Setor Alimentício,72,3228,2.2
+2025-2026,setor,Área de Consultoria,285,3228,8.8
+2025-2026,setor,Filantropia/ONG's,22,3228,0.7
+2025-2026,setor,Agronegócios,66,3228,2.0
+2025-2026,setor,Educação,163,3228,5.0
+2025-2026,setor,Internet/Ecommerce,105,3228,3.3
+2025-2026,setor,Telecomunicação,75,3228,2.3
+2025-2026,setor,Setor Público,136,3228,4.2
+2025-2026,setor,Setor Automotivo,53,3228,1.6
+2024-2025,setor,Setor de Energia,82,4863,1.7
+2024-2025,setor,Internet/Ecommerce,153,4863,3.1
+2024-2025,setor,Filantropia/ONG's,15,4863,0.3
+2024-2025,setor,Setor Farmaceutico,27,4863,0.6
+2024-2025,setor,Setor Imobiliário/ Construção Civil,74,4863,1.5
+2024-2025,setor,Setor Alimentício,143,4863,2.9
+2024-2025,setor,Tecnologia/Fábrica de Software,942,4863,19.4
+2024-2025,setor,Setor Público,142,4863,2.9
+2024-2025,setor,Setor Automotivo,55,4863,1.1
+2024-2025,setor,Agronegócios,84,4863,1.7
+2024-2025,setor,Outra Opção,332,4863,6.8
+2024-2025,setor,Varejo,380,4863,7.8
+2024-2025,setor,Indústria,328,4863,6.7
+2024-2025,setor,Finanças ou Bancos,1035,4863,21.3
+2024-2025,setor,Seguros ou Previdência,65,4863,1.3
+2024-2025,setor,Telecomunicação,103,4863,2.1
+2024-2025,setor,Entretenimento ou Esportes,46,4863,0.9
+2024-2025,setor,Educação,194,4863,4.0
+2024-2025,setor,Marketing,114,4863,2.3
+2024-2025,setor,Área da Saúde,195,4863,4.0
+2024-2025,setor,Área de Consultoria,354,4863,7.3
+2023-2024,setor,Setor Farmaceutico,29,4753,0.6
+2023-2024,setor,Indústria,313,4753,6.6
+2023-2024,setor,Educação,209,4753,4.4
+2023-2024,setor,Agronegócios,92,4753,1.9
+2023-2024,setor,Seguros ou Previdência,68,4753,1.4
+2023-2024,setor,Setor Público,174,4753,3.7
+2023-2024,setor,Área da Saúde,201,4753,4.2
+2023-2024,setor,Marketing,115,4753,2.4
+2023-2024,setor,Área de Consultoria,389,4753,8.2
+2023-2024,setor,Filantropia/ONG's,28,4753,0.6
+2023-2024,setor,Entretenimento ou Esportes,59,4753,1.2
+2023-2024,setor,Setor Automotivo,53,4753,1.1
+2023-2024,setor,Setor de Energia,84,4753,1.8
+2023-2024,setor,Outra Opção,344,4753,7.2
+2023-2024,setor,Internet/Ecommerce,129,4753,2.7
+2023-2024,setor,Telecomunicação,115,4753,2.4
+2023-2024,setor,Tecnologia/Fábrica de Software,857,4753,18.0
+2023-2024,setor,Finanças ou Bancos,927,4753,19.5
+2023-2024,setor,Varejo,392,4753,8.2
+2023-2024,setor,Setor Imobiliário/ Construção Civil,66,4753,1.4
+2023-2024,setor,Setor Alimentício,109,4753,2.3
+2025-2026,numero_de_funcionarios,de 501 a 1.000,342,3228,10.6
+2025-2026,numero_de_funcionarios,Acima de 3.000,1319,3228,40.9
+2025-2026,numero_de_funcionarios,de 501 a 100,1,3228,0.0
+2025-2026,numero_de_funcionarios,de 51 a 100,270,3228,8.4
+2025-2026,numero_de_funcionarios,de 1.001 a 3.000,378,3228,11.7
+2025-2026,numero_de_funcionarios,de 1 a 5,95,3228,2.9
+2025-2026,numero_de_funcionarios,de 6 a 10,51,3228,1.6
+2025-2026,numero_de_funcionarios,de 11 a 50,234,3228,7.2
+2025-2026,numero_de_funcionarios,de 101 a 500,538,3228,16.7
+2024-2025,numero_de_funcionarios,Acima de 3.000,2335,4863,48.0
+2024-2025,numero_de_funcionarios,de 11 a 50,284,4863,5.8
+2024-2025,numero_de_funcionarios,de 6 a 10,70,4863,1.4
+2024-2025,numero_de_funcionarios,de 51 a 100,309,4863,6.4
+2024-2025,numero_de_funcionarios,de 101 a 500,760,4863,15.6
+2024-2025,numero_de_funcionarios,de 1 a 5,113,4863,2.3
+2024-2025,numero_de_funcionarios,de 1.001 a 3.000,548,4863,11.3
+2024-2025,numero_de_funcionarios,de 501 a 1.000,444,4863,9.1
+2023-2024,numero_de_funcionarios,de 11 a 50,348,4753,7.3
+2023-2024,numero_de_funcionarios,de 6 a 10,89,4753,1.9
+2023-2024,numero_de_funcionarios,de 1 a 5,124,4753,2.6
+2023-2024,numero_de_funcionarios,de 1.001 a 3.000,520,4753,10.9
+2023-2024,numero_de_funcionarios,de 101 a 500,823,4753,17.3
+2023-2024,numero_de_funcionarios,de 501 a 100,1,4753,0.0
+2023-2024,numero_de_funcionarios,Acima de 3.000,2077,4753,43.7
+2023-2024,numero_de_funcionarios,de 51 a 100,326,4753,6.9
+2023-2024,numero_de_funcionarios,de 501 a 1.000,445,4753,9.4
