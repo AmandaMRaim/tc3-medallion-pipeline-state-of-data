@@ -37,20 +37,23 @@ Este script (lógica compartilhada em _lib_padroniza_colunas.py):
   6. Padroniza a sintaxe de todo nome final de coluna: minúsculo, sem
      acento, "/" e espaços viram "_", sem pontuação (, ? ( )).
 
-LÊ o Bronze (sem alterá-lo) e ESCREVE o resultado em Silver como um
-diretório Spark (part-*.csv dentro).
+LÊ o Bronze do S3 (sem alterá-lo) e ESCREVE o resultado em Silver
+"por edição" (staging) no S3, como diretório Spark (part-*.csv dentro).
+Esse resultado ainda está no schema PRÓPRIO desta edição — a
+harmonização entre as 3 edições (schema único, viram partições da
+tabela catalogada db_state_of_data.state_of_data) acontece no script 06.
 
-Uso (local, fora do Glue):
+Uso (local, fora do Glue — exige credenciais AWS configuradas para o
+Spark local enxergar o S3):
     python scripts/02_padroniza_colunas_2024_2025.py
 """
 
-from pathlib import Path
-
+from _config_aws import caminho_bronze, caminho_silver_staging_por_edicao
 from _lib_padroniza_colunas import cria_spark_session, executa
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-ARQUIVO_ORIGINAL = BASE_DIR / "Bronze" / "2024-2025" / "state-of-data-brazil-2024-2025.csv"
-DIRETORIO_SAIDA = BASE_DIR / "Silver" / "2024-2025" / "state-of-data-brazil-2024-2025_colunas_limpas"
+EDICAO = "2024-2025"
+ARQUIVO_ORIGINAL = caminho_bronze(EDICAO)
+DIRETORIO_SAIDA = caminho_silver_staging_por_edicao(EDICAO)
 
 # Correções pontuais para nomes com erro de digitação no CSV de origem.
 # Chave: nome original completo da coluna, como vem no header.

@@ -43,30 +43,33 @@ uma faixa de confiança (`confianca_2023_2024` / `confianca_2025_2026`):
     por compartilharem o trecho "_dia_a_dia_" — são perguntas
     completamente diferentes. NÃO usar sem revisão manual linha a linha.
 
+Nota sobre revisão manual no S3: como esse CSV é editado à mão (coluna
+`status_revisao_2023_2024`) e este script SOBRESCREVE o arquivo do zero
+a cada execução, faça um backup do CSV do S3 antes de rodar de novo se
+já tiver revisão feita — depois reaplique as aprovações/rejeições em
+cima do arquivo novo (ver histórico do projeto para o procedimento).
+
 Uso:
     python scripts/05_monta_dicionario_correspondencia.py
 """
 
 from difflib import SequenceMatcher
-from pathlib import Path
 
 import pandas as pd
 
+from _config_aws import EDICOES, caminho_documentacao, caminho_silver_staging_por_edicao
 from _lib_padroniza_colunas import cria_spark_session
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-DIRETORIOS_SILVER = {
-    "2023-2024": BASE_DIR / "Silver" / "2023-2024" / "state-of-data-brazil-2023-2024_colunas_limpas",
-    "2024-2025": BASE_DIR / "Silver" / "2024-2025" / "state-of-data-brazil-2024-2025_colunas_limpas",
-    "2025-2026": BASE_DIR / "Silver" / "2025-2026" / "state-of-data-brazil-2025-2026_colunas_limpas",
-}
-ARQUIVO_SAIDA = BASE_DIR / "Silver" / "_documentacao" / "dicionario_correspondencia_colunas.csv"
+DIRETORIOS_SILVER = {edicao: caminho_silver_staging_por_edicao(edicao) for edicao in EDICOES}
+# Escrita via pandas (arquivo pequeno, editado à mão) — para gravar direto
+# no S3 é preciso ter o pacote `s3fs` instalado (ver requirements.txt).
+ARQUIVO_SAIDA = caminho_documentacao("dicionario_correspondencia_colunas.csv")
 
 EDICAO_BASE = "2024-2025"
 LIMIAR_SIMILARIDADE_FUZZY = 0.60  # abaixo disso, não sugere — fica "sem_correspondencia"
 
 
-def carrega_colunas(spark, diretorio: Path) -> list:
+def carrega_colunas(spark, diretorio: str) -> list:
     return spark.read.option("header", True).csv(str(diretorio)).columns
 
 

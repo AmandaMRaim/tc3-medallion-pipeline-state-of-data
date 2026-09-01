@@ -38,20 +38,16 @@ Uso:
     python scripts/04_documenta_nulos.py
 """
 
-from pathlib import Path
-
 import pandas as pd
 from pyspark.sql import functions as F
 
+from _config_aws import EDICOES, caminho_documentacao, caminho_silver_staging_por_edicao
 from _lib_padroniza_colunas import col_seguro, cria_spark_session
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-DIRETORIOS_SILVER = {
-    "2023-2024": BASE_DIR / "Silver" / "2023-2024" / "state-of-data-brazil-2023-2024_colunas_limpas",
-    "2024-2025": BASE_DIR / "Silver" / "2024-2025" / "state-of-data-brazil-2024-2025_colunas_limpas",
-    "2025-2026": BASE_DIR / "Silver" / "2025-2026" / "state-of-data-brazil-2025-2026_colunas_limpas",
-}
-ARQUIVO_SAIDA = BASE_DIR / "Silver" / "_documentacao" / "dicionario_nulos.csv"
+DIRETORIOS_SILVER = {edicao: caminho_silver_staging_por_edicao(edicao) for edicao in EDICOES}
+# Escrita via pandas (arquivo pequeno, editado à mão) — para gravar direto
+# no S3 é preciso ter o pacote `s3fs` instalado (ver requirements.txt).
+ARQUIVO_SAIDA = caminho_documentacao("dicionario_nulos.csv")
 
 LIMIAR_QUASE_UNIVERSAL = 10.0  # % de nulo abaixo do qual consideramos "não-resposta genuína"
 VALORES_BINARIOS_VALIDOS = {"0", "1"}
@@ -63,7 +59,7 @@ def classifica_semantica_nulo(tipo: str, pct_nulo: float) -> str:
     return "quase_universal" if pct_nulo < LIMIAR_QUASE_UNIVERSAL else "condicional_ao_perfil"
 
 
-def calcula_estatisticas_edicao(spark, edicao: str, diretorio: Path) -> pd.DataFrame:
+def calcula_estatisticas_edicao(spark, edicao: str, diretorio: str) -> pd.DataFrame:
     print(f"Lendo Silver {edicao}: {diretorio}")
     df = spark.read.option("header", True).csv(str(diretorio))
     colunas = df.columns
@@ -105,7 +101,6 @@ def main() -> None:
     blocos = [calcula_estatisticas_edicao(spark, edicao, diretorio) for edicao, diretorio in DIRETORIOS_SILVER.items()]
     dicionario = pd.concat(blocos, ignore_index=True).sort_values(["edicao", "pct_nulo"], ascending=[True, False])
 
-    ARQUIVO_SAIDA.parent.mkdir(parents=True, exist_ok=True)
     dicionario.to_csv(ARQUIVO_SAIDA, index=False)
 
     print(f"\nTotal de linhas no dicionário: {len(dicionario)}")

@@ -12,20 +12,23 @@ de código: em 2024-2025 era "3.f"/"4.l", nesta edição é "3.f"/"4.i" — mesm
 pergunta (gestor vs. não-gestor), mesmas 8 opções com texto idêntico,
 preenchimento mutuamente exclusivo (confirmado antes de codar).
 
-LÊ o Bronze (sem alterá-lo) e ESCREVE o resultado em Silver como um
-diretório Spark (part-*.csv dentro).
+LÊ o Bronze do S3 (sem alterá-lo) e ESCREVE o resultado em Silver
+"por edição" (staging) no S3, como diretório Spark (part-*.csv dentro).
+Esse resultado ainda está no schema PRÓPRIO desta edição — a
+harmonização entre as 3 edições (schema único, viram partições da
+tabela catalogada db_state_of_data.state_of_data) acontece no script 06.
 
-Uso (local, fora do Glue):
+Uso (local, fora do Glue — exige credenciais AWS configuradas para o
+Spark local enxergar o S3):
     python scripts/03_padroniza_colunas_2025_2026.py
 """
 
-from pathlib import Path
-
+from _config_aws import caminho_bronze, caminho_silver_staging_por_edicao
 from _lib_padroniza_colunas import cria_spark_session, executa
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-ARQUIVO_ORIGINAL = BASE_DIR / "Bronze" / "2025-2026" / "state-of-data-brazil-2025-2026.csv"
-DIRETORIO_SAIDA = BASE_DIR / "Silver" / "2025-2026" / "state-of-data-brazil-2025-2026_colunas_limpas"
+EDICAO = "2025-2026"
+ARQUIVO_ORIGINAL = caminho_bronze(EDICAO)
+DIRETORIO_SAIDA = caminho_silver_staging_por_edicao(EDICAO)
 
 # Correções pontuais para nomes com erro de digitação no CSV de origem.
 # Chave: nome original completo da coluna, como vem no header.

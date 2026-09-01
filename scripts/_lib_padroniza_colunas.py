@@ -263,11 +263,13 @@ def constroi_dataframe_final(
 
 def executa(
     spark: SparkSession,
-    arquivo_original: Path,
-    diretorio_saida: Path,
+    arquivo_original,
+    diretorio_saida,
     grupos_alias: list,
     correcoes_manuais: dict,
 ) -> None:
+    """`arquivo_original`/`diretorio_saida` aceitam tanto `Path` local quanto
+    string de URI S3 (ex: "s3://bucket/Silver/_por_edicao/2023-2024/")."""
     print(f"Lendo: {arquivo_original}")
     df = le_csv_bruto(spark, arquivo_original)
 
@@ -283,7 +285,8 @@ def executa(
 
     df_final = constroi_dataframe_final(df, grupos, parsed, correcoes_manuais)
 
-    diretorio_saida.parent.mkdir(parents=True, exist_ok=True)
+    if isinstance(diretorio_saida, Path):
+        diretorio_saida.parent.mkdir(parents=True, exist_ok=True)
     (
         df_final.coalesce(1)
         .write.mode("overwrite")

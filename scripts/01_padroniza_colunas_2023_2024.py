@@ -41,11 +41,14 @@ Este script (lógica de agrupamento compartilhada em _lib_padroniza_colunas.py):
      (texto concatenado); para colunas fora de grupo, mantém a descrição
      limpa da tupla.
 
-LÊ o Bronze (sem alterá-lo) e ESCREVE o resultado em Silver como um
-diretório Spark (part-*.csv dentro) — é assim que sai de um Glue Job de
-verdade, e é assim que os próximos scripts leem de volta.
+LÊ o Bronze do S3 (sem alterá-lo) e ESCREVE o resultado em Silver
+"por edição" (staging) no S3, como diretório Spark (part-*.csv dentro).
+Esse resultado ainda está no schema PRÓPRIO desta edição — a
+harmonização entre as 3 edições (schema único, viram partições da
+tabela catalogada db_state_of_data.state_of_data) acontece no script 06.
 
-Uso (local, fora do Glue):
+Uso (local, fora do Glue — exige credenciais AWS configuradas para o
+Spark local enxergar o S3):
     python scripts/01_padroniza_colunas_2023_2024.py
 
 Uso no AWS Glue Job: cole o corpo do script num Glue Job PySpark,
@@ -54,8 +57,8 @@ substituindo `cria_spark_session(...)` pela SparkSession do GlueContext
 """
 
 import re
-from pathlib import Path
 
+from _config_aws import caminho_bronze, caminho_silver_staging_por_edicao
 from _lib_padroniza_colunas import (
     aplica_coalesce_alias,
     constroi_dataframe_final,
@@ -64,9 +67,9 @@ from _lib_padroniza_colunas import (
     le_csv_bruto,
 )
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-ARQUIVO_ORIGINAL = BASE_DIR / "Bronze" / "2023-2024" / "state-of-data-brazil-2023-2024.csv"
-DIRETORIO_SAIDA = BASE_DIR / "Silver" / "2023-2024" / "state-of-data-brazil-2023-2024_colunas_limpas"
+EDICAO = "2023-2024"
+ARQUIVO_ORIGINAL = caminho_bronze(EDICAO)
+DIRETORIO_SAIDA = caminho_silver_staging_por_edicao(EDICAO)
 
 # Captura (codigo, descricao) da tupla: "('P1_a ', 'Idade')" -> ("P1_a", "Idade")
 PADRAO_TUPLA = re.compile(r"^\(\s*'(.*?)'\s*,\s*'(.*?)'\s*\)$")
@@ -121,8 +124,7 @@ def main() -> None:
 
     df_final = constroi_dataframe_final(df, grupos, parsed, correcoes_manuais={})
 
-    DIRETORIO_SAIDA.parent.mkdir(parents=True, exist_ok=True)
-    df_final.coalesce(1).write.mode("overwrite").option("header", True).csv(str(DIRETORIO_SAIDA))
+    df_final.coalesce(1).write.mode("overwrite").option("header", True).csv(DIRETORIO_SAIDA)
 
     print(f"\nColunas originais: {len(colunas_originais)} | Colunas finais: {len(df_final.columns)}")
     print(f"Diretório gravado em Silver: {DIRETORIO_SAIDA}")

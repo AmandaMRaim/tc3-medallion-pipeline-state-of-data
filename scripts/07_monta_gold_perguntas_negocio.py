@@ -1,9 +1,13 @@
 """
-Etapa PySpark (Gold base -> Gold por pergunta de negócio) — State of Data Brazil.
+Etapa PySpark (Silver "state_of_data" -> Gold por pergunta de negócio) — State of Data Brazil.
 
-Parte de Gold/state_of_data_unificado (base longa gravada pelo script 06,
-um respondente por linha, as 3 edições unificadas) e gera uma tabela Gold
-pequena e pré-agregada para cada pergunta de negócio do desafio:
+Lê a tabela Silver catalogada db_state_of_data.state_of_data (schema
+harmonizado, gravada pelo script 06, um respondente por linha, as 3
+edições como partições) diretamente do Glue Data Catalog — dentro de um
+Glue Job a sessão Spark já enxerga o catálogo como Hive metastore, então
+`spark.table("db_state_of_data.state_of_data")` funciona sem nenhuma
+configuração extra. Gera uma tabela Gold pequena e pré-agregada para cada
+pergunta de negócio do desafio:
 
   1. gold_01_estrutura_mercado
      Como está estruturado o mercado brasileiro de Dados?
@@ -38,21 +42,21 @@ Cada tabela final é pequena (dezenas a poucas centenas de linhas — já é
 uma AGREGAÇÃO), então é gravada com `coalesce(1)` para sair como um único
 arquivo `part-*.csv` dentro do diretório, mais fácil de abrir/conferir.
 
-Uso (local, fora do Glue):
+Uso (dentro de um Glue Job — fora do Glue, rodar isso exige uma
+SparkSession local configurada para enxergar o Glue Data Catalog como
+Hive metastore, o que não foi testado neste ambiente):
     python scripts/07_monta_gold_perguntas_negocio.py
 """
 
 from functools import reduce
-from pathlib import Path
 
 from pyspark.sql import DataFrame
 from pyspark.sql import functions as F
 
+from _config_aws import NOME_COLUNA_PARTICAO, caminho_gold_pergunta_negocio, tabela_qualificada
 from _lib_padroniza_colunas import col_seguro, cria_spark_session
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-DIRETORIO_BASE = BASE_DIR / "Gold" / "state_of_data_unificado"
-DIR_SAIDA = BASE_DIR / "Gold" / "perguntas_negocio"
+TABELA_ORIGEM = tabela_qualificada()
 
 
 def uniao(dfs: list) -> DataFrame:
@@ -225,17 +229,21 @@ TABELAS = {
 def main() -> None:
     spark = cria_spark_session("monta_gold_perguntas_negocio")
 
-    print(f"Lendo base unificada: {DIRETORIO_BASE}")
-    df = spark.read.option("header", True).csv(str(DIRETORIO_BASE))
+    print(f"Lendo tabela do Glue Data Catalog: {TABELA_ORIGEM}")
+    df = spark.table(TABELA_ORIGEM)
+    if NOME_COLUNA_PARTICAO in df.columns and NOME_COLUNA_PARTICAO != "edicao":
+        # As funções gold_XX abaixo usam "edicao" como nome da dimensão de
+        # edição — renomeia a coluna de partição (vem do catálogo com o
+        # nome configurado em _config_aws.NOME_COLUNA_PARTICAO) para não
+        # precisar mexer em cada função.
+        df = df.withColumnRenamed(NOME_COLUNA_PARTICAO, "edicao")
 
-    DIR_SAIDA.mkdir(parents=True, exist_ok=True)
-
-    for nome_diretorio, funcao in TABELAS.items():
-        print(f"\nGerando {nome_diretorio} ...")
+    for nome_tabela, funcao in TABELAS.items():
+        print(f"\nGerando {nome_tabela} ...")
         tabela = funcao(df)
-        caminho = DIR_SAIDA / nome_diretorio
-        tabela.coalesce(1).write.mode("overwrite").option("header", True).csv(str(caminho))
-        print(f"  {tabela.count()} linhas -> {caminho}")
+        destino = caminho_gold_pergunta_negocio(nome_tabela)
+        tabela.coalesce(1).write.mode("overwrite").option("header", True).csv(destino)
+        print(f"  {tabela.count()} linhas -> {destino}")
 
     spark.stop()
 

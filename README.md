@@ -6,31 +6,58 @@ unificando as 3 últimas edições disponíveis (2023-2024, 2024-2025,
 2025-2026). Feito para o Tech Challenge da Fase 03 (Big Data & Analytics)
 da FIAP.
 
+## Arquitetura
+
+O pipeline roda direto sobre **S3 + AWS Glue Data Catalog** (bucket e
+nomes de tabela em `scripts/_config_aws.py`):
+
+```
+S3 Bronze (dados brutos, por edição)
+        │
+        ▼  scripts 01/02/03 — padroniza o header de cada edição
+S3 Silver "por edição" (staging — schema PRÓPRIO de cada edição)
+        │
+        ▼  script 05 — dicionário de correspondência entre edições
+S3 Silver/_documentacao (dicionários de nulo e correspondência)
+        │
+        ▼  script 06 — harmoniza schema + grava cada edição na sua partição
+S3 Silver "state_of_data"  ──►  Glue Data Catalog: db_state_of_data.state_of_data
+   (1 tabela, 3 partições — 2023-2024 / 2024-2025 / 2025-2026)
+        │
+        ▼  script 07 — lê a tabela via spark.table(), agrega por pergunta de negócio
+S3 Gold/perguntas_negocio/  (7 tabelas pré-agregadas)
+```
+
+A tabela `db_state_of_data.state_of_data` e suas 3 partições **já
+existem catalogadas** — o script 06 só grava os arquivos no caminho S3
+de cada partição, não mexe no catálogo.
+
+> Bucket, caminho do Bronze/Silver e nome da coluna de partição
+> (`NOME_COLUNA_PARTICAO = "partition_0"` — as pastas no S3 não seguem o
+> padrão Hive `chave=valor`, então o crawler nomeou a partição
+> genericamente) já foram confirmados com o grupo, em `_config_aws.py`.
+
 ## Estrutura de pastas
 
 ```
-Bronze/                     dados brutos, como vieram do Kaggle (não alterar)
-  2023-2024/
-  2024-2025/
-  2025-2026/
-Silver/                     dados tratados: header padronizado, grupos
-  2023-2024/                multi-select desmanchados, sem preenchimento
-  2024-2025/                de nulo (ver Silver/_documentacao)
-  2025-2026/
-  _documentacao/
-    dicionario_nulos.csv                  semântica do nulo por coluna
-    dicionario_correspondencia_colunas.csv  de/para de colunas entre as 3 edições
-Gold/
-  state_of_data_unificado/  as 3 edições unidas, 1 linha por respondente
-  perguntas_negocio/        7 tabelas pré-agregadas, uma por pergunta do desafio
-scripts/                    pipeline PySpark (ver abaixo)
+scripts/
+  _config_aws.py                     bucket, database, nomes de tabela e caminhos S3
+  _lib_padroniza_colunas.py          lógica compartilhada (grupos multi-select, etc.)
+  01/02/03_padroniza_colunas_*.py    Bronze -> Silver "por edição" (staging)
+  04_documenta_nulos.py              documenta semântica do nulo por coluna
+  05_monta_dicionario_correspondencia.py   de/para de colunas entre as 3 edições
+  06_monta_silver_state_of_data.py   harmoniza schema -> tabela Silver catalogada
+  07_monta_gold_perguntas_negocio.py Silver catalogada -> 7 tabelas Gold
 ```
 
 ## Requisitos
 
 - Python 3.9+
 - Java 17 (exigido pelo PySpark; sem JVM instalada o Spark não sobe)
-- `pip install -r requirements.txt` (pandas + pyspark)
+- `pip install -r requirements.txt` (pandas + pyspark + s3fs)
+- Credenciais AWS configuradas (`aws configure` ou variáveis de ambiente)
+  para o Spark local enxergar o S3 — dentro de um Glue Job isso já vem
+  pronto, não precisa configurar nada
 
 Instalação do Java no macOS (Homebrew):
 ```bash
@@ -40,7 +67,7 @@ export PATH="$JAVA_HOME/bin:$PATH"
 ```
 Adicione essas duas linhas de `export` no seu `~/.zshrc` para não precisar repetir a cada sessão de terminal.
 
-## Como rodar o pipeline (local)
+## Como rodar o pipeline
 
 Rodar cada script em ordem, a partir da raiz do repositório:
 
@@ -50,41 +77,47 @@ python3 scripts/02_padroniza_colunas_2024_2025.py
 python3 scripts/03_padroniza_colunas_2025_2026.py
 python3 scripts/04_documenta_nulos.py
 python3 scripts/05_monta_dicionario_correspondencia.py
-python3 scripts/06_monta_gold_unificado.py
+python3 scripts/06_monta_silver_state_of_data.py
 python3 scripts/07_monta_gold_perguntas_negocio.py
 ```
 
 | # | Script | Camada | O que faz |
 |---|---|---|---|
-| 01/02/03 | `padroniza_colunas_*` | Bronze → Silver | Limpa o header de cada edição: detecta grupos de pergunta multi-select (pai com texto concatenado + filhas binárias 0/1), funde grupos "alias" (mesma pergunta, público mutuamente exclusivo por skip logic), normaliza a sintaxe do nome final (minúsculo, sem acento, sem pontuação) |
+| 01/02/03 | `padroniza_colunas_*` | Bronze → Silver (staging, por edição) | Limpa o header de cada edição: detecta grupos de pergunta multi-select (pai com texto concatenado + filhas binárias 0/1), funde grupos "alias" (mesma pergunta, público mutuamente exclusivo por skip logic), normaliza a sintaxe do nome final (minúsculo, sem acento, sem pontuação) |
 | 04 | `documenta_nulos` | Silver (doc) | Documenta, para cada coluna, se o nulo é "grupo não exibido" (multi-select), "quase universal" (não-resposta genuína) ou "condicional ao perfil" (pergunta não se aplica a todos) — **não preenche nenhum nulo** |
 | 05 | `monta_dicionario_correspondencia` | Silver (doc) | Casa colunas entre as 3 edições (nome exato, depois aproximado/fuzzy) e classifica a confiança de cada match — rascunho para revisão manual, não verdade automática |
-| 06 | `monta_gold_unificado` | Silver → Gold | Une as 3 edições numa base só, usando apenas correspondências confiáveis do dicionário (exatas, fuzzy de alta confiança, ou aprovadas na revisão manual) |
-| 07 | `monta_gold_perguntas_negocio` | Gold → Gold | Gera 7 tabelas pré-agregadas, uma por pergunta de negócio do desafio (estrutura do mercado, perfis valorizados, diversidade, adoção de tecnologia/IA, diferenças regionais, oportunidades e desafios) |
+| 06 | `monta_silver_state_of_data` | Silver (staging) → Silver (tabela catalogada) | Harmoniza o schema das 3 edições (usando o dicionário) e grava cada uma na sua partição de `db_state_of_data.state_of_data` — **não cataloga**, a tabela/partições já existem |
+| 07 | `monta_gold_perguntas_negocio` | Silver (catalogada) → Gold | Lê `db_state_of_data.state_of_data` via `spark.table(...)` (Glue Data Catalog) e gera 7 tabelas pré-agregadas, uma por pergunta de negócio do desafio |
 
 **Importante — revisão manual:** `dicionario_correspondencia_colunas.csv`
 é editado à mão (coluna `status_revisao_2023_2024`: `aprovado_manual` /
 `rejeitado_manual`) depois de rodar o script 05. Rodar o script 05 de
 novo **sobrescreve o arquivo do zero** — se já tiver revisão manual
-feita, faça backup antes ou aplique as mudanças com cuidado em cima do
-arquivo existente em vez de rodar o script direto.
+feita, faça backup do CSV no S3 antes, ou reaplique as aprovações em
+cima do arquivo novo depois.
 
 ## Saída dos scripts
 
 Scripts que escrevem tabela de **dado de respondente** (01, 02, 03, 06, 07)
-gravam um **diretório Spark** (`part-*.csv` + `_SUCCESS` dentro), não um
-arquivo único — é assim que sai de um Glue Job de verdade e como o
-Athena/Glue Catalog leem uma tabela (apontando pra um prefixo do S3, não
-pra um arquivo). Os dois dicionários de documentação (04 e 05) continuam
-sendo um único CSV "achatado" via pandas, de propósito — são pequenos
-(uma linha por coluna, não por respondente) e feitos para abrir/editar
-numa planilha.
+gravam um **diretório Spark** (`part-*.csv` + `_SUCCESS` dentro) no S3,
+não um arquivo único — é assim que o Athena/Glue Catalog leem uma tabela
+(apontando pra um prefixo do S3, não pra um arquivo). Os dois dicionários
+de documentação (04 e 05) continuam sendo um único CSV "achatado" via
+pandas, de propósito — são pequenos (uma linha por coluna, não por
+respondente) e feitos para abrir/editar numa planilha (exige o pacote
+`s3fs` para o pandas conseguir escrever direto no S3).
+
+A tabela Silver catalogada **não grava a coluna de partição dentro do
+arquivo** — segue a convenção Hive/Athena, onde o valor da partição vem
+do caminho (pasta), não do conteúdo do CSV.
 
 ## No AWS Glue
 
 Os scripts usam `cria_spark_session(...)` de `scripts/_lib_padroniza_colunas.py`
 para rodar localmente. Dentro de um Glue Job, troque essa chamada pela
-sessão já fornecida pelo GlueContext:
+sessão já fornecida pelo GlueContext (que já vem com o Glue Data Catalog
+configurado como Hive metastore, então `spark.table("db.tabela")` no
+script 07 funciona sem nenhuma configuração extra):
 
 ```python
 from awsglue.context import GlueContext
@@ -94,5 +127,4 @@ spark = glueContext.spark_session
 ```
 
 O resto do código (leitura, transformação, escrita) funciona sem
-alteração — trocando os caminhos locais (`Bronze/...`, `Silver/...`,
-`Gold/...`) por `s3://<bucket>/...`.
+alteração.
