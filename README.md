@@ -20,22 +20,19 @@ S3 Silver "por edição" (staging — schema PRÓPRIO de cada edição)
         ▼  script 05 — dicionário de correspondência entre edições
 S3 Silver/_documentacao (dicionários de nulo e correspondência)
         │
-        ▼  script 06 — harmoniza schema + grava cada edição na sua partição
-S3 Silver "state_of_data"  ──►  Glue Data Catalog: db_state_of_data.state_of_data
+        ▼  script 06 — harmoniza schema, grava cada edição na sua partição e cataloga
+S3 Silver "state_of_data_silver"  ──►  Glue Data Catalog: db_state_of_data.state_of_data_silver
    (1 tabela, 3 partições — 2023-2024 / 2024-2025 / 2025-2026)
         │
         ▼  script 07 — lê a tabela via spark.table(), agrega por pergunta de negócio
 S3 Gold/perguntas_negocio/  (7 tabelas pré-agregadas)
 ```
 
-A tabela `db_state_of_data.state_of_data` e suas 3 partições **já
-existem catalogadas** — o script 06 só grava os arquivos no caminho S3
-de cada partição, não mexe no catálogo.
-
-> Bucket, caminho do Bronze/Silver e nome da coluna de partição
-> (`NOME_COLUNA_PARTICAO = "partition_0"` — as pastas no S3 não seguem o
-> padrão Hive `chave=valor`, então o crawler nomeou a partição
-> genericamente) já foram confirmados com o grupo, em `_config_aws.py`.
+A tabela `db_state_of_data.state_of_data_silver` e suas 3 partições são
+**criadas pelo próprio script 06** (via boto3/API do Glue), depois de
+gravar os arquivos no S3 — ver `_config_aws.cataloga_tabela_particionada`.
+É idempotente: pode rodar de novo sem erro (atualiza em vez de falhar se
+a tabela/partição já existir).
 
 ## Estrutura de pastas
 
@@ -86,8 +83,8 @@ python3 scripts/07_monta_gold_perguntas_negocio.py
 | 01/02/03 | `padroniza_colunas_*` | Bronze → Silver (staging, por edição) | Limpa o header de cada edição: detecta grupos de pergunta multi-select (pai com texto concatenado + filhas binárias 0/1), funde grupos "alias" (mesma pergunta, público mutuamente exclusivo por skip logic), normaliza a sintaxe do nome final (minúsculo, sem acento, sem pontuação) |
 | 04 | `documenta_nulos` | Silver (doc) | Documenta, para cada coluna, se o nulo é "grupo não exibido" (multi-select), "quase universal" (não-resposta genuína) ou "condicional ao perfil" (pergunta não se aplica a todos) — **não preenche nenhum nulo** |
 | 05 | `monta_dicionario_correspondencia` | Silver (doc) | Casa colunas entre as 3 edições (nome exato, depois aproximado/fuzzy) e classifica a confiança de cada match — rascunho para revisão manual, não verdade automática |
-| 06 | `monta_silver_state_of_data` | Silver (staging) → Silver (tabela catalogada) | Harmoniza o schema das 3 edições (usando o dicionário) e grava cada uma na sua partição de `db_state_of_data.state_of_data` — **não cataloga**, a tabela/partições já existem |
-| 07 | `monta_gold_perguntas_negocio` | Silver (catalogada) → Gold | Lê `db_state_of_data.state_of_data` via `spark.table(...)` (Glue Data Catalog) e gera 7 tabelas pré-agregadas, uma por pergunta de negócio do desafio |
+| 06 | `monta_silver_state_of_data` | Silver (staging) → Silver (tabela catalogada) | Harmoniza o schema das 3 edições (usando o dicionário), grava cada uma na sua partição de `db_state_of_data.state_of_data_silver` e **cria/atualiza a tabela e as 3 partições no Glue Data Catalog via boto3** |
+| 07 | `monta_gold_perguntas_negocio` | Silver (catalogada) → Gold | Lê `db_state_of_data.state_of_data_silver` via `spark.table(...)` (Glue Data Catalog) e gera 7 tabelas pré-agregadas, uma por pergunta de negócio do desafio |
 
 **Importante — revisão manual:** `dicionario_correspondencia_colunas.csv`
 é editado à mão (coluna `status_revisao_2023_2024`: `aprovado_manual` /

@@ -1,7 +1,7 @@
 """
 Etapa PySpark (Silver "por edição" -> Silver "state_of_data") — Harmoniza
 o schema das 3 edições e grava cada uma na sua partição da tabela
-catalogada db_state_of_data.state_of_data.
+catalogada db_state_of_data.state_of_data_silver.
 
 Usa o dicionário de correspondência (Silver/_documentacao/
 dicionario_correspondencia_colunas.csv, gerado pelo script 05 e revisado
@@ -32,16 +32,18 @@ confiança média/baixa AINDA NÃO revisada, fica de fora por enquanto: a
 coluna existe no schema final (para não perder o dado das edições que a
 têm), mas fica NULA para a edição cuja correspondência não foi validada.
 
-IMPORTANTE — catalogação: a tabela db_state_of_data.state_of_data e suas
-3 partições JÁ EXISTEM no Glue Data Catalog. Este script só GRAVA os
-arquivos no caminho S3 de cada partição — não cria/altera a tabela nem
-registra partição nenhuma. A coluna de partição (NOME_COLUNA_PARTICAO em
+Catalogação: depois de gravar as 3 partições no S3, este script CRIA (ou
+atualiza, se já existir) a tabela `db_state_of_data.state_of_data_silver`
+no Glue Data Catalog via boto3, com as 3 partições registradas — ver
+`_config_aws.cataloga_tabela_particionada`. Idempotente: pode rodar de
+novo sem erro. A coluna de partição (NOME_COLUNA_PARTICAO em
 _config_aws.py) NÃO é escrita como coluna de dado dentro do arquivo —
 segue a convenção Hive/Athena, onde o valor da partição vem do caminho
-(pasta), não do conteúdo do arquivo.
+(pasta "particao=<valor>/"), não do conteúdo do arquivo.
 
 Uso (local, fora do Glue — exige credenciais AWS configuradas para o
-Spark local enxergar o S3):
+Spark local enxergar o S3, e permissão glue:CreateTable/CreatePartition
+etc. no IAM):
     python scripts/06_monta_silver_state_of_data.py
 """
 
@@ -49,7 +51,16 @@ import pandas as pd
 from pyspark.sql.types import StringType
 from pyspark.sql import functions as F
 
-from _config_aws import EDICOES, caminho_documentacao, caminho_silver_staging_por_edicao, caminho_silver_state_of_data
+from _config_aws import (
+    DATABASE,
+    EDICOES,
+    TABELA_STATE_OF_DATA,
+    caminho_base_silver_state_of_data,
+    caminho_documentacao,
+    caminho_silver_staging_por_edicao,
+    caminho_silver_state_of_data,
+    cataloga_tabela_particionada,
+)
 from _lib_padroniza_colunas import col_seguro, cria_spark_session
 
 ARQUIVO_DICIONARIO = caminho_documentacao("dicionario_correspondencia_colunas.csv")
@@ -128,10 +139,22 @@ def main() -> None:
 
         bloco = df.select(*selecoes)
         destino = caminho_silver_state_of_data(edicao)
-        bloco.coalesce(1).write.mode("overwrite").option("header", True).csv(destino)
+        bloco.coalesce(1).write.mode("overwrite").option("header", True).option("encoding", "UTF-8").csv(destino)
 
         print(f"  {edicao}: {n_preenchidas}/{len(colunas_canonicas)} colunas preenchidas, {bloco.count()} linhas")
         print(f"  Partição gravada em: {destino}")
+
+    # A ordem das colunas no catálogo precisa bater EXATAMENTE com a ordem
+    # escrita no CSV (OpenCSVSerde casa coluna por posição, não por nome).
+    colunas_arquivo = ["linha_origem_silver"] + colunas_canonicas
+    print(f"\nCatalogando {DATABASE}.{TABELA_STATE_OF_DATA} no Glue Data Catalog...")
+    cataloga_tabela_particionada(
+        database=DATABASE,
+        tabela=TABELA_STATE_OF_DATA,
+        colunas=colunas_arquivo,
+        particoes=EDICOES,
+        localizacao_base=caminho_base_silver_state_of_data(),
+    )
 
     spark.stop()
 

@@ -16,7 +16,7 @@ LÊ o Bronze do S3 (sem alterá-lo) e ESCREVE o resultado em Silver
 "por edição" (staging) no S3, como diretório Spark (part-*.csv dentro).
 Esse resultado ainda está no schema PRÓPRIO desta edição — a
 harmonização entre as 3 edições (schema único, viram partições da
-tabela catalogada db_state_of_data.state_of_data) acontece no script 06.
+tabela catalogada db_state_of_data.state_of_data_silver) acontece no script 06.
 
 Uso (local, fora do Glue — exige credenciais AWS configuradas para o
 Spark local enxergar o S3):

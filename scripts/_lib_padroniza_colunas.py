@@ -26,12 +26,39 @@ from pathlib import Path
 
 from pyspark.sql import DataFrame, SparkSession
 from pyspark.sql import functions as F
+from pyspark.sql.types import StringType
 
 # Separa o prefixo de código da pergunta do texto legível.
 # "2.l.1_Remuneração/Salário" -> prefixo="2.l.1", descricao="Remuneração/Salário"
 PADRAO_PREFIXO = re.compile(r"^(\d+(?:\.[A-Za-z0-9]+)*)[_ ]+(.*)$")
 
 VALORES_BINARIOS_VALIDOS = {"0", "1"}
+
+
+def repara_mojibake(texto):
+    """Corrige texto UTF-8 que foi lido/salvo em algum ponto como Latin-1
+    (sintoma clássico: "não" virando "nÃ£o", "experiência" virando
+    "experiÃªncia"). Isso acontece quando os bytes UTF-8 de um caractere
+    acentuado (ex: 'ã' = 0xC3 0xA3) são interpretados um a um como dois
+    caracteres Latin-1 separados ('Ã' e '£') em vez de decodificados
+    juntos como um único caractere UTF-8.
+
+    A correção reverte exatamente essa troca: reinterpreta o texto como
+    bytes Latin-1 e decodifica de volta como UTF-8. Texto que já está
+    correto simplesmente falha nesse round-trip (um "ã" verdadeiro vira
+    um único byte 0xE3 ao codificar em Latin-1, que não é uma sequência
+    UTF-8 válida sozinho) e fica inalterado — por isso é seguro aplicar
+    em qualquer string, com ou sem mojibake.
+    """
+    if texto is None:
+        return None
+    try:
+        return texto.encode("latin-1").decode("utf-8")
+    except (UnicodeDecodeError, UnicodeEncodeError):
+        return texto
+
+
+_repara_mojibake_udf = F.udf(repara_mojibake, StringType())
 
 
 def cria_spark_session(nome_app: str) -> SparkSession:
@@ -53,8 +80,15 @@ def cria_spark_session(nome_app: str) -> SparkSession:
 
 def le_csv_bruto(spark: SparkSession, caminho: Path) -> DataFrame:
     """Lê um CSV da pesquisa tratando tudo como string (igual ao dtype=str do
-    pandas), com suporte a campos multiline e aspas escapadas."""
-    return (
+    pandas), com suporte a campos multiline e aspas escapadas.
+
+    Também repara mojibake (ver `repara_mojibake`) tanto no NOME das
+    colunas quanto nos VALORES — o `option("encoding", "UTF-8")` abaixo
+    não é suficiente sozinho quando o arquivo de origem já tem os bytes
+    fisicamente errados (ex: foi salvo/reexportado em algum passo
+    anterior como Latin-1/Windows-1252 a partir de um UTF-8 original).
+    """
+    df = (
         spark.read.option("header", True)
         .option("multiLine", True)
         .option("quote", '"')
@@ -62,6 +96,10 @@ def le_csv_bruto(spark: SparkSession, caminho: Path) -> DataFrame:
         .option("encoding", "UTF-8")
         .csv(str(caminho))
     )
+
+    df = df.toDF(*[repara_mojibake(c) for c in df.columns])
+    df = df.select(*[_repara_mojibake_udf(col_seguro(c)).alias(c) for c in df.columns])
+    return df
 
 
 @dataclass
@@ -291,6 +329,7 @@ def executa(
         df_final.coalesce(1)
         .write.mode("overwrite")
         .option("header", True)
+        .option("encoding", "UTF-8")
         .csv(str(diretorio_saida))
     )
     print(f"\nColunas originais: {len(colunas_originais)} | Colunas finais: {len(df_final.columns)}")

@@ -2,10 +2,7 @@
 Configuração do ambiente AWS (S3 + Glue Data Catalog) para o pipeline.
 
 Centraliza os nomes/caminhos que mudam entre rodar local e rodar num Glue
-Job de verdade. Valores confirmados pelo grupo: BUCKET, DATABASE, TABELA,
-caminho do Bronze e da tabela Silver particionada. O nome da coluna de
-partição no Glue Catalog (NOME_COLUNA_PARTICAO) ainda é uma suposição —
-ajuste se o catálogo usar outro nome.
+Job de verdade.
 
 Camadas:
   - Bronze: dados brutos por edição, em
@@ -14,27 +11,29 @@ Camadas:
   - Silver "por edição" (staging): saída dos scripts 01/02/03 — cada
     edição ainda com o SEU PRÓPRIO schema (antes da harmonização),
     usada só como entrada do script 06. Não é a tabela catalogada.
-  - Silver "state_of_data" (tabela final catalogada): saída do script 06
-    — schema ÚNICO (harmonizado via dicionário de correspondência),
-    uma partição por edição, gravada em
-    s3://{BUCKET}/Silver/state_of_data/{particao}/
-    Essa tabela e as partições JÁ EXISTEM no Glue Data Catalog — os
-    scripts só escrevem os arquivos no caminho certo, sem recatalogar.
+  - Silver "state_of_data_silver" (tabela final catalogada): saída do
+    script 06 — schema ÚNICO (harmonizado via dicionário de
+    correspondência), uma partição por edição, gravada em
+    s3://{BUCKET}/Silver/state_of_data_silver/particao={particao}/
+    (padrão Hive "chave=valor", pra facilitar descoberta por
+    Crawler/MSCK REPAIR além do registro explícito que o próprio script
+    06 faz via boto3 — ver `cataloga_tabela_particionada`).
   - Gold: tabelas de negócio (script 07), lidas a partir da tabela Silver
     catalogada via Spark SQL/Glue Catalog, gravadas em
     s3://{BUCKET}/Gold/perguntas_negocio/{nome_tabela}/
 """
 
+import boto3
+
 BUCKET = "tc-fase3-grupo80-state-of-data-brazil"
 
 DATABASE = "db_state_of_data"
-TABELA_STATE_OF_DATA = "state_of_data"
+TABELA_STATE_OF_DATA = "state_of_data_silver"
 
-# Nome da coluna de partição tal como registrada no Glue Data Catalog.
-# É "partition_0" (não "particao") porque as pastas no S3 não seguem o
-# padrão Hive "chave=valor" (ex: "particao=2023-2024/") — são só o valor
-# ("2023-2024/"), então o crawler nomeou a partição genericamente.
-NOME_COLUNA_PARTICAO = "partition_0"
+# Nome da coluna de partição — como esta tabela é criada pelo próprio
+# script 06 (via boto3), o caminho no S3 já segue o padrão Hive
+# "particao=<valor>/", então o nome pode ser o natural "particao".
+NOME_COLUNA_PARTICAO = "particao"
 
 EDICOES = ["2023-2024", "2024-2025", "2025-2026"]
 
@@ -50,9 +49,14 @@ def caminho_silver_staging_por_edicao(edicao: str) -> str:
     return f"s3://{BUCKET}/Silver/_por_edicao/{edicao}/"
 
 
+def caminho_base_silver_state_of_data() -> str:
+    """Prefixo raiz da tabela Silver final catalogada (sem a partição)."""
+    return f"s3://{BUCKET}/Silver/{TABELA_STATE_OF_DATA}/"
+
+
 def caminho_silver_state_of_data(particao: str) -> str:
     """Partição da tabela Silver final catalogada (schema harmonizado)."""
-    return f"s3://{BUCKET}/Silver/state_of_data/{particao}/"
+    return f"{caminho_base_silver_state_of_data()}{NOME_COLUNA_PARTICAO}={particao}/"
 
 
 def caminho_documentacao(nome_arquivo: str) -> str:
@@ -66,3 +70,70 @@ def caminho_gold_pergunta_negocio(nome_tabela: str) -> str:
 
 def tabela_qualificada(nome_tabela: str = TABELA_STATE_OF_DATA) -> str:
     return f"{DATABASE}.{nome_tabela}"
+
+
+def _storage_descriptor(colunas: list, localizacao: str) -> dict:
+    """Descriptor de armazenamento CSV compatível com o que o Spark escreve
+    por padrão (quoteChar='"', escapeChar='\\', separador ','). Usa
+    OpenCSVSerde, que respeita aspas/escapes — diferente do
+    LazySimpleSerDe, que trataria vírgula dentro de campo como separador."""
+    return {
+        "Columns": [{"Name": c, "Type": "string"} for c in colunas],
+        "Location": localizacao,
+        "InputFormat": "org.apache.hadoop.mapred.TextInputFormat",
+        "OutputFormat": "org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat",
+        "SerdeInfo": {
+            "SerializationLibrary": "org.apache.hadoop.hive.serde2.OpenCSVSerde",
+            "Parameters": {
+                "separatorChar": ",",
+                "quoteChar": '"',
+                "escapeChar": "\\",
+            },
+        },
+    }
+
+
+def cataloga_tabela_particionada(database: str, tabela: str, colunas: list, particoes: list, localizacao_base: str) -> None:
+    """Cria (ou atualiza, se já existir) uma tabela particionada no Glue
+    Data Catalog via boto3 — chamado depois de já ter GRAVADO os arquivos
+    de cada partição no S3 (ver script 06). Idempotente: pode rodar de
+    novo sem erro se a tabela/partição já existir.
+
+    `colunas`: nomes das colunas do schema harmonizado (todas STRING).
+    `particoes`: valores de partição (ex: EDICOES) — o caminho de cada
+    uma é montado como `{localizacao_base}{NOME_COLUNA_PARTICAO}={valor}/`.
+    """
+    glue = boto3.client("glue")
+
+    table_input = {
+        "Name": tabela,
+        "TableType": "EXTERNAL_TABLE",
+        "Parameters": {"classification": "csv", "skip.header.line.count": "1"},
+        "PartitionKeys": [{"Name": NOME_COLUNA_PARTICAO, "Type": "string"}],
+        "StorageDescriptor": _storage_descriptor(colunas, localizacao_base),
+    }
+
+    try:
+        glue.create_table(DatabaseName=database, TableInput=table_input)
+        print(f"Tabela criada no Glue Data Catalog: {database}.{tabela}")
+    except glue.exceptions.AlreadyExistsException:
+        glue.update_table(DatabaseName=database, TableInput=table_input)
+        print(f"Tabela já existia, schema atualizado: {database}.{tabela}")
+
+    for particao in particoes:
+        localizacao_particao = f"{localizacao_base}{NOME_COLUNA_PARTICAO}={particao}/"
+        partition_input = {
+            "Values": [particao],
+            "StorageDescriptor": _storage_descriptor(colunas, localizacao_particao),
+        }
+        try:
+            glue.create_partition(DatabaseName=database, TableName=tabela, PartitionInput=partition_input)
+            print(f"  Partição registrada: {particao} -> {localizacao_particao}")
+        except glue.exceptions.AlreadyExistsException:
+            glue.update_partition(
+                DatabaseName=database,
+                TableName=tabela,
+                PartitionValueList=[particao],
+                PartitionInput=partition_input,
+            )
+            print(f"  Partição já existia, atualizada: {particao} -> {localizacao_particao}")

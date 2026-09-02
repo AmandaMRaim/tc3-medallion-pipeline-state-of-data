@@ -101,7 +101,7 @@ def main() -> None:
     blocos = [calcula_estatisticas_edicao(spark, edicao, diretorio) for edicao, diretorio in DIRETORIOS_SILVER.items()]
     dicionario = pd.concat(blocos, ignore_index=True).sort_values(["edicao", "pct_nulo"], ascending=[True, False])
 
-    dicionario.to_csv(ARQUIVO_SAIDA, index=False)
+    dicionario.to_csv(ARQUIVO_SAIDA, index=False, encoding="utf-8")
 
     print(f"\nTotal de linhas no dicionário: {len(dicionario)}")
     print(dicionario["classificacao_nulo"].value_counts())

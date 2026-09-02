@@ -1,3 +1,4 @@
 pandas==2.3.2
 pyspark==4.0.2
 s3fs
+boto3

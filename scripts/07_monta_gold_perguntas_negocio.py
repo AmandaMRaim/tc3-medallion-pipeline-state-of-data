@@ -1,13 +1,13 @@
 """
-Etapa PySpark (Silver "state_of_data" -> Gold por pergunta de negócio) — State of Data Brazil.
+Etapa PySpark (Silver "state_of_data_silver" -> Gold por pergunta de negócio) — State of Data Brazil.
 
-Lê a tabela Silver catalogada db_state_of_data.state_of_data (schema
-harmonizado, gravada pelo script 06, um respondente por linha, as 3
-edições como partições) diretamente do Glue Data Catalog — dentro de um
-Glue Job a sessão Spark já enxerga o catálogo como Hive metastore, então
-`spark.table("db_state_of_data.state_of_data")` funciona sem nenhuma
-configuração extra. Gera uma tabela Gold pequena e pré-agregada para cada
-pergunta de negócio do desafio:
+Lê a tabela Silver catalogada db_state_of_data.state_of_data_silver
+(schema harmonizado, gravada E catalogada pelo script 06, um respondente
+por linha, as 3 edições como partições) diretamente do Glue Data Catalog
+— dentro de um Glue Job a sessão Spark já enxerga o catálogo como Hive
+metastore, então `spark.table("db_state_of_data.state_of_data_silver")`
+funciona sem nenhuma configuração extra. Gera uma tabela Gold pequena e
+pré-agregada para cada pergunta de negócio do desafio:
 
   1. gold_01_estrutura_mercado
      Como está estruturado o mercado brasileiro de Dados?
@@ -242,7 +242,7 @@ def main() -> None:
         print(f"\nGerando {nome_tabela} ...")
         tabela = funcao(df)
         destino = caminho_gold_pergunta_negocio(nome_tabela)
-        tabela.coalesce(1).write.mode("overwrite").option("header", True).csv(destino)
+        tabela.coalesce(1).write.mode("overwrite").option("header", True).option("encoding", "UTF-8").csv(destino)
         print(f"  {tabela.count()} linhas -> {destino}")
 
     spark.stop()
