@@ -136,6 +136,24 @@ def desmancha_grupo_multiselect(df: DataFrame, prefixo: str, dimensoes: list = (
     return resultado.select(*colunas_ordem).orderBy(*ordenacao)
 
 
+def desmancha_grupos_seguro(df: DataFrame, grupos: dict, dimensoes: list = ("edicao",)) -> list:
+    """Roda `desmancha_grupo_multiselect` para cada (categoria, prefixo) de
+    `grupos`, marcando a coluna "categoria" — mas PULA (com aviso) qualquer
+    grupo cujo prefixo não tenha nenhuma coluna, em vez de quebrar o
+    script inteiro. Isso acontece quando o grupo depende de uma
+    correspondência manual específica no dicionário (ex: "linguagem
+    preferida" do 2025-2026) que ainda não foi curada na revisão."""
+    resultado = []
+    for categoria, prefixo in grupos.items():
+        if not any(c.startswith(prefixo) for c in df.columns):
+            print(f"  aviso: nenhuma coluna com prefixo '{prefixo}' — categoria '{categoria}' pulada")
+            continue
+        sub = desmancha_grupo_multiselect(df, prefixo, dimensoes=dimensoes)
+        sub = sub.withColumn("categoria", F.lit(categoria))
+        resultado.append(sub)
+    return resultado
+
+
 def gold_01_estrutura_mercado(df: DataFrame) -> DataFrame:
     colunas = [
         "cargo_atual", "nivel", "situacao_de_trabalho", "modelo_de_trabalho_atual",
@@ -169,15 +187,15 @@ def gold_04_adocao_tecnologias(df: DataFrame) -> DataFrame:
         # Só existe em 2025-2026 (a pergunta "linguagem usada no dia a dia" virou
         # "linguagem preferida" nessa edição — conceito diferente, não é o mesmo
         # grupo de "linguagem_de_programacao_dia_a_dia" acima; ver dicionário de
-        # correspondência para o porquê da separação).
+        # correspondência para o porquê da separação). Depende de uma
+        # correspondência manual específica no dicionário (não é gerada
+        # automaticamente pelo script 05) — se essa curadoria ainda não foi
+        # feita no dicionário em uso, a coluna simplesmente não existe e a
+        # categoria é pulada (ver aviso abaixo), em vez de quebrar o script.
         "linguagem_preferida_2025_2026": "linguagem_preferida_",
     }
-    partes = []
-    for categoria, prefixo in grupos.items():
-        sub = desmancha_grupo_multiselect(df, prefixo, dimensoes=["edicao"])
-        sub = sub.filter(F.col("elegiveis") > 0)  # descarta edições onde o grupo nem existe
-        sub = sub.withColumn("categoria", F.lit(categoria))
-        partes.append(sub)
+    partes = desmancha_grupos_seguro(df, grupos, dimensoes=["edicao"])
+    partes = [p.filter(F.col("elegiveis") > 0) for p in partes]  # descarta edições onde o grupo nem existe
     return uniao(partes)
 
 
@@ -196,10 +214,7 @@ def gold_05_adocao_ia(df: DataFrame) -> DataFrame:
         "tipo_de_uso_de_ia_na_empresa": "tipo_de_uso_de_ai_generativa_e_llm_na_empresa_",
         "motivos_para_nao_usar_ia": "motivos_para_nao_usar_ai_generativa_e_llm_",
     }
-    for categoria, prefixo in grupos.items():
-        sub = desmancha_grupo_multiselect(df, prefixo, dimensoes=["edicao"])
-        sub = sub.withColumn("categoria", F.lit(categoria))
-        partes.append(sub)
+    partes.extend(desmancha_grupos_seguro(df, grupos, dimensoes=["edicao"]))
 
     # Mistura de esquemas de propósito (distribuicao_categorica x desmancha
     # multiselect) — colunas que só existem num dos dois ficam nulas no
@@ -220,11 +235,7 @@ def gold_07_oportunidades_desafios(df: DataFrame) -> DataFrame:
         "criterios_para_escolher_emprego": "criterios_para_escolha_de_emprego_",
         "motivos_para_nao_usar_ia": "motivos_para_nao_usar_ai_generativa_e_llm_",
     }
-    partes = []
-    for categoria, prefixo in grupos.items():
-        sub = desmancha_grupo_multiselect(df, prefixo, dimensoes=["edicao"])
-        sub = sub.withColumn("categoria", F.lit(categoria))
-        partes.append(sub)
+    partes = desmancha_grupos_seguro(df, grupos, dimensoes=["edicao"])
     return uniao(partes)
 
 
