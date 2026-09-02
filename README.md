@@ -84,7 +84,7 @@ python3 scripts/07_monta_gold_perguntas_negocio.py
 | 04 | `documenta_nulos` | Silver (doc) | Documenta, para cada coluna, se o nulo é "grupo não exibido" (multi-select), "quase universal" (não-resposta genuína) ou "condicional ao perfil" (pergunta não se aplica a todos) — **não preenche nenhum nulo** |
 | 05 | `monta_dicionario_correspondencia` | Silver (doc) | Casa colunas entre as 3 edições (nome exato, depois aproximado/fuzzy) e classifica a confiança de cada match — rascunho para revisão manual, não verdade automática |
 | 06 | `monta_silver_state_of_data` | Silver (staging) → Silver (tabela catalogada) | Harmoniza o schema das 3 edições (usando o dicionário), grava cada uma na sua partição de `db_state_of_data.state_of_data_silver` e **cria/atualiza a tabela e as 3 partições no Glue Data Catalog via boto3** |
-| 07 | `monta_gold_perguntas_negocio` | Silver (catalogada) → Gold | Lê `db_state_of_data.state_of_data_silver` via `spark.table(...)` (Glue Data Catalog) e gera 7 tabelas pré-agregadas, uma por pergunta de negócio do desafio |
+| 07 | `monta_gold_perguntas_negocio` | Silver (catalogada) → Gold (catalogada) | Lê `db_state_of_data.state_of_data_silver` via `spark.table(...)` (Glue Data Catalog), gera 7 tabelas pré-agregadas, uma por pergunta de negócio do desafio, e **cria/atualiza cada uma no Glue Data Catalog** (mesmo banco, sem partição — "edicao" já é coluna normal) |
 
 **Importante — revisão manual:** `dicionario_correspondencia_colunas.csv`
 é editado à mão (coluna `status_revisao_2023_2024`: `aprovado_manual` /

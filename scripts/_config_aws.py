@@ -18,9 +18,12 @@ Camadas:
     (padrão Hive "chave=valor", pra facilitar descoberta por
     Crawler/MSCK REPAIR além do registro explícito que o próprio script
     06 faz via boto3 — ver `cataloga_tabela_particionada`).
-  - Gold: tabelas de negócio (script 07), lidas a partir da tabela Silver
-    catalogada via Spark SQL/Glue Catalog, gravadas em
-    s3://{BUCKET}/Gold/perguntas_negocio/{nome_tabela}/
+  - Gold: 7 tabelas de negócio (script 07), lidas a partir da tabela
+    Silver catalogada via Spark SQL/Glue Catalog, gravadas em
+    s3://{BUCKET}/Gold/perguntas_negocio/{nome_tabela}/ e catalogadas
+    (sem partição — "edicao" já é coluna normal) no mesmo banco
+    db_state_of_data, uma tabela por pergunta de negócio — ver
+    `cataloga_tabela_simples`.
 """
 
 import hashlib
@@ -178,3 +181,27 @@ def cataloga_tabela_particionada(database: str, tabela: str, colunas: list, part
                 PartitionInput=partition_input,
             )
             print(f"  Partição já existia, atualizada: {particao} -> {localizacao_particao}")
+
+
+def cataloga_tabela_simples(database: str, tabela: str, colunas: list, localizacao: str) -> None:
+    """Cria (ou atualiza, se já existir) uma tabela SEM partição no Glue
+    Data Catalog via boto3 — usado nas tabelas Gold (script 07): cada uma
+    já tem "edicao" como coluna normal (a agregação cruza as 3 edições
+    dentro do mesmo arquivo), não faz sentido particionar por edição
+    de novo. Idempotente, mesma lógica de `cataloga_tabela_particionada`.
+    """
+    glue = boto3.client("glue")
+
+    table_input = {
+        "Name": tabela,
+        "TableType": "EXTERNAL_TABLE",
+        "Parameters": {"classification": "csv", "skip.header.line.count": "1"},
+        "StorageDescriptor": _storage_descriptor(colunas, localizacao),
+    }
+
+    try:
+        glue.create_table(DatabaseName=database, TableInput=table_input)
+        print(f"Tabela criada no Glue Data Catalog: {database}.{tabela}")
+    except glue.exceptions.AlreadyExistsException:
+        glue.update_table(DatabaseName=database, TableInput=table_input)
+        print(f"Tabela já existia, schema atualizado: {database}.{tabela}")

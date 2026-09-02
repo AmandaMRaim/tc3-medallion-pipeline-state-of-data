@@ -42,6 +42,13 @@ Cada tabela final é pequena (dezenas a poucas centenas de linhas — já é
 uma AGREGAÇÃO), então é gravada com `coalesce(1)` para sair como um único
 arquivo `part-*.csv` dentro do diretório, mais fácil de abrir/conferir.
 
+Catalogação: depois de gravar cada uma das 7 tabelas no S3, este script
+CRIA (ou atualiza) a tabela correspondente no Glue Data Catalog via
+boto3 (mesmo banco `db_state_of_data` da tabela Silver) — SEM partição,
+já que "edicao" aqui é só uma coluna normal (a agregação já cruza as 3
+edições dentro do mesmo arquivo). Ver `_config_aws.cataloga_tabela_simples`.
+Idempotente: pode rodar de novo sem erro.
+
 Uso (dentro de um Glue Job — fora do Glue, rodar isso exige uma
 SparkSession local configurada para enxergar o Glue Data Catalog como
 Hive metastore, o que não foi testado neste ambiente):
@@ -53,7 +60,13 @@ from functools import reduce
 from pyspark.sql import DataFrame
 from pyspark.sql import functions as F
 
-from _config_aws import NOME_COLUNA_PARTICAO, caminho_gold_pergunta_negocio, tabela_qualificada
+from _config_aws import (
+    DATABASE,
+    NOME_COLUNA_PARTICAO,
+    caminho_gold_pergunta_negocio,
+    cataloga_tabela_simples,
+    tabela_qualificada,
+)
 from _lib_padroniza_colunas import col_seguro, cria_spark_session
 
 TABELA_ORIGEM = tabela_qualificada()
@@ -244,6 +257,14 @@ def main() -> None:
         destino = caminho_gold_pergunta_negocio(nome_tabela)
         tabela.coalesce(1).write.mode("overwrite").option("header", True).option("encoding", "UTF-8").csv(destino)
         print(f"  {tabela.count()} linhas -> {destino}")
+
+        print(f"  Catalogando {DATABASE}.{nome_tabela} no Glue Data Catalog...")
+        cataloga_tabela_simples(
+            database=DATABASE,
+            tabela=nome_tabela,
+            colunas=tabela.columns,
+            localizacao=destino,
+        )
 
     spark.stop()
 
