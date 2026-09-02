@@ -191,7 +191,6 @@ def main() -> None:
             linhas.append(linha)
 
     dicionario = pd.DataFrame(linhas)
-    ARQUIVO_SAIDA.parent.mkdir(parents=True, exist_ok=True)
     dicionario.to_csv(ARQUIVO_SAIDA, index=False, encoding="utf-8")
 
     print(f"\nTotal de linhas no dicionário: {len(dicionario)}")
