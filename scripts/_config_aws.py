@@ -23,9 +23,18 @@ Camadas:
     s3://{BUCKET}/Gold/perguntas_negocio/{nome_tabela}/
 """
 
+import hashlib
+
 import boto3
 
 BUCKET = "tc-fase3-grupo80-state-of-data-brazil"
+
+# A API do Glue rejeita nome de coluna com mais de 255 caracteres
+# (ValidationException). Algumas colunas do schema harmonizado (ex:
+# perguntas do 2023-2024 sem correspondência confiável nas outras
+# edições, que viram o nome canônico = a frase inteira da pergunta)
+# passam disso.
+LIMITE_NOME_COLUNA_GLUE = 255
 
 DATABASE = "db_state_of_data"
 TABELA_STATE_OF_DATA = "state_of_data_silver"
@@ -72,13 +81,45 @@ def tabela_qualificada(nome_tabela: str = TABELA_STATE_OF_DATA) -> str:
     return f"{DATABASE}.{nome_tabela}"
 
 
+def _trunca_nome_coluna_glue(nome: str) -> str:
+    """Encurta um nome de coluna para caber no limite de 255 caracteres do
+    Glue, preservando um sufixo de hash pra continuar único mesmo se dois
+    nomes longos diferentes só se distinguirem depois do ponto de corte."""
+    if len(nome) <= LIMITE_NOME_COLUNA_GLUE:
+        return nome
+    sufixo = "_" + hashlib.sha1(nome.encode("utf-8")).hexdigest()[:8]
+    return nome[: LIMITE_NOME_COLUNA_GLUE - len(sufixo)] + sufixo
+
+
+def _colunas_para_catalogo(colunas: list) -> list:
+    """Aplica `_trunca_nome_coluna_glue` em todas as colunas e garante que
+    não colidiram entre si depois do truncamento (o sufixo de hash torna
+    isso praticamente impossível, mas falha alto e claro se acontecer, em
+    vez de silenciosamente perder uma coluna)."""
+    truncadas = [_trunca_nome_coluna_glue(c) for c in colunas]
+    vistos: dict = {}
+    for original, truncado in zip(colunas, truncadas):
+        if truncado in vistos and vistos[truncado] != original:
+            raise ValueError(
+                f"Colisão ao truncar nomes de coluna para o Glue: "
+                f"'{vistos[truncado]}' e '{original}' viraram '{truncado}'"
+            )
+        vistos[truncado] = original
+    return truncadas
+
+
 def _storage_descriptor(colunas: list, localizacao: str) -> dict:
     """Descriptor de armazenamento CSV compatível com o que o Spark escreve
     por padrão (quoteChar='"', escapeChar='\\', separador ','). Usa
     OpenCSVSerde, que respeita aspas/escapes — diferente do
-    LazySimpleSerDe, que trataria vírgula dentro de campo como separador."""
+    LazySimpleSerDe, que trataria vírgula dentro de campo como separador.
+
+    Os nomes de coluna são truncados para o limite do Glue (255
+    caracteres) — casamento com o CSV real continua correto porque o
+    OpenCSVSerde lê por POSIÇÃO da coluna, não pelo nome."""
+    colunas_catalogo = _colunas_para_catalogo(colunas)
     return {
-        "Columns": [{"Name": c, "Type": "string"} for c in colunas],
+        "Columns": [{"Name": c, "Type": "string"} for c in colunas_catalogo],
         "Location": localizacao,
         "InputFormat": "org.apache.hadoop.mapred.TextInputFormat",
         "OutputFormat": "org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat",
