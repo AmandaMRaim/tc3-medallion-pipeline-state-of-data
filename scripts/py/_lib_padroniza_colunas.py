@@ -1,22 +1,7 @@
 """
 Lógica compartilhada (PySpark) de padronização de header (Bronze -> Silver)
-para as edições da pesquisa State of Data Brazil que usam o padrão de
-coluna "<código_numérico>_<descrição>" (2024-2025 e 2025-2026).
-
-Cada edição tem seu próprio script fino (02_..., 03_..., ...) que só
-declara ARQUIVO_ORIGINAL, DIRETORIO_SAIDA, GRUPOS_ALIAS e CORRECOES_MANUAIS
-e chama `executa(...)` daqui. Ver docstring de qualquer um desses scripts
-para a explicação completa da lógica de detecção de grupos multi-select
-e do coalesce de aliases.
-
-A detecção de grupos e a montagem do nome final das colunas trabalham só
-com METADADOS (nomes de coluna, um Python list — igual em pandas ou
-Spark), então essa parte não muda com o motor de execução. As partes que
-precisam tocar os DADOS de fato usam a API do Spark: `identifica_grupos_base`
-checa em uma única agregação (collect_set em lote) se cada coluna candidata
-a "filha" de multi-select só tem valores "0"/"1", e `constroi_dataframe_final`
-monta o DataFrame final com `select`/`coalesce`. `coluna_e_binaria` fica
-disponível como utilitário avulso (checagem pontual de UMA coluna).
+para as edições da pesquisa State of Data Brazil. Cada script de edição
+(01/02/03) só declara suas constantes e chama `executa(...)` daqui.
 """
 
 from dataclasses import dataclass, field
@@ -28,7 +13,6 @@ from pyspark.sql import DataFrame, SparkSession
 from pyspark.sql import functions as F
 from pyspark.sql.types import StringType
 
-# Separa o prefixo de código da pergunta do texto legível.
 # "2.l.1_Remuneração/Salário" -> prefixo="2.l.1", descricao="Remuneração/Salário"
 PADRAO_PREFIXO = re.compile(r"^(\d+(?:\.[A-Za-z0-9]+)*)[_ ]+(.*)$")
 
@@ -36,20 +20,8 @@ VALORES_BINARIOS_VALIDOS = {"0", "1"}
 
 
 def repara_mojibake(texto):
-    """Corrige texto UTF-8 que foi lido/salvo em algum ponto como Latin-1
-    (sintoma clássico: "não" virando "nÃ£o", "experiência" virando
-    "experiÃªncia"). Isso acontece quando os bytes UTF-8 de um caractere
-    acentuado (ex: 'ã' = 0xC3 0xA3) são interpretados um a um como dois
-    caracteres Latin-1 separados ('Ã' e '£') em vez de decodificados
-    juntos como um único caractere UTF-8.
-
-    A correção reverte exatamente essa troca: reinterpreta o texto como
-    bytes Latin-1 e decodifica de volta como UTF-8. Texto que já está
-    correto simplesmente falha nesse round-trip (um "ã" verdadeiro vira
-    um único byte 0xE3 ao codificar em Latin-1, que não é uma sequência
-    UTF-8 válida sozinho) e fica inalterado — por isso é seguro aplicar
-    em qualquer string, com ou sem mojibake.
-    """
+    """Reverte UTF-8 lido como Latin-1 (ex: "não" -> "nÃ£o"). Texto já
+    correto falha no round-trip e fica inalterado — seguro aplicar sempre."""
     if texto is None:
         return None
     try:
@@ -62,15 +34,7 @@ _repara_mojibake_udf = F.udf(repara_mojibake, StringType())
 
 
 def cria_spark_session(nome_app: str) -> SparkSession:
-    """Cria a SparkSession para rodar local (fora do Glue).
-
-    Dentro do AWS Glue Job, não chame isso — use a sessão já fornecida
-    pelo GlueContext:
-        from awsglue.context import GlueContext
-        from pyspark.context import SparkContext
-        glueContext = GlueContext(SparkContext.getOrCreate())
-        spark = glueContext.spark_session
-    """
+    """Só para rodar local. Dentro de um Glue Job, use a sessão do GlueContext."""
     return (
         SparkSession.builder.appName(nome_app)
         .config("spark.sql.session.timeZone", "UTC")
@@ -79,15 +43,9 @@ def cria_spark_session(nome_app: str) -> SparkSession:
 
 
 def le_csv_bruto(spark: SparkSession, caminho: Path) -> DataFrame:
-    """Lê um CSV da pesquisa tratando tudo como string (igual ao dtype=str do
-    pandas), com suporte a campos multiline e aspas escapadas.
-
-    Também repara mojibake (ver `repara_mojibake`) tanto no NOME das
-    colunas quanto nos VALORES — o `option("encoding", "UTF-8")` abaixo
-    não é suficiente sozinho quando o arquivo de origem já tem os bytes
-    fisicamente errados (ex: foi salvo/reexportado em algum passo
-    anterior como Latin-1/Windows-1252 a partir de um UTF-8 original).
-    """
+    """Lê CSV como string (igual dtype=str do pandas), com multiline/aspas
+    escapadas. Repara mojibake em nomes de coluna e valores — o
+    option("encoding") sozinho não corrige arquivo já salvo com bytes errados."""
     df = (
         spark.read.option("header", True)
         .option("multiLine", True)
@@ -104,15 +62,14 @@ def le_csv_bruto(spark: SparkSession, caminho: Path) -> DataFrame:
 
 @dataclass
 class GrupoMultiselect:
-    raizes: list  # prefixos-raiz que compõem o grupo (>1 só se for alias)
+    raizes: list
     descricao_pai: str
     colunas_pai: list
-    # descricao_opcao -> lista de colunas originais (uma por raiz) que representam essa opção
     opcoes: dict = field(default_factory=dict)
 
 
 def parseia_coluna(nome_original: str) -> tuple:
-    """Retorna (prefixo, descricao) de uma coluna. Prefixo é None se não bater com o padrão."""
+    """Retorna (prefixo, descricao); prefixo é None se não bater com o padrão."""
     nome = nome_original.strip()
     match = PADRAO_PREFIXO.match(nome)
     if not match:
@@ -121,43 +78,24 @@ def parseia_coluna(nome_original: str) -> tuple:
 
 
 def col_seguro(nome: str):
-    """Referencia uma coluna pelo nome LITERAL, escapado com backtick.
-
-    O F.col()/df[...] comum interpreta "." como separador de campo
-    aninhado (df["a.b"] tentaria acessar o campo "b" dentro de uma
-    struct "a"). Isso quebra em cima dos nomes de coluna brutos desta
-    pesquisa, que têm ponto de verdade no meio do texto — ex. a tupla do
-    2023-2024 termina a frase com "." (ex: "...da companhia.") e algumas
-    opções já normalizadas têm ponto no meio (ex: "h2o.ai"). Envolver em
-    backtick faz o Spark tratar o nome inteiro como um identificador
-    literal, ponto incluso.
-    """
+    """Referencia a coluna pelo nome literal (backtick) — F.col() comum trata
+    "." como separador de campo aninhado, o que quebra nomes com ponto de
+    verdade no texto (ex: "h2o.ai")."""
     escapado = nome.replace("`", "``")
     return F.col(f"`{escapado}`")
 
 
 def coluna_e_binaria(df: DataFrame, coluna: str) -> bool:
-    """Checa se os valores não nulos de uma coluna são só "0"/"1".
-
-    Usa collect_set (agregação distribuída, uma única ação) limitado a
-    200 valores distintos — suficiente pra decidir "é binária?" sem
-    trazer pro driver o conteúdo de colunas de texto livre/alta
-    cardinalidade por engano.
-    """
+    """Checa se os valores não nulos são só "0"/"1" (collect_set limitado a
+    200, para não trazer coluna de alta cardinalidade pro driver)."""
     linha = df.select(F.slice(F.collect_set(col_seguro(coluna)), 1, 200).alias("valores")).first()
     valores = set(linha["valores"]) if linha and linha["valores"] else set()
     return bool(valores) and valores.issubset(VALORES_BINARIOS_VALIDOS)
 
 
 def normaliza_nome_coluna(nome: str) -> str:
-    """Padroniza a sintaxe final do nome de coluna: minúsculo, sem acento,
-    "/" e espaços viram "_", remove pontuação (, ? ( ) .), sem underscores
-    duplicados nas pontas.
-
-    Ponto final também é removido (não só ,?()): nome de coluna com "."
-    é um problema conhecido no Hive/Athena (o "." separa banco.tabela.coluna
-    lá também), então é melhor nunca deixar sobrar no nome definitivo.
-    """
+    """minúsculo, sem acento, "/" e espaço viram "_", remove pontuação
+    (inclui "." — nome de coluna com ponto é problema conhecido no Hive/Athena)."""
     nome = nome.replace("/", "_")
     nome = unicodedata.normalize("NFKD", nome)
     nome = "".join(ch for ch in nome if not unicodedata.combining(ch))
@@ -169,29 +107,18 @@ def normaliza_nome_coluna(nome: str) -> str:
 
 
 def identifica_grupos_base(df: DataFrame, parsed: dict):
-    """Identifica, por prefixo-raiz, os grupos pai/filhas de multi-select.
-
-    Uma coluna X.y é "pai" de X.y.N quando X.y existe como coluna E as
-    colunas X.y.N têm valores estritamente binários (0/1).
-
-    A checagem de binariedade é feita para TODAS as colunas candidatas de
-    uma vez, numa única agregação Spark (uma ação só) — em vez de uma
-    ação por coluna, o que em produção (Glue) viraria centenas de jobs
-    pequenos desnecessários para uma pesquisa com ~400 colunas.
-
-    Retorna dict: raiz -> GrupoMultiselect (uma única raiz cada, antes do coalesce de alias).
-    """
+    """Uma coluna X.y é "pai" de X.y.N quando X.y existe como coluna E as
+    X.y.N são binárias (0/1). Checagem de binariedade em UMA agregação só
+    (evita uma ação por coluna candidata)."""
     prefixo_para_col = {p: c for c, (p, _) in parsed.items() if p}
 
-    # 1) Identifica candidatos a "filha" só pelo metadado (nome da coluna),
-    #    sem tocar nos dados ainda.
     candidatos = {}
     for col, (prefixo, desc) in parsed.items():
         if not prefixo:
             continue
         partes = prefixo.split(".")
         if len(partes) < 3 or not partes[-1].isdigit():
-            continue  # só nos interessa prefixo tipo "2.l.1" (termina em número)
+            continue
         root = ".".join(partes[:-1])
         pai_col = prefixo_para_col.get(root)
         if pai_col is None:
@@ -201,23 +128,19 @@ def identifica_grupos_base(df: DataFrame, parsed: dict):
     if not candidatos:
         return {}
 
-    # 2) Uma única agregação para checar quais candidatos são binários.
+    # Alias posicional: nome bruto pode ter ponto/parênteses/vírgula, ainda
+    # sem normalização nesse ponto.
     colunas_candidatas = list(candidatos.keys())
-    # Alias posicional (col_0, col_1, ...) em vez do nome original: nomes de
-    # coluna com ponto/parênteses/vírgula não podem virar alias de agregação
-    # sem passar antes por normalização, e aqui ainda estamos em cima do
-    # nome bruto (a normalização só acontece depois, em constroi_dataframe_final).
     apelidos = {f"bin_check_{i}": c for i, c in enumerate(colunas_candidatas)}
     agregacoes = [F.slice(F.collect_set(col_seguro(c)), 1, 200).alias(apelido) for apelido, c in apelidos.items()]
     linha = df.agg(*agregacoes).first()
 
-    # 3) Monta os grupos só com os candidatos confirmados binários.
     grupos: dict = {}
     for apelido, col in apelidos.items():
         root, pai_col, desc = candidatos[col]
         valores = set(linha[apelido]) if linha[apelido] else set()
         if not (valores and valores.issubset(VALORES_BINARIOS_VALIDOS)):
-            continue  # filha não é binária -> não é dummy de multi-select (ex: 1.a.1_faixa_idade)
+            continue
 
         _, desc_pai = parsed[pai_col]
         grupo = grupos.setdefault(
@@ -229,15 +152,15 @@ def identifica_grupos_base(df: DataFrame, parsed: dict):
 
 
 def aplica_coalesce_alias(grupos: dict, grupos_alias: list) -> list:
-    """Funde grupos declarados em `grupos_alias` (mesma pergunta, públicos mutuamente
-    exclusivos do formulário) em um único GrupoMultiselect."""
+    """Funde grupos de `grupos_alias` (mesma pergunta, públicos mutuamente
+    exclusivos) num só GrupoMultiselect, opção a opção por texto exato."""
     raizes_em_alias = {r for combo in grupos_alias for r in combo}
     resultado = [g for raiz, g in grupos.items() if raiz not in raizes_em_alias]
 
     for combo in grupos_alias:
         membros = [grupos[r] for r in combo if r in grupos]
         if len(membros) < 2:
-            resultado.extend(membros)  # alias configurado mas não encontrado nos dados; não quebra
+            resultado.extend(membros)
             continue
 
         fundido = GrupoMultiselect(
@@ -245,7 +168,6 @@ def aplica_coalesce_alias(grupos: dict, grupos_alias: list) -> list:
             descricao_pai=membros[0].descricao_pai,
             colunas_pai=[c for m in membros for c in m.colunas_pai],
         )
-        # Funde opção a opção pelo texto EXATO da descrição da opção.
         chaves_opcao = {desc for m in membros for desc in m.opcoes}
         for desc in chaves_opcao:
             cols = [c for m in membros for c in m.opcoes.get(desc, [])]
@@ -261,16 +183,14 @@ def constroi_dataframe_final(
     parsed: dict,
     correcoes_manuais: dict,
 ) -> DataFrame:
-    """Monta o DataFrame final com um `select()` — coalesce nos grupos
-    multi-select (quando a opção tiver mais de uma coluna de origem, ex.
-    grupo alias) e alias simples nas colunas fora de grupo."""
+    """Coalesce nos grupos multi-select (quando a opção tem mais de uma
+    coluna de origem, ex. alias); alias simples nas colunas fora de grupo."""
     colunas_pai_para_remover = {c for g in grupos for c in g.colunas_pai}
     colunas_em_grupo = {c for g in grupos for cols in g.opcoes.values() for c in cols}
 
     selecoes = []
     nomes_gerados = []
 
-    # 1) Colunas de grupos multi-select (com coalesce quando houver mais de uma coluna por opção)
     for g in grupos:
         for desc_opcao, cols_originais in g.opcoes.items():
             nome_final = normaliza_nome_coluna(f"{g.descricao_pai}_{desc_opcao}")
@@ -278,7 +198,6 @@ def constroi_dataframe_final(
             selecoes.append(expressao)
             nomes_gerados.append(nome_final)
 
-    # 2) Colunas fora de qualquer grupo (perguntas de escolha única)
     for col in df.columns:
         if col in colunas_pai_para_remover or col in colunas_em_grupo:
             continue
@@ -290,7 +209,6 @@ def constroi_dataframe_final(
         selecoes.append(col_seguro(col).alias(nome_final))
         nomes_gerados.append(nome_final)
 
-    # Checagem de colisão residual (não deveria ocorrer; se ocorrer, avisa em vez de sobrescrever)
     vistos = set()
     colisoes = [n for n in nomes_gerados if (n in vistos or vistos.add(n))]
     if colisoes:
@@ -306,8 +224,7 @@ def executa(
     grupos_alias: list,
     correcoes_manuais: dict,
 ) -> None:
-    """`arquivo_original`/`diretorio_saida` aceitam tanto `Path` local quanto
-    string de URI S3 (ex: "s3://bucket/Silver/_por_edicao/2023-2024/")."""
+    """`arquivo_original`/`diretorio_saida` aceitam Path local ou URI S3."""
     print(f"Lendo: {arquivo_original}")
     df = le_csv_bruto(spark, arquivo_original)
 

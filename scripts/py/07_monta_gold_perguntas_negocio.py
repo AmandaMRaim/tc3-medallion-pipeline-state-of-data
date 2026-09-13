@@ -1,58 +1,14 @@
 """
-Etapa PySpark (Silver "state_of_data_silver" -> Gold por pergunta de negócio) — State of Data Brazil.
+Etapa PySpark (Silver "state_of_data_silver" -> Gold por pergunta de
+negócio) — State of Data Brazil.
 
-Lê a tabela Silver catalogada db_state_of_data.state_of_data_silver
-(schema harmonizado, gravada E catalogada pelo script 06, um respondente
-por linha, as 3 edições como partições) diretamente do Glue Data Catalog
-— dentro de um Glue Job a sessão Spark já enxerga o catálogo como Hive
-metastore, então `spark.table("db_state_of_data.state_of_data_silver")`
-funciona sem nenhuma configuração extra. Gera uma tabela Gold pequena e
-pré-agregada para cada pergunta de negócio do desafio:
-
-  1. gold_01_estrutura_mercado
-     Como está estruturado o mercado brasileiro de Dados?
-
-  2. gold_02_perfis_valorizados
-     Quais perfis profissionais são mais valorizados pelo mercado?
-
-  3. gold_03_diversidade_genero
-     Qual é o cenário de diversidade de gênero nas carreiras de dados?
-
-  4. gold_04_adocao_tecnologias
-     Quais tecnologias apresentam maior adoção entre os profissionais?
-
-  5. gold_05_adocao_ia
-     Qual é o índice de adoção de IA e seu impacto?
-
-  6. gold_06_diferencas_regiao_senioridade_modelo
-     Existem diferenças relevantes entre regiões, senioridades ou
-     modelos de trabalho?
-
-  7. gold_07_oportunidades_desafios
-     Quais oportunidades e desafios podem ser identificados para
-     empresas que desejam investir em Dados e IA?
-
-Todas as tabelas de multi-select calculam "% de adoção" sobre a
-população ELEGÍVEL (quem respondeu aquele grupo de pergunta), não sobre
-a base toda — ver Silver/_documentacao/dicionario_nulos.csv sobre por que
-isso importa (nulo em grupo multi-select = pergunta não exibida, não
-"não selecionou").
-
-Cada tabela final é pequena (dezenas a poucas centenas de linhas — já é
-uma AGREGAÇÃO), então é gravada com `coalesce(1)` para sair como um único
-arquivo `part-*.csv` dentro do diretório, mais fácil de abrir/conferir.
-
-Catalogação: depois de gravar cada uma das 7 tabelas no S3, este script
-CRIA (ou atualiza) a tabela correspondente no Glue Data Catalog via
-boto3 (mesmo banco `db_state_of_data` da tabela Silver) — SEM partição,
-já que "edicao" aqui é só uma coluna normal (a agregação já cruza as 3
-edições dentro do mesmo arquivo). Ver `_config_aws.cataloga_tabela_simples`.
-Idempotente: pode rodar de novo sem erro.
-
-Uso (dentro de um Glue Job — fora do Glue, rodar isso exige uma
-SparkSession local configurada para enxergar o Glue Data Catalog como
-Hive metastore, o que não foi testado neste ambiente):
-    python scripts/07_monta_gold_perguntas_negocio.py
+Lê a tabela Silver catalogada via `spark.table(...)` e gera 7 tabelas
+Gold pré-agregadas, uma por pergunta de negócio do desafio (estrutura do
+mercado, perfis valorizados, diversidade, adoção de tecnologia/IA,
+diferenças regionais, oportunidades e desafios). % de adoção nos grupos
+multi-select é calculado sobre a população ELEGÍVEL (quem respondeu
+aquele grupo), não a base toda. Cada tabela é gravada no S3 e catalogada
+(sem partição — "edicao" é coluna normal) no mesmo banco da Silver.
 """
 
 from functools import reduce
@@ -77,12 +33,8 @@ def uniao(dfs: list) -> DataFrame:
 
 
 def distribuicao_categorica(df: DataFrame, colunas: list, dimensoes: list = ("edicao",)) -> DataFrame:
-    """Contagem e % (dentro de cada combinação de `dimensoes`, calculado
-    separadamente por coluna categórica) para uma ou mais colunas.
-
-    Retorna formato longo: dimensoes..., variavel, valor, contagem, total_respondentes, pct_na_dimensao.
-    Linhas nulas na coluna categórica são ignoradas (não fazem parte da distribuição).
-    """
+    """Contagem e % por `dimensoes`, calculado separadamente por coluna.
+    Retorna: dimensoes..., variavel, valor, contagem, total_respondentes, pct_na_dimensao."""
     dimensoes = list(dimensoes)
     partes = []
     for coluna in colunas:
@@ -102,14 +54,10 @@ def distribuicao_categorica(df: DataFrame, colunas: list, dimensoes: list = ("ed
 
 
 def desmancha_grupo_multiselect(df: DataFrame, prefixo: str, dimensoes: list = ("edicao",)) -> DataFrame:
-    """"Desmancha" um grupo de colunas binárias (0/1) de multi-select em formato longo.
-
-    % de adoção calculado sobre a população ELEGÍVEL (quem tem pelo menos
-    uma coluna não nula no grupo, dentro de cada combinação de `dimensoes`),
-    não sobre a base toda.
-
-    Retorna: dimensoes..., opcao, elegiveis, selecionaram, pct_adocao.
-    """
+    """Desmancha um grupo de colunas binárias (0/1) em formato longo. %
+    de adoção sobre a população ELEGÍVEL (tem ao menos 1 coluna não nula
+    no grupo), não a base toda. Retorna: dimensoes..., opcao, elegiveis,
+    selecionaram, pct_adocao."""
     dimensoes = list(dimensoes)
     colunas_grupo = [c for c in df.columns if c.startswith(prefixo)]
     if not colunas_grupo:
@@ -137,12 +85,9 @@ def desmancha_grupo_multiselect(df: DataFrame, prefixo: str, dimensoes: list = (
 
 
 def desmancha_grupos_seguro(df: DataFrame, grupos: dict, dimensoes: list = ("edicao",)) -> list:
-    """Roda `desmancha_grupo_multiselect` para cada (categoria, prefixo) de
-    `grupos`, marcando a coluna "categoria" — mas PULA (com aviso) qualquer
-    grupo cujo prefixo não tenha nenhuma coluna, em vez de quebrar o
-    script inteiro. Isso acontece quando o grupo depende de uma
-    correspondência manual específica no dicionário (ex: "linguagem
-    preferida" do 2025-2026) que ainda não foi curada na revisão."""
+    """Igual `desmancha_grupo_multiselect` pra cada grupo, mas PULA (com
+    aviso) prefixo sem nenhuma coluna — acontece quando o grupo depende de
+    correspondência manual ainda não curada no dicionário."""
     resultado = []
     for categoria, prefixo in grupos.items():
         if not any(c.startswith(prefixo) for c in df.columns):
@@ -184,18 +129,12 @@ def gold_04_adocao_tecnologias(df: DataFrame) -> DataFrame:
         "ferramenta_de_bi": "ferramenta_de_bi_dia_a_dia_",
         "ferramenta_etl_data_engineer": "ferramentas_etl_de_",
         "ferramenta_etl_data_analyst": "ferramentas_etl_da_",
-        # Só existe em 2025-2026 (a pergunta "linguagem usada no dia a dia" virou
-        # "linguagem preferida" nessa edição — conceito diferente, não é o mesmo
-        # grupo de "linguagem_de_programacao_dia_a_dia" acima; ver dicionário de
-        # correspondência para o porquê da separação). Depende de uma
-        # correspondência manual específica no dicionário (não é gerada
-        # automaticamente pelo script 05) — se essa curadoria ainda não foi
-        # feita no dicionário em uso, a coluna simplesmente não existe e a
-        # categoria é pulada (ver aviso abaixo), em vez de quebrar o script.
+        # Só existe em 2025-2026 ("linguagem usada no dia a dia" virou
+        # "linguagem preferida" — conceito diferente do grupo acima).
         "linguagem_preferida_2025_2026": "linguagem_preferida_",
     }
     partes = desmancha_grupos_seguro(df, grupos, dimensoes=["edicao"])
-    partes = [p.filter(F.col("elegiveis") > 0) for p in partes]  # descarta edições onde o grupo nem existe
+    partes = [p.filter(F.col("elegiveis") > 0) for p in partes]
     return uniao(partes)
 
 
@@ -215,10 +154,6 @@ def gold_05_adocao_ia(df: DataFrame) -> DataFrame:
         "motivos_para_nao_usar_ia": "motivos_para_nao_usar_ai_generativa_e_llm_",
     }
     partes.extend(desmancha_grupos_seguro(df, grupos, dimensoes=["edicao"]))
-
-    # Mistura de esquemas de propósito (distribuicao_categorica x desmancha
-    # multiselect) — colunas que só existem num dos dois ficam nulas no
-    # outro (allowMissingColumns=True em uniao()), igual fazia o pd.concat.
     return uniao(partes)
 
 
@@ -256,10 +191,7 @@ def main() -> None:
     print(f"Lendo tabela do Glue Data Catalog: {TABELA_ORIGEM}")
     df = spark.table(TABELA_ORIGEM)
     if NOME_COLUNA_PARTICAO in df.columns and NOME_COLUNA_PARTICAO != "edicao":
-        # As funções gold_XX abaixo usam "edicao" como nome da dimensão de
-        # edição — renomeia a coluna de partição (vem do catálogo com o
-        # nome configurado em _config_aws.NOME_COLUNA_PARTICAO) para não
-        # precisar mexer em cada função.
+        # gold_XX abaixo usam "edicao" como nome da dimensão.
         df = df.withColumnRenamed(NOME_COLUNA_PARTICAO, "edicao")
 
     for nome_tabela, funcao in TABELAS.items():

@@ -1,41 +1,11 @@
 """
 Etapa PySpark (documentação, não altera Silver) — Dicionário de nulos.
 
-Decisão do projeto: os valores nulos NÃO são preenchidos no Silver. Na
-pesquisa State of Data Brazil, a maior parte dos nulos é estrutural
-(lógica condicional do formulário — "skip logic"), não dado faltante:
-
-  - Colunas binárias de multi-select (0/1): NaN significa que a
-    pergunta-pai nem foi exibida para o respondente (não "não
-    selecionou"). Ex: perguntas só respondidas por quem é gestor.
-  - Colunas categóricas de escolha única: o % de nulo indica o quão
-    condicional a pergunta é ao perfil do respondente. Perguntas
-    universais (idade, gênero, nível de ensino) têm ~0% de nulo;
-    perguntas condicionais (cargo como gestor, tempo buscando
-    oportunidade) têm nulo alto porque só se aplicam a um subconjunto.
-
-Este script não trata/preenche nulo nenhum — gera um DICIONÁRIO
-documentando, para cada coluna de cada edição:
-  - tipo: "binaria_multiselect" ou "categorica_escolha_unica"
-  - pct_nulo: percentual de linhas nulas
-  - classificacao: heurística de leitura do nulo, para orientar quem for
-    escrever consultas na camada Gold (ex: calcular "% de gestores que
-    fazem X" sobre a subpopulação elegível, não sobre a base toda)
-
-O cálculo de nulo/tipo é feito em UMA agregação Spark por edição (uma
-única leitura da base, não uma consulta por coluna) — como o resultado é
-pequeno (uma linha por coluna, não por respondente), o dicionário final é
-coletado para o driver e gravado como um único CSV "achatado" (mais fácil
-de abrir e revisar numa planilha do que um diretório Spark particionado).
-
-Classificação (heurística, baseada só no % de nulo — não substitui
-revisão manual do questionário original quando houver dúvida):
-  - "quase_universal"      (pct_nulo < 10%):  nulo = não-resposta genuína
-  - "condicional_ao_perfil" (pct_nulo >= 10%): nulo = pergunta não aplicável
-                                                 a esse respondente
-
-Uso:
-    python scripts/04_documenta_nulos.py
+Não preenche nenhum nulo — só documenta, por coluna/edição, se o nulo é
+estrutural (grupo multi-select não exibido, "skip logic" do formulário)
+ou não-resposta genuína (pct_nulo < 10%, heurística). Importa pra quem
+for escrever consultas na Gold: ex. "% de gestores que fazem X" precisa
+ser calculado sobre a subpopulação elegível, não a base toda.
 """
 
 import pandas as pd
@@ -45,11 +15,9 @@ from _config_aws import EDICOES, caminho_documentacao, caminho_silver_staging_po
 from _lib_padroniza_colunas import col_seguro, cria_spark_session
 
 DIRETORIOS_SILVER = {edicao: caminho_silver_staging_por_edicao(edicao) for edicao in EDICOES}
-# Escrita via pandas (arquivo pequeno, editado à mão) — para gravar direto
-# no S3 é preciso ter o pacote `s3fs` instalado (ver requirements.txt).
 ARQUIVO_SAIDA = caminho_documentacao("dicionario_nulos.csv")
 
-LIMIAR_QUASE_UNIVERSAL = 10.0  # % de nulo abaixo do qual consideramos "não-resposta genuína"
+LIMIAR_QUASE_UNIVERSAL = 10.0
 VALORES_BINARIOS_VALIDOS = {"0", "1"}
 
 
@@ -65,10 +33,8 @@ def calcula_estatisticas_edicao(spark, edicao: str, diretorio: str) -> pd.DataFr
     colunas = df.columns
     total_linhas = df.count()
 
-    # Uma única passada: conta nulos por coluna E coleta até 200 valores
-    # distintos por coluna (para decidir se é binária), tudo numa linha só.
-    # Alias posicional (evita qualquer problema com caractere especial
-    # remanescente no nome da coluna virando alias de agregação).
+    # Uma agregação só: conta nulos + coleta valores distintos por coluna.
+    # Alias posicional evita problema com caractere especial no nome.
     apelidos = {f"col_{i}": c for i, c in enumerate(colunas)}
     agregacoes = []
     for apelido, c in apelidos.items():

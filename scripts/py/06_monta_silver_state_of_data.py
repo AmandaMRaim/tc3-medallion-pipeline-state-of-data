@@ -1,50 +1,18 @@
 """
-Etapa PySpark (Silver "por edição" -> Silver "state_of_data") — Harmoniza
-o schema das 3 edições e grava cada uma na sua partição da tabela
-catalogada db_state_of_data.state_of_data_silver.
+Etapa PySpark (Silver "por edição" -> Silver "state_of_data_silver") —
+Harmoniza o schema das 3 edições (usando o dicionário do script 05) e
+grava cada uma na sua partição da tabela catalogada
+db_state_of_data.state_of_data_silver, depois cria/atualiza a tabela e
+as 3 partições no Glue Data Catalog via boto3 (idempotente).
 
-Usa o dicionário de correspondência (Silver/_documentacao/
-dicionario_correspondencia_colunas.csv, gerado pelo script 05 e revisado
-manualmente — arquivo pequeno de metadado, lido com pandas mesmo nesta
-versão PySpark, ver nota abaixo) para dar aos 3 datasets (schema próprio
-de cada edição, gravado pelos scripts 01/02/03 em Silver/_por_edicao/)
-o MESMO conjunto de colunas — requisito de uma tabela particionada no
-Glue Data Catalog, já que todas as partições precisam compartilhar um
-schema único.
+Política de confiança — só usa uma correspondência entre edições quando
+método é "exato", ou "fuzzy" com confiança "alta" (score >= 0.85), ou foi
+`aprovado_manual` na revisão. O resto fica de fora por enquanto (coluna
+existe no schema final, mas NULA pra edição não validada) — mais seguro
+que arriscar juntar dado errado.
 
-Nota sobre o motor de execução: o dicionário de correspondência é uma
-tabela de METADADO pequena (uma linha por coluna, não por respondente) e
-é editada manualmente numa planilha durante a revisão — por isso continua
-sendo lida/gravada com pandas como um único CSV "achatado", em vez de um
-diretório Spark particionado (ruim pra abrir/editar à mão). Já a leitura
-das 3 bases Silver e o `select`/alias por edição SÃO operações sobre dado
-de respondente de verdade — isso sim roda em Spark.
-
-Política de confiança — SÓ usa uma correspondência entre edições quando:
-  - metodo == "exato" (nomes idênticos), ou
-  - metodo == "fuzzy" e confianca == "alta" (score >= 0.85, texto quase
-    idêntico), ou
-  - status_revisao_2023_2024 == "aprovado_manual" (aprovado na revisão
-    manual em chat, mesmo com confiança média/baixa)
-
-Qualquer correspondência marcada "rejeitado_manual", ou fuzzy de
-confiança média/baixa AINDA NÃO revisada, fica de fora por enquanto: a
-coluna existe no schema final (para não perder o dado das edições que a
-têm), mas fica NULA para a edição cuja correspondência não foi validada.
-
-Catalogação: depois de gravar as 3 partições no S3, este script CRIA (ou
-atualiza, se já existir) a tabela `db_state_of_data.state_of_data_silver`
-no Glue Data Catalog via boto3, com as 3 partições registradas — ver
-`_config_aws.cataloga_tabela_particionada`. Idempotente: pode rodar de
-novo sem erro. A coluna de partição (NOME_COLUNA_PARTICAO em
-_config_aws.py) NÃO é escrita como coluna de dado dentro do arquivo —
-segue a convenção Hive/Athena, onde o valor da partição vem do caminho
-(pasta "particao=<valor>/"), não do conteúdo do arquivo.
-
-Uso (local, fora do Glue — exige credenciais AWS configuradas para o
-Spark local enxergar o S3, e permissão glue:CreateTable/CreatePartition
-etc. no IAM):
-    python scripts/06_monta_silver_state_of_data.py
+Coluna de partição não é escrita dentro do arquivo (convenção Hive/Athena
+— valor vem do caminho "particao=<valor>/").
 """
 
 import pandas as pd
@@ -88,8 +56,6 @@ def monta_mapa_colunas(dicionario: pd.DataFrame):
         col_2023_2024 = linha["coluna_2023_2024"]
         col_2025_2026 = linha["coluna_2025_2026"]
 
-        # Nome canônico: prioriza 2024-2025 (edição-espinha-dorsal); usa a
-        # coluna exclusiva quando a linha não tem correspondente em 2024-2025.
         if pd.notna(col_2024_2025):
             canonico = col_2024_2025
             mapa["2024-2025"][canonico] = col_2024_2025
@@ -144,8 +110,7 @@ def main() -> None:
         print(f"  {edicao}: {n_preenchidas}/{len(colunas_canonicas)} colunas preenchidas, {bloco.count()} linhas")
         print(f"  Partição gravada em: {destino}")
 
-    # A ordem das colunas no catálogo precisa bater EXATAMENTE com a ordem
-    # escrita no CSV (OpenCSVSerde casa coluna por posição, não por nome).
+    # Ordem tem que bater com a do CSV (OpenCSVSerde casa por posição).
     colunas_arquivo = ["linha_origem_silver"] + colunas_canonicas
     print(f"\nCatalogando {DATABASE}.{TABELA_STATE_OF_DATA} no Glue Data Catalog...")
     cataloga_tabela_particionada(

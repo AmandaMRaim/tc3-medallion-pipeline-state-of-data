@@ -9,7 +9,7 @@ da FIAP.
 ## Arquitetura
 
 O pipeline roda direto sobre **S3 + AWS Glue Data Catalog** (bucket e
-nomes de tabela em `scripts/_config_aws.py`):
+nomes de tabela em `scripts/py/_config_aws.py`):
 
 ```
 S3 Bronze (dados brutos, por edição)
@@ -38,13 +38,16 @@ a tabela/partição já existir).
 
 ```
 scripts/
-  _config_aws.py                     bucket, database, nomes de tabela e caminhos S3
-  _lib_padroniza_colunas.py          lógica compartilhada (grupos multi-select, etc.)
-  01/02/03_padroniza_colunas_*.py    Bronze -> Silver "por edição" (staging)
-  04_documenta_nulos.py              documenta semântica do nulo por coluna
-  05_monta_dicionario_correspondencia.py   de/para de colunas entre as 3 edições
-  06_monta_silver_state_of_data.py   harmoniza schema -> tabela Silver catalogada
-  07_monta_gold_perguntas_negocio.py Silver catalogada -> 7 tabelas Gold
+  py/                                  scripts .py — os que de fato rodam como Glue Job
+    _config_aws.py                     bucket, database, nomes de tabela e caminhos S3
+    _lib_padroniza_colunas.py          lógica compartilhada (grupos multi-select, etc.)
+    01/02/03_padroniza_colunas_*.py    Bronze -> Silver "por edição" (staging)
+    04_documenta_nulos.py              documenta semântica do nulo por coluna
+    05_monta_dicionario_correspondencia.py   de/para de colunas entre as 3 edições
+    06_monta_silver_state_of_data.py   harmoniza schema -> tabela Silver catalogada
+    07_monta_gold_perguntas_negocio.py Silver catalogada -> 7 tabelas Gold
+  notebooks/                           mesmos 7 scripts em .ipynb (cópia, não substitui
+                                        os .py — ver "Versão em notebook" abaixo)
 ```
 
 ## Requisitos
@@ -69,13 +72,13 @@ Adicione essas duas linhas de `export` no seu `~/.zshrc` para não precisar repe
 Rodar cada script em ordem, a partir da raiz do repositório:
 
 ```bash
-python3 scripts/01_padroniza_colunas_2023_2024.py
-python3 scripts/02_padroniza_colunas_2024_2025.py
-python3 scripts/03_padroniza_colunas_2025_2026.py
-python3 scripts/04_documenta_nulos.py
-python3 scripts/05_monta_dicionario_correspondencia.py
-python3 scripts/06_monta_silver_state_of_data.py
-python3 scripts/07_monta_gold_perguntas_negocio.py
+python3 scripts/py/01_padroniza_colunas_2023_2024.py
+python3 scripts/py/02_padroniza_colunas_2024_2025.py
+python3 scripts/py/03_padroniza_colunas_2025_2026.py
+python3 scripts/py/04_documenta_nulos.py
+python3 scripts/py/05_monta_dicionario_correspondencia.py
+python3 scripts/py/06_monta_silver_state_of_data.py
+python3 scripts/py/07_monta_gold_perguntas_negocio.py
 ```
 
 | # | Script | Camada | O que faz |
@@ -108,9 +111,26 @@ A tabela Silver catalogada **não grava a coluna de partição dentro do
 arquivo** — segue a convenção Hive/Athena, onde o valor da partição vem
 do caminho (pasta), não do conteúdo do CSV.
 
+## Versão em notebook
+
+`scripts/notebooks/` tem os mesmos 7 scripts convertidos para `.ipynb`
+(uma célula por função/bloco de configuração) — cópia gerada a partir
+dos `.py`, mantida à parte pra não ser a fonte de verdade do pipeline
+(edite o `.py` correspondente e gere de novo se precisar sincronizar).
+Cada notebook começa com uma célula de bootstrap que adiciona
+`scripts/py/` ao `sys.path`, já que é de lá que vêm `_config_aws` e
+`_lib_padroniza_colunas`:
+```python
+import sys, os
+sys.path.insert(0, os.path.join(os.getcwd(), "..", "py"))
+```
+Isso assume que o notebook roda com o diretório de trabalho igual à
+pasta onde ele está (`scripts/notebooks/`) — é o padrão do Jupyter e do
+Glue Studio Notebook ao abrir um arquivo `.ipynb`.
+
 ## No AWS Glue
 
-Os scripts usam `cria_spark_session(...)` de `scripts/_lib_padroniza_colunas.py`
+Os scripts usam `cria_spark_session(...)` de `scripts/py/_lib_padroniza_colunas.py`
 para rodar localmente. Dentro de um Glue Job, troque essa chamada pela
 sessão já fornecida pelo GlueContext (que já vem com o Glue Data Catalog
 configurado como Hive metastore, então `spark.table("db.tabela")` no
