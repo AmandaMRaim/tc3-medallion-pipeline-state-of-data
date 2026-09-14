@@ -145,3 +145,133 @@ spark = glueContext.spark_session
 
 O resto do código (leitura, transformação, escrita) funciona sem
 alteração.
+
+## Analytics
+
+Depois da construção das 7 tabelas Gold, foi desenvolvida uma camada de
+**Analytics** para responder diretamente às perguntas de negócio do desafio.
+Essa etapa parte dos arquivos em `Gold/perguntas_negocio/`, faz as validações
+e tratamentos necessários para cada análise e gera tabelas auxiliares e gráficos
+prontos para o material executivo.
+
+O fluxo analítico ficou separado do pipeline de Engenharia de Dados:
+
+```
+Gold/perguntas_negocio/  (7 tabelas pré-agregadas)
+        │
+        ▼  scripts/Analytics/gold_XX_* — inspeção, análise e cruzamentos em PySpark
+scripts/Analytics/outputs/gold_XX/      — CSVs analíticos para validação/visualização
+        │
+        ▼  scripts de gráficos — leitura dos outputs e preparação visual
+scripts/Analytics/graficos/gold_XX/     — gráficos em PNG para o storytelling executivo
+```
+
+As transformações e agregações analíticas são feitas principalmente em
+**PySpark**. `pandas` é utilizado nos outputs menores e na preparação dos dados
+para visualização, e os gráficos são gerados em **Matplotlib**. Em algumas
+visualizações também é utilizado `numpy`.
+
+## Estrutura da camada de Analytics
+
+```
+scripts/
+  Analytics/
+    gold_01_estrutura_mercado/              estrutura atual e evolução do mercado
+    gold_02_perfis_valorizados/             remuneração e perfis mais valorizados
+    gold_03_diversidade_genero/             gênero, senioridade, cargos, salário e cor/raça/etnia
+    gold_04_adocao_tecnologias/             adoção e evolução de tecnologias
+    gold_05_adocao_ia/                      adoção, prioridade, uso e barreiras de IA
+    gold_06_regiao_senioridade_modelo_trabalho/  diferenças salariais e cruzamentos
+    gold_07_oportunidades_desafios/         oportunidades, desafios e síntese executiva
+    outputs/                                CSVs derivados das análises
+      gold_01/
+      gold_02/
+      gold_03/
+      gold_04/
+      gold_05/
+      gold_06/
+      gold_07/
+    graficos/                               PNGs utilizados no material executivo
+    utils/
+      export_utils.py                       função compartilhada para exportação de CSVs
+```
+
+Cada pasta `gold_XX_*` segue a mesma lógica geral: primeiro é feita a inspeção
+da Gold e a validação das variáveis disponíveis; depois são executadas as
+análises e cruzamentos; por último, os resultados selecionados são exportados e
+transformados em gráficos. Quando uma pergunta exige mais de um recorte, a
+análise foi separada em scripts menores para manter cada etapa rastreável.
+
+## Perguntas de negócio analisadas
+
+| Gold | Pergunta | O que foi analisado |
+|---|---|---|
+| 01 | Como está estruturado o mercado brasileiro de Dados? | Estrutura e evolução de cargos, senioridade, setores, modelos de trabalho, região, situação de trabalho e porte das empresas. Os cargos foram harmonizados antes das comparações históricas para reduzir diferenças de nomenclatura entre edições. |
+| 02 | Quais perfis profissionais são mais valorizados pelo mercado? | Perfis por cargo e senioridade, com distribuição das faixas salariais, P50 e P75, ranking da edição 2025-2026 e evolução histórica. A análise usa amostra mínima de 20 respondentes para os perfis comparáveis e trata a faixa salarial inconsistente identificada durante a inspeção. |
+| 03 | Qual é o cenário de diversidade de gênero nas carreiras de dados? | Composição de gênero ao longo das edições, participação feminina por senioridade, cargo e faixa salarial, além da composição de cor/raça/etnia e do recorte de participação feminina dentro dessas categorias. |
+| 04 | Quais tecnologias apresentam maior adoção entre os profissionais? | Rankings e evolução de linguagens de programação, ferramentas de BI, cloud, bancos de dados e ferramentas de ETL para Data Engineer e Data Analyst, além da linguagem preferida na edição mais recente e dos maiores crescimentos e quedas de adoção. |
+| 05 | Qual é o índice de adoção de Inteligência Artificial e seu impacto? | Evolução da adoção pessoal de IA, prioridade atribuída à IA nas empresas, formas de uso, uso pessoal de soluções de IA e principais barreiras para adoção. |
+| 06 | Existem diferenças relevantes entre regiões, senioridades ou modelos de trabalho? | Comparação das faixas salariais por região, senioridade e modelo de trabalho, utilizando P50 e P75, além dos cruzamentos senioridade × modelo de trabalho e senioridade × região. Grupos com menos de 30 respondentes são mantidos, mas sinalizados como amostra pequena. |
+| 07 | Quais oportunidades e desafios podem ser identificados para empresas que desejam investir em Dados e Inteligência Artificial? | Critérios para escolha de emprego, motivos de insatisfação profissional, desafios dos gestores, barreiras para uso de IA, variações entre edições e uma síntese executiva dos principais indicadores. |
+
+## Critérios adotados nas análises
+
+As comparações históricas respeitam a disponibilidade real de cada variável nas
+edições da pesquisa. Quando uma categoria não existe em determinado ano, ela não
+é preenchida artificialmente apenas para completar a série.
+
+Para os recortes de remuneração, as faixas salariais continuam sendo tratadas
+como **intervalos categóricos ordenados**. O P50 corresponde à primeira faixa que
+atinge 50% da distribuição acumulada e o P75 à primeira faixa que atinge 75%; os
+resultados, portanto, representam faixas salariais e não salários pontuais.
+
+Também foram aplicadas validações de denominador e tamanho de amostra antes das
+comparações. Nos casos em que a amostra reduzida ainda é mantida no resultado,
+essa condição é explicitamente sinalizada para evitar que grupos pequenos sejam
+interpretados com o mesmo peso dos grupos mais representativos.
+
+As diferenças de nomenclatura que impediam comparações diretas foram tratadas
+somente quando necessário para a análise. Um exemplo é a harmonização das
+categorias de **Engenharia de Dados** e **Arquitetura de Dados** utilizada nos
+recortes históricos de cargos e remuneração.
+
+## Outputs e gráficos
+
+Os arquivos em `scripts/Analytics/outputs/` são derivados analíticos das Golds e
+servem como etapa intermediária entre o processamento em PySpark e a construção
+das visualizações. Eles não substituem as tabelas Gold do pipeline.
+
+Os scripts de gráficos leem esses resultados já consolidados e geram arquivos
+PNG voltados para a apresentação executiva. Entre as visualizações produzidas
+estão estrutura e evolução de cargos, senioridade, setores e modelos de trabalho;
+P50/P75 dos perfis valorizados; diversidade de gênero e cor/raça/etnia; adoção de
+tecnologias; adoção e barreiras de IA; diferenças salariais por região,
+senioridade e modelo de trabalho; e os principais desafios e oportunidades para
+empresas.
+
+## Como rodar as análises
+
+Depois de gerar as 7 tabelas Gold, rode os scripts de cada pasta em **ordem
+numérica**. Os scripts assumem a seguinte estrutura relativa a partir da raiz do
+repositório:
+
+```text
+Gold/perguntas_negocio/gold_XX_*/
+scripts/Analytics/gold_XX_*/
+scripts/Analytics/outputs/gold_XX/
+scripts/Analytics/graficos/gold_XX/
+```
+
+Exemplo para a Gold 01:
+
+```bash
+python3 scripts/Analytics/gold_01_estrutura_mercado/01_cargos.py
+python3 scripts/Analytics/gold_01_estrutura_mercado/02_nivel.py
+python3 scripts/Analytics/gold_01_estrutura_mercado/03_setor.py
+python3 scripts/Analytics/gold_01_estrutura_mercado/04_modelo_de_trabalho.py
+python3 scripts/Analytics/gold_01_estrutura_mercado/05_complementares.py
+python3 scripts/Analytics/gold_01_estrutura_mercado/06_gráficos_gold_01.py
+```
+
+O mesmo padrão é seguido nas demais Golds: inspeção/validação → análises e
+cruzamentos → exportação dos resultados → geração dos gráficos.
