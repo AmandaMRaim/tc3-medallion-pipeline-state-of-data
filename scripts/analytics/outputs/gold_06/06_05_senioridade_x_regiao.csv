@@ -1,0 +1,36 @@
+﻿edicao;nivel;ordem_nivel;regiao_onde_mora;total_respondentes;faixa_salarial_mediana;faixa_salarial_p75;ordem_faixa_mediana;ordem_faixa_p75;ranking_no_nivel;status_amostra
+2024-2025;Júnior;1;Sudeste;477;de R$ 3.001/mês a R$ 4.000/mês;de R$ 4.001/mês a R$ 6.000/mês;4;5;1;OK
+2024-2025;Júnior;1;Sul;183;de R$ 3.001/mês a R$ 4.000/mês;de R$ 4.001/mês a R$ 6.000/mês;4;5;1;OK
+2024-2025;Júnior;1;Centro-oeste;71;de R$ 2.001/mês a R$ 3.000/mês;de R$ 4.001/mês a R$ 6.000/mês;3;5;2;OK
+2024-2025;Júnior;1;Nordeste;106;de R$ 2.001/mês a R$ 3.000/mês;de R$ 4.001/mês a R$ 6.000/mês;3;5;2;OK
+2024-2025;Júnior;1;Norte;16;de R$ 2.001/mês a R$ 3.000/mês;de R$ 3.001/mês a R$ 4.000/mês;3;4;3;Amostra pequena (<30)
+2024-2025;Pleno;2;Centro-oeste;92;de R$ 6.001/mês a R$ 8.000/mês;de R$ 8.001/mês a R$ 12.000/mês;6;7;1;OK
+2024-2025;Pleno;2;Nordeste;141;de R$ 6.001/mês a R$ 8.000/mês;de R$ 8.001/mês a R$ 12.000/mês;6;7;1;OK
+2024-2025;Pleno;2;Norte;15;de R$ 6.001/mês a R$ 8.000/mês;de R$ 8.001/mês a R$ 12.000/mês;6;7;1;Amostra pequena (<30)
+2024-2025;Pleno;2;Sudeste;795;de R$ 6.001/mês a R$ 8.000/mês;de R$ 8.001/mês a R$ 12.000/mês;6;7;1;OK
+2024-2025;Pleno;2;Sul;303;de R$ 6.001/mês a R$ 8.000/mês;de R$ 8.001/mês a R$ 12.000/mês;6;7;1;OK
+2024-2025;Sênior;3;Centro-oeste;77;de R$ 12.001/mês a R$ 16.000/mês;de R$ 16.001/mês a R$ 20.000/mês;8;9;1;OK
+2024-2025;Sênior;3;Nordeste;127;de R$ 12.001/mês a R$ 16.000/mês;de R$ 16.001/mês a R$ 20.000/mês;8;9;1;OK
+2024-2025;Sênior;3;Norte;19;de R$ 12.001/mês a R$ 16.000/mês;de R$ 16.001/mês a R$ 20.000/mês;8;9;1;Amostra pequena (<30)
+2024-2025;Sênior;3;Sudeste;965;de R$ 12.001/mês a R$ 16.000/mês;de R$ 16.001/mês a R$ 20.000/mês;8;9;1;OK
+2024-2025;Sênior;3;Sul;336;de R$ 8.001/mês a R$ 12.000/mês;de R$ 12.001/mês a R$ 16.000/mês;7;8;2;OK
+2025-2026;Júnior;1;Centro-oeste;40;de R$ 3.001/mês a R$ 4.000/mês;de R$ 4.001/mês a R$ 6.000/mês;4;5;1;OK
+2025-2026;Júnior;1;Sudeste;312;de R$ 3.001/mês a R$ 4.000/mês;de R$ 4.001/mês a R$ 6.000/mês;4;5;1;OK
+2025-2026;Júnior;1;Sul;82;de R$ 3.001/mês a R$ 4.000/mês;de R$ 4.001/mês a R$ 6.000/mês;4;5;1;OK
+2025-2026;Júnior;1;Nordeste;69;de R$ 2.001/mês a R$ 3.000/mês;de R$ 4.001/mês a R$ 6.000/mês;3;5;2;OK
+2025-2026;Júnior;1;Norte;7;de R$ 2.001/mês a R$ 3.000/mês;de R$ 3.001/mês a R$ 4.000/mês;3;4;3;Amostra pequena (<30)
+2025-2026;Pleno;2;Centro-oeste;53;de R$ 6.001/mês a R$ 8.000/mês;de R$ 8.001/mês a R$ 12.000/mês;6;7;1;OK
+2025-2026;Pleno;2;Nordeste;94;de R$ 6.001/mês a R$ 8.000/mês;de R$ 8.001/mês a R$ 12.000/mês;6;7;1;OK
+2025-2026;Pleno;2;Sudeste;464;de R$ 6.001/mês a R$ 8.000/mês;de R$ 8.001/mês a R$ 12.000/mês;6;7;1;OK
+2025-2026;Pleno;2;Sul;135;de R$ 6.001/mês a R$ 8.000/mês;de R$ 8.001/mês a R$ 12.000/mês;6;7;1;OK
+2025-2026;Pleno;2;Norte;10;de R$ 4.001/mês a R$ 6.000/mês;de R$ 6.001/mês a R$ 8.000/mês;5;6;2;Amostra pequena (<30)
+2025-2026;Sênior;3;Nordeste;86;de R$ 12.001/mês a R$ 16.000/mês;de R$ 16.001/mês a R$ 20.000/mês;8;9;1;OK
+2025-2026;Sênior;3;Norte;12;de R$ 12.001/mês a R$ 16.000/mês;de R$ 16.001/mês a R$ 20.000/mês;8;9;1;Amostra pequena (<30)
+2025-2026;Sênior;3;Sul;140;de R$ 12.001/mês a R$ 16.000/mês;de R$ 12.001/mês a R$ 16.000/mês;8;8;2;OK
+2025-2026;Sênior;3;Centro-oeste;60;de R$ 8.001/mês a R$ 12.000/mês;de R$ 16.001/mês a R$ 20.000/mês;7;9;3;OK
+2025-2026;Sênior;3;Sudeste;526;de R$ 8.001/mês a R$ 12.000/mês;de R$ 16.001/mês a R$ 20.000/mês;7;9;3;OK
+2025-2026;Especialista/Staff+;4;Centro-oeste;17;de R$ 20.001/mês a R$ 25.000/mês;de R$ 30.001/mês a R$ 40.000/mês;10;12;1;Amostra pequena (<30)
+2025-2026;Especialista/Staff+;4;Norte;3;de R$ 20.001/mês a R$ 25.000/mês;de R$ 30.001/mês a R$ 40.000/mês;10;12;1;Amostra pequena (<30)
+2025-2026;Especialista/Staff+;4;Sudeste;245;de R$ 16.001/mês a R$ 20.000/mês;de R$ 20.001/mês a R$ 25.000/mês;9;10;2;OK
+2025-2026;Especialista/Staff+;4;Sul;56;de R$ 16.001/mês a R$ 20.000/mês;de R$ 20.001/mês a R$ 25.000/mês;9;10;2;OK
+2025-2026;Especialista/Staff+;4;Nordeste;17;de R$ 16.001/mês a R$ 20.000/mês;de R$ 16.001/mês a R$ 20.000/mês;9;9;3;Amostra pequena (<30)

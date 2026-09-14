@@ -1,0 +1,16 @@
+edicao,ranking,opcao,elegiveis,selecionaram,pct_adocao
+2023-2024,1,servidores_on_premise_nao_utilizamos_cloud,3613,582.0,16.1
+2024-2025,1,amazon_web_services_aws,3589,1584.0,44.1
+2024-2025,2,azure_microsoft,3589,1108.0,30.9
+2024-2025,3,google_cloud_gcp,3589,1050.0,29.3
+2024-2025,4,servidores_on_premise_nao_utilizamos_cloud,3589,463.0,12.9
+2024-2025,5,cloud_propria,3589,191.0,5.3
+2024-2025,6,oracle_cloud,3589,143.0,4.0
+2024-2025,7,ibm,3589,60.0,1.7
+2025-2026,1,amazon_web_services_aws,2096,1012.0,48.3
+2025-2026,2,azure_microsoft,2096,730.0,34.8
+2025-2026,3,google_cloud_gcp,2096,647.0,30.9
+2025-2026,4,servidores_on_premise_nao_utilizamos_cloud,2096,300.0,14.3
+2025-2026,5,cloud_propria,2096,114.0,5.4
+2025-2026,6,oracle_cloud,2096,94.0,4.5
+2025-2026,7,ibm,2096,25.0,1.2

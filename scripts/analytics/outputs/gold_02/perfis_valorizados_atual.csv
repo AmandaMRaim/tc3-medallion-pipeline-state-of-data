@@ -1,0 +1,30 @@
+nivel,ranking,cargo_harmonizado,total_respondentes,faixa_salarial_mediana,faixa_salarial_p75,ordem_faixa_mediana,ordem_faixa_p75
+Especialista/Staff+,1,Engenheiro de Machine Learning/ML Engineer/AI Engineer,27,de R$ 25.001/mês a R$ 30.000/mês,de R$ 30.001/mês a R$ 40.000/mês,11,12
+Especialista/Staff+,2,Engenharia e Arquitetura de Dados,75,de R$ 16.001/mês a R$ 20.000/mês,de R$ 25.001/mês a R$ 30.000/mês,9,11
+Especialista/Staff+,3,Cientista de Dados/Data Scientist,72,de R$ 16.001/mês a R$ 20.000/mês,de R$ 20.001/mês a R$ 25.000/mês,9,10
+Especialista/Staff+,4,Analista de Dados/Data Analyst,59,de R$ 12.001/mês a R$ 16.000/mês,de R$ 16.001/mês a R$ 20.000/mês,8,9
+Especialista/Staff+,4,Analytics Engineer,24,de R$ 12.001/mês a R$ 16.000/mês,de R$ 16.001/mês a R$ 20.000/mês,8,9
+Júnior,1,Cientista de Dados/Data Scientist,65,de R$ 4.001/mês a R$ 6.000/mês,de R$ 8.001/mês a R$ 12.000/mês,5,7
+Júnior,2,Engenheiro de Machine Learning/ML Engineer/AI Engineer,21,de R$ 4.001/mês a R$ 6.000/mês,de R$ 6.001/mês a R$ 8.000/mês,5,6
+Júnior,3,Engenharia e Arquitetura de Dados,51,de R$ 4.001/mês a R$ 6.000/mês,de R$ 4.001/mês a R$ 6.000/mês,5,5
+Júnior,4,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,24,de R$ 3.001/mês a R$ 4.000/mês,de R$ 6.001/mês a R$ 8.000/mês,4,6
+Júnior,5,Analista de Dados/Data Analyst,145,de R$ 3.001/mês a R$ 4.000/mês,de R$ 4.001/mês a R$ 6.000/mês,4,5
+Júnior,5,Analista de BI/BI Analyst,57,de R$ 3.001/mês a R$ 4.000/mês,de R$ 4.001/mês a R$ 6.000/mês,4,5
+Júnior,6,Analista de Negócios/Business Analyst,22,de R$ 2.001/mês a R$ 3.000/mês,de R$ 4.001/mês a R$ 6.000/mês,3,5
+Júnior,7,Analista de Suporte/Analista Técnico,20,de R$ 2.001/mês a R$ 3.000/mês,de R$ 2.001/mês a R$ 3.000/mês,3,3
+Pleno,1,Cientista de Dados/Data Scientist,140,de R$ 8.001/mês a R$ 12.000/mês,de R$ 8.001/mês a R$ 12.000/mês,7,7
+Pleno,1,Engenharia e Arquitetura de Dados,112,de R$ 8.001/mês a R$ 12.000/mês,de R$ 8.001/mês a R$ 12.000/mês,7,7
+Pleno,1,Analytics Engineer,41,de R$ 8.001/mês a R$ 12.000/mês,de R$ 8.001/mês a R$ 12.000/mês,7,7
+Pleno,2,Analista de Dados/Data Analyst,211,de R$ 6.001/mês a R$ 8.000/mês,de R$ 8.001/mês a R$ 12.000/mês,6,7
+Pleno,2,Analista de Negócios/Business Analyst,53,de R$ 6.001/mês a R$ 8.000/mês,de R$ 8.001/mês a R$ 12.000/mês,6,7
+Pleno,2,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,27,de R$ 6.001/mês a R$ 8.000/mês,de R$ 8.001/mês a R$ 12.000/mês,6,7
+Pleno,2,Analista de Suporte/Analista Técnico,20,de R$ 6.001/mês a R$ 8.000/mês,de R$ 8.001/mês a R$ 12.000/mês,6,7
+Pleno,3,Analista de BI/BI Analyst,82,de R$ 6.001/mês a R$ 8.000/mês,de R$ 6.001/mês a R$ 8.000/mês,6,6
+Sênior,1,Engenheiro de Machine Learning/ML Engineer/AI Engineer,42,de R$ 16.001/mês a R$ 20.000/mês,de R$ 30.001/mês a R$ 40.000/mês,9,12
+Sênior,2,Desenvolvedor/ Engenheiro de Software/ Analista de Sistemas,41,de R$ 12.001/mês a R$ 16.000/mês,de R$ 20.001/mês a R$ 25.000/mês,8,10
+Sênior,3,Engenharia e Arquitetura de Dados,192,de R$ 12.001/mês a R$ 16.000/mês,de R$ 16.001/mês a R$ 20.000/mês,8,9
+Sênior,3,Cientista de Dados/Data Scientist,147,de R$ 12.001/mês a R$ 16.000/mês,de R$ 16.001/mês a R$ 20.000/mês,8,9
+Sênior,3,Analytics Engineer,59,de R$ 12.001/mês a R$ 16.000/mês,de R$ 16.001/mês a R$ 20.000/mês,8,9
+Sênior,4,Analista de Dados/Data Analyst,184,de R$ 8.001/mês a R$ 12.000/mês,de R$ 12.001/mês a R$ 16.000/mês,7,8
+Sênior,5,Analista de BI/BI Analyst,59,de R$ 8.001/mês a R$ 12.000/mês,de R$ 8.001/mês a R$ 12.000/mês,7,7
+Sênior,5,Analista de Negócios/Business Analyst,48,de R$ 8.001/mês a R$ 12.000/mês,de R$ 8.001/mês a R$ 12.000/mês,7,7

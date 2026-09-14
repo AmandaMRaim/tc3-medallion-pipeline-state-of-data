@@ -1,0 +1,250 @@
+edicao,categoria,categoria_nome,ranking,opcao,elegiveis,selecionaram,pct_adocao
+2023-2024,cloud,Cloud,1,servidores_on_premise_nao_utilizamos_cloud,3613,582.0,16.1
+2023-2024,ferramenta_de_bi,Ferramentas de BI,1,microsoft_powerbi,3772,2154.0,57.1
+2023-2024,ferramenta_de_bi,Ferramentas de BI,2,looker,3772,898.0,23.8
+2023-2024,ferramenta_de_bi,Ferramentas de BI,3,looker_studiogoogle_data_studio,3772,653.0,17.3
+2023-2024,ferramenta_de_bi,Ferramentas de BI,4,nao_utilizo_nenhuma_ferramenta_de_bi_no_trabalho,3772,409.0,10.8
+2023-2024,ferramenta_de_bi,Ferramentas de BI,5,fazemos_todas_as_analises_utilizando_apenas_excel_ou_planilhas_do_google,3772,391.0,10.4
+2023-2024,ferramenta_de_bi,Ferramentas de BI,6,qlik_view_qlik_sense,3772,194.0,5.1
+2023-2024,ferramenta_de_bi,Ferramentas de BI,7,amazon_quicksight,3772,138.0,3.7
+2023-2024,ferramenta_de_bi,Ferramentas de BI,8,alteryx,3772,100.0,2.7
+2023-2024,ferramenta_de_bi,Ferramentas de BI,9,salesforce_einstein_analytics,3772,85.0,2.3
+2023-2024,ferramenta_de_bi,Ferramentas de BI,10,sas_visual_analytics,3772,85.0,2.3
+2023-2024,ferramenta_de_bi,Ferramentas de BI,11,sap_business_objects_sap_analytics,3772,80.0,2.1
+2023-2024,ferramenta_de_bi,Ferramentas de BI,12,redash,3772,62.0,1.6
+2023-2024,ferramenta_de_bi,Ferramentas de BI,13,oracle_business_intelligence,3772,49.0,1.3
+2023-2024,linguagem_de_programacao,Linguagens de Programação,1,sql,3772,3156.0,83.7
+2023-2024,linguagem_de_programacao,Linguagens de Programação,2,python,3772,2825.0,74.9
+2023-2024,linguagem_de_programacao,Linguagens de Programação,3,r,3772,408.0,10.8
+2023-2024,linguagem_de_programacao,Linguagens de Programação,4,java,3772,355.0,9.4
+2023-2024,linguagem_de_programacao,Linguagens de Programação,5,nao_utilizo_nenhuma_das_linguagens_listadas,3772,305.0,8.1
+2023-2024,linguagem_de_programacao,Linguagens de Programação,6,visual_basic_vba,3772,285.0,7.6
+2023-2024,linguagem_de_programacao,Linguagens de Programação,7,javascript,3772,282.0,7.5
+2023-2024,linguagem_de_programacao,Linguagens de Programação,8,sas_stata,3772,151.0,4.0
+2023-2024,linguagem_de_programacao,Linguagens de Programação,9,scala,3772,131.0,3.5
+2023-2024,linguagem_de_programacao,Linguagens de Programação,10,c_c++_c#,3772,70.0,1.9
+2023-2024,linguagem_de_programacao,Linguagens de Programação,11,php,3772,56.0,1.5
+2023-2024,linguagem_de_programacao,Linguagens de Programação,12,net,3772,40.0,1.1
+2023-2024,linguagem_de_programacao,Linguagens de Programação,13,matlab,3772,30.0,0.8
+2023-2024,linguagem_de_programacao,Linguagens de Programação,14,julia,3772,8.0,0.2
+2023-2024,linguagem_de_programacao,Linguagens de Programação,15,rust,3772,7.0,0.2
+2024-2025,banco_de_dados,Bancos de Dados,1,postgresql,3589,1127.0,31.4
+2024-2025,banco_de_dados,Bancos de Dados,2,databricks,3589,1116.0,31.1
+2024-2025,banco_de_dados,Bancos de Dados,3,sql_server,3589,1053.0,29.3
+2024-2025,banco_de_dados,Bancos de Dados,4,google_bigquery,3589,942.0,26.2
+2024-2025,banco_de_dados,Bancos de Dados,5,s3,3589,849.0,23.7
+2024-2025,banco_de_dados,Bancos de Dados,6,mysql,3589,834.0,23.2
+2024-2025,banco_de_dados,Bancos de Dados,7,oracle,3589,643.0,17.9
+2024-2025,banco_de_dados,Bancos de Dados,8,amazon_athena,3589,504.0,14.0
+2024-2025,banco_de_dados,Bancos de Dados,9,mongodb,3589,411.0,11.5
+2024-2025,banco_de_dados,Bancos de Dados,10,amazon_redshift,3589,365.0,10.2
+2024-2025,banco_de_dados,Bancos de Dados,11,hive,3589,265.0,7.4
+2024-2025,banco_de_dados,Bancos de Dados,12,amazon_aurora_ou_rds,3589,238.0,6.6
+2024-2025,banco_de_dados,Bancos de Dados,13,dynamodb,3589,233.0,6.5
+2024-2025,banco_de_dados,Bancos de Dados,14,sqlite,3589,225.0,6.3
+2024-2025,banco_de_dados,Bancos de Dados,15,snowflake,3589,224.0,6.2
+2024-2025,banco_de_dados,Bancos de Dados,16,sap_hana,3589,192.0,5.3
+2024-2025,banco_de_dados,Bancos de Dados,17,elasticsearch,3589,154.0,4.3
+2024-2025,banco_de_dados,Bancos de Dados,18,presto,3589,150.0,4.2
+2024-2025,banco_de_dados,Bancos de Dados,19,mariadb,3589,129.0,3.6
+2024-2025,banco_de_dados,Bancos de Dados,20,microsoft_access,3589,119.0,3.3
+2024-2025,banco_de_dados,Bancos de Dados,21,redis,3589,115.0,3.2
+2024-2025,banco_de_dados,Bancos de Dados,22,db2,3589,78.0,2.2
+2024-2025,banco_de_dados,Bancos de Dados,23,firebase,3589,73.0,2.0
+2024-2025,banco_de_dados,Bancos de Dados,24,google_firestore,3589,56.0,1.6
+2024-2025,banco_de_dados,Bancos de Dados,25,neo4j,3589,53.0,1.5
+2024-2025,banco_de_dados,Bancos de Dados,26,cassandra,3589,41.0,1.1
+2024-2025,banco_de_dados,Bancos de Dados,27,firebird,3589,39.0,1.1
+2024-2025,banco_de_dados,Bancos de Dados,28,splunk,3589,24.0,0.7
+2024-2025,banco_de_dados,Bancos de Dados,29,hbase,3589,23.0,0.6
+2024-2025,banco_de_dados,Bancos de Dados,30,sybase,3589,20.0,0.6
+2024-2025,banco_de_dados,Bancos de Dados,31,datomic,3589,17.0,0.5
+2024-2025,banco_de_dados,Bancos de Dados,32,vertica,3589,9.0,0.3
+2024-2025,banco_de_dados,Bancos de Dados,33,coachdb,3589,7.0,0.2
+2024-2025,cloud,Cloud,1,amazon_web_services_aws,3589,1584.0,44.1
+2024-2025,cloud,Cloud,2,azure_microsoft,3589,1108.0,30.9
+2024-2025,cloud,Cloud,3,google_cloud_gcp,3589,1050.0,29.3
+2024-2025,cloud,Cloud,4,servidores_on_premise_nao_utilizamos_cloud,3589,463.0,12.9
+2024-2025,cloud,Cloud,5,cloud_propria,3589,191.0,5.3
+2024-2025,cloud,Cloud,6,oracle_cloud,3589,143.0,4.0
+2024-2025,cloud,Cloud,7,ibm,3589,60.0,1.7
+2024-2025,ferramenta_etl_data_analyst,ETL - Data Analyst,1,scripts_python,1669,845.0,50.6
+2024-2025,ferramenta_etl_data_analyst,ETL - Data Analyst,2,sql_&_stored_procedures,1669,801.0,48.0
+2024-2025,ferramenta_etl_data_analyst,ETL - Data Analyst,3,databricks,1669,380.0,22.8
+2024-2025,ferramenta_etl_data_analyst,ETL - Data Analyst,4,nao_utilizo_ferramentas_de_etl,1669,267.0,16.0
+2024-2025,ferramenta_etl_data_analyst,ETL - Data Analyst,5,apache_airflow,1669,151.0,9.0
+2024-2025,ferramenta_etl_data_analyst,ETL - Data Analyst,6,sql_server_integration_services_ssis,1669,81.0,4.9
+2024-2025,ferramenta_etl_data_analyst,ETL - Data Analyst,7,pentaho,1669,75.0,4.5
+2024-2025,ferramenta_etl_data_analyst,ETL - Data Analyst,8,aws_glue,1669,68.0,4.1
+2024-2025,ferramenta_etl_data_analyst,ETL - Data Analyst,9,qlik_sense,1669,52.0,3.1
+2024-2025,ferramenta_etl_data_analyst,ETL - Data Analyst,10,google_dataflow,1669,41.0,2.5
+2024-2025,ferramenta_etl_data_analyst,ETL - Data Analyst,11,alteryx,1669,36.0,2.2
+2024-2025,ferramenta_etl_data_analyst,ETL - Data Analyst,12,knime,1669,29.0,1.7
+2024-2025,ferramenta_etl_data_analyst,ETL - Data Analyst,13,sas_data_integration,1669,27.0,1.6
+2024-2025,ferramenta_etl_data_analyst,ETL - Data Analyst,14,oracle_data_integrator,1669,17.0,1.0
+2024-2025,ferramenta_etl_data_analyst,ETL - Data Analyst,15,ibm_datastage,1669,11.0,0.7
+2024-2025,ferramenta_etl_data_analyst,ETL - Data Analyst,16,talend,1669,10.0,0.6
+2024-2025,ferramenta_etl_data_analyst,ETL - Data Analyst,17,fivetran,1669,9.0,0.5
+2024-2025,ferramenta_etl_data_analyst,ETL - Data Analyst,18,sap_bw_etl,1669,9.0,0.5
+2024-2025,ferramenta_etl_data_analyst,ETL - Data Analyst,19,apache_nifi,1669,8.0,0.5
+2024-2025,ferramenta_etl_data_analyst,ETL - Data Analyst,20,stitch,1669,3.0,0.2
+2024-2025,ferramenta_etl_data_analyst,ETL - Data Analyst,21,luigi,1669,1.0,0.1
+2024-2025,ferramenta_etl_data_engineer,ETL - Data Engineer,1,scripts_python,929,761.0,81.9
+2024-2025,ferramenta_etl_data_engineer,ETL - Data Engineer,2,sql_&_stored_procedures,929,641.0,69.0
+2024-2025,ferramenta_etl_data_engineer,ETL - Data Engineer,3,apache_airflow,929,407.0,43.8
+2024-2025,ferramenta_etl_data_engineer,ETL - Data Engineer,4,databricks,929,347.0,37.4
+2024-2025,ferramenta_etl_data_engineer,ETL - Data Engineer,5,aws_glue,929,181.0,19.5
+2024-2025,ferramenta_etl_data_engineer,ETL - Data Engineer,6,sql_server_integration_services_ssis,929,77.0,8.3
+2024-2025,ferramenta_etl_data_engineer,ETL - Data Engineer,7,google_dataflow,929,74.0,8.0
+2024-2025,ferramenta_etl_data_engineer,ETL - Data Engineer,8,pentaho,929,48.0,5.2
+2024-2025,ferramenta_etl_data_engineer,ETL - Data Engineer,9,apache_nifi,929,41.0,4.4
+2024-2025,ferramenta_etl_data_engineer,ETL - Data Engineer,10,oracle_data_integrator,929,28.0,3.0
+2024-2025,ferramenta_etl_data_engineer,ETL - Data Engineer,11,fivetran,929,20.0,2.2
+2024-2025,ferramenta_etl_data_engineer,ETL - Data Engineer,12,alteryx,929,14.0,1.5
+2024-2025,ferramenta_etl_data_engineer,ETL - Data Engineer,13,nao_utilizo_ferramentas_de_etl,929,14.0,1.5
+2024-2025,ferramenta_etl_data_engineer,ETL - Data Engineer,14,qlik_sense,929,14.0,1.5
+2024-2025,ferramenta_etl_data_engineer,ETL - Data Engineer,15,sas_data_integration,929,14.0,1.5
+2024-2025,ferramenta_etl_data_engineer,ETL - Data Engineer,16,ibm_datastage,929,10.0,1.1
+2024-2025,ferramenta_etl_data_engineer,ETL - Data Engineer,17,knime,929,10.0,1.1
+2024-2025,ferramenta_etl_data_engineer,ETL - Data Engineer,18,talend,929,9.0,1.0
+2024-2025,ferramenta_etl_data_engineer,ETL - Data Engineer,19,sap_bw_etl,929,8.0,0.9
+2024-2025,ferramenta_etl_data_engineer,ETL - Data Engineer,20,stitch,929,7.0,0.8
+2024-2025,ferramenta_etl_data_engineer,ETL - Data Engineer,21,luigi,929,1.0,0.1
+2024-2025,ferramenta_de_bi,Ferramentas de BI,1,microsoft_powerbi,3619,1996.0,55.2
+2024-2025,ferramenta_de_bi,Ferramentas de BI,2,looker,3619,831.0,23.0
+2024-2025,ferramenta_de_bi,Ferramentas de BI,3,tableau,3619,687.0,19.0
+2024-2025,ferramenta_de_bi,Ferramentas de BI,4,looker_studiogoogle_data_studio,3619,603.0,16.7
+2024-2025,ferramenta_de_bi,Ferramentas de BI,5,fazemos_todas_as_analises_utilizando_apenas_excel_ou_planilhas_do_google,3619,385.0,10.6
+2024-2025,ferramenta_de_bi,Ferramentas de BI,6,nao_utilizo_nenhuma_ferramenta_de_bi_no_trabalho,3619,353.0,9.8
+2024-2025,ferramenta_de_bi,Ferramentas de BI,7,metabase,3619,318.0,8.8
+2024-2025,ferramenta_de_bi,Ferramentas de BI,8,grafana,3619,290.0,8.0
+2024-2025,ferramenta_de_bi,Ferramentas de BI,9,qlik_view_qlik_sense,3619,178.0,4.9
+2024-2025,ferramenta_de_bi,Ferramentas de BI,10,amazon_quicksight,3619,167.0,4.6
+2024-2025,ferramenta_de_bi,Ferramentas de BI,11,pentaho,3619,113.0,3.1
+2024-2025,ferramenta_de_bi,Ferramentas de BI,12,superset,3619,97.0,2.7
+2024-2025,ferramenta_de_bi,Ferramentas de BI,13,salesforce_einstein_analytics,3619,92.0,2.5
+2024-2025,ferramenta_de_bi,Ferramentas de BI,14,sas_visual_analytics,3619,74.0,2.0
+2024-2025,ferramenta_de_bi,Ferramentas de BI,15,alteryx,3619,72.0,2.0
+2024-2025,ferramenta_de_bi,Ferramentas de BI,16,redash,3619,55.0,1.5
+2024-2025,ferramenta_de_bi,Ferramentas de BI,17,sap_business_objects_sap_analytics,3619,55.0,1.5
+2024-2025,ferramenta_de_bi,Ferramentas de BI,18,oracle_business_intelligence,3619,36.0,1.0
+2024-2025,linguagem_de_programacao,Linguagens de Programação,1,sql,3589,3146.0,87.7
+2024-2025,linguagem_de_programacao,Linguagens de Programação,2,python,3589,2935.0,81.8
+2024-2025,linguagem_de_programacao,Linguagens de Programação,3,r,3589,352.0,9.8
+2024-2025,linguagem_de_programacao,Linguagens de Programação,4,java,3589,291.0,8.1
+2024-2025,linguagem_de_programacao,Linguagens de Programação,5,javascript,3589,223.0,6.2
+2024-2025,linguagem_de_programacao,Linguagens de Programação,6,visual_basic_vba,3589,215.0,6.0
+2024-2025,linguagem_de_programacao,Linguagens de Programação,7,sas_stata,3589,130.0,3.6
+2024-2025,linguagem_de_programacao,Linguagens de Programação,8,scala,3589,126.0,3.5
+2024-2025,linguagem_de_programacao,Linguagens de Programação,9,c_c++_c#,3589,46.0,1.3
+2024-2025,linguagem_de_programacao,Linguagens de Programação,10,php,3589,34.0,0.9
+2024-2025,linguagem_de_programacao,Linguagens de Programação,11,net,3589,31.0,0.9
+2024-2025,linguagem_de_programacao,Linguagens de Programação,12,matlab,3589,20.0,0.6
+2024-2025,linguagem_de_programacao,Linguagens de Programação,13,rust,3589,12.0,0.3
+2024-2025,linguagem_de_programacao,Linguagens de Programação,14,julia,3589,6.0,0.2
+2025-2026,banco_de_dados,Bancos de Dados,1,postgresql,2096,771.0,36.8
+2025-2026,banco_de_dados,Bancos de Dados,2,sql_server,2096,702.0,33.5
+2025-2026,banco_de_dados,Bancos de Dados,3,databricks,2096,689.0,32.9
+2025-2026,banco_de_dados,Bancos de Dados,4,s3,2096,604.0,28.8
+2025-2026,banco_de_dados,Bancos de Dados,5,mysql,2096,598.0,28.5
+2025-2026,banco_de_dados,Bancos de Dados,6,google_bigquery,2096,566.0,27.0
+2025-2026,banco_de_dados,Bancos de Dados,7,oracle,2096,410.0,19.6
+2025-2026,banco_de_dados,Bancos de Dados,8,amazon_athena,2096,319.0,15.2
+2025-2026,banco_de_dados,Bancos de Dados,9,mongodb,2096,310.0,14.8
+2025-2026,banco_de_dados,Bancos de Dados,10,sqlite,2096,258.0,12.3
+2025-2026,banco_de_dados,Bancos de Dados,11,amazon_redshift,2096,231.0,11.0
+2025-2026,banco_de_dados,Bancos de Dados,12,snowflake,2096,191.0,9.1
+2025-2026,banco_de_dados,Bancos de Dados,13,amazon_aurora_ou_rds,2096,171.0,8.2
+2025-2026,banco_de_dados,Bancos de Dados,14,hive,2096,160.0,7.6
+2025-2026,banco_de_dados,Bancos de Dados,15,dynamodb,2096,159.0,7.6
+2025-2026,banco_de_dados,Bancos de Dados,16,redis,2096,130.0,6.2
+2025-2026,banco_de_dados,Bancos de Dados,17,sap_hana,2096,123.0,5.9
+2025-2026,banco_de_dados,Bancos de Dados,18,elasticsearch,2096,121.0,5.8
+2025-2026,banco_de_dados,Bancos de Dados,19,mariadb,2096,91.0,4.3
+2025-2026,banco_de_dados,Bancos de Dados,20,microsoft_access,2096,90.0,4.3
+2025-2026,banco_de_dados,Bancos de Dados,21,presto,2096,88.0,4.2
+2025-2026,banco_de_dados,Bancos de Dados,22,db2,2096,73.0,3.5
+2025-2026,banco_de_dados,Bancos de Dados,23,firebase,2096,65.0,3.1
+2025-2026,banco_de_dados,Bancos de Dados,24,neo4j,2096,40.0,1.9
+2025-2026,banco_de_dados,Bancos de Dados,25,google_firestore,2096,37.0,1.8
+2025-2026,banco_de_dados,Bancos de Dados,26,firebird,2096,31.0,1.5
+2025-2026,banco_de_dados,Bancos de Dados,27,cassandra,2096,30.0,1.4
+2025-2026,banco_de_dados,Bancos de Dados,28,splunk,2096,16.0,0.8
+2025-2026,banco_de_dados,Bancos de Dados,29,hbase,2096,15.0,0.7
+2025-2026,banco_de_dados,Bancos de Dados,30,datomic,2096,13.0,0.6
+2025-2026,banco_de_dados,Bancos de Dados,31,sybase,2096,13.0,0.6
+2025-2026,banco_de_dados,Bancos de Dados,32,vertica,2096,7.0,0.3
+2025-2026,banco_de_dados,Bancos de Dados,33,coachdb,2096,6.0,0.3
+2025-2026,cloud,Cloud,1,amazon_web_services_aws,2096,1012.0,48.3
+2025-2026,cloud,Cloud,2,azure_microsoft,2096,730.0,34.8
+2025-2026,cloud,Cloud,3,google_cloud_gcp,2096,647.0,30.9
+2025-2026,cloud,Cloud,4,servidores_on_premise_nao_utilizamos_cloud,2096,300.0,14.3
+2025-2026,cloud,Cloud,5,cloud_propria,2096,114.0,5.4
+2025-2026,cloud,Cloud,6,oracle_cloud,2096,94.0,4.5
+2025-2026,cloud,Cloud,7,ibm,2096,25.0,1.2
+2025-2026,ferramenta_etl_data_analyst,ETL - Data Analyst,1,scripts_python,929,538.0,57.9
+2025-2026,ferramenta_etl_data_analyst,ETL - Data Analyst,2,sql_&_stored_procedures,929,495.0,53.3
+2025-2026,ferramenta_etl_data_analyst,ETL - Data Analyst,3,databricks,929,218.0,23.5
+2025-2026,ferramenta_etl_data_analyst,ETL - Data Analyst,4,nao_utilizo_ferramentas_de_etl,929,130.0,14.0
+2025-2026,ferramenta_etl_data_analyst,ETL - Data Analyst,5,apache_airflow,929,58.0,6.2
+2025-2026,ferramenta_etl_data_analyst,ETL - Data Analyst,6,sql_server_integration_services_ssis,929,54.0,5.8
+2025-2026,ferramenta_etl_data_analyst,ETL - Data Analyst,7,aws_glue,929,39.0,4.2
+2025-2026,ferramenta_etl_data_analyst,ETL - Data Analyst,8,pentaho,929,26.0,2.8
+2025-2026,ferramenta_etl_data_analyst,ETL - Data Analyst,9,qlik_sense,929,22.0,2.4
+2025-2026,ferramenta_etl_data_analyst,ETL - Data Analyst,10,google_dataflow,929,20.0,2.2
+2025-2026,ferramenta_etl_data_analyst,ETL - Data Analyst,11,alteryx,929,19.0,2.0
+2025-2026,ferramenta_etl_data_analyst,ETL - Data Analyst,12,knime,929,18.0,1.9
+2025-2026,ferramenta_etl_data_analyst,ETL - Data Analyst,13,sas_data_integration,929,15.0,1.6
+2025-2026,ferramenta_etl_data_analyst,ETL - Data Analyst,14,oracle_data_integrator,929,11.0,1.2
+2025-2026,ferramenta_etl_data_analyst,ETL - Data Analyst,15,fivetran,929,8.0,0.9
+2025-2026,ferramenta_etl_data_analyst,ETL - Data Analyst,16,sap_bw_etl,929,8.0,0.9
+2025-2026,ferramenta_etl_data_analyst,ETL - Data Analyst,17,talend,929,6.0,0.6
+2025-2026,ferramenta_etl_data_analyst,ETL - Data Analyst,18,ibm_datastage,929,4.0,0.4
+2025-2026,ferramenta_etl_data_analyst,ETL - Data Analyst,19,apache_nifi,929,3.0,0.3
+2025-2026,ferramenta_etl_data_analyst,ETL - Data Analyst,20,stitch,929,3.0,0.3
+2025-2026,ferramenta_etl_data_engineer,ETL - Data Engineer,1,scripts_python,566,490.0,86.6
+2025-2026,ferramenta_etl_data_engineer,ETL - Data Engineer,2,sql_&_stored_procedures,566,390.0,68.9
+2025-2026,ferramenta_etl_data_engineer,ETL - Data Engineer,3,apache_airflow,566,244.0,43.1
+2025-2026,ferramenta_etl_data_engineer,ETL - Data Engineer,4,databricks,566,209.0,36.9
+2025-2026,ferramenta_etl_data_engineer,ETL - Data Engineer,5,aws_glue,566,123.0,21.7
+2025-2026,ferramenta_etl_data_engineer,ETL - Data Engineer,6,google_dataflow,566,50.0,8.8
+2025-2026,ferramenta_etl_data_engineer,ETL - Data Engineer,7,sql_server_integration_services_ssis,566,38.0,6.7
+2025-2026,ferramenta_etl_data_engineer,ETL - Data Engineer,8,pentaho,566,32.0,5.7
+2025-2026,ferramenta_etl_data_engineer,ETL - Data Engineer,9,apache_nifi,566,20.0,3.5
+2025-2026,ferramenta_etl_data_engineer,ETL - Data Engineer,10,fivetran,566,20.0,3.5
+2025-2026,ferramenta_etl_data_engineer,ETL - Data Engineer,11,alteryx,566,11.0,1.9
+2025-2026,ferramenta_etl_data_engineer,ETL - Data Engineer,12,qlik_sense,566,10.0,1.8
+2025-2026,ferramenta_etl_data_engineer,ETL - Data Engineer,13,stitch,566,10.0,1.8
+2025-2026,ferramenta_etl_data_engineer,ETL - Data Engineer,14,knime,566,9.0,1.6
+2025-2026,ferramenta_etl_data_engineer,ETL - Data Engineer,15,talend,566,8.0,1.4
+2025-2026,ferramenta_etl_data_engineer,ETL - Data Engineer,16,oracle_data_integrator,566,7.0,1.2
+2025-2026,ferramenta_etl_data_engineer,ETL - Data Engineer,17,sap_bw_etl,566,7.0,1.2
+2025-2026,ferramenta_etl_data_engineer,ETL - Data Engineer,18,ibm_datastage,566,6.0,1.1
+2025-2026,ferramenta_etl_data_engineer,ETL - Data Engineer,19,nao_utilizo_ferramentas_de_etl,566,6.0,1.1
+2025-2026,ferramenta_etl_data_engineer,ETL - Data Engineer,20,sas_data_integration,566,4.0,0.7
+2025-2026,ferramenta_de_bi,Ferramentas de BI,1,microsoft_powerbi,2106,1243.0,59.0
+2025-2026,ferramenta_de_bi,Ferramentas de BI,2,looker,2106,475.0,22.6
+2025-2026,ferramenta_de_bi,Ferramentas de BI,3,looker_studiogoogle_data_studio,2106,328.0,15.6
+2025-2026,ferramenta_de_bi,Ferramentas de BI,4,tableau,2106,287.0,13.6
+2025-2026,ferramenta_de_bi,Ferramentas de BI,5,nao_utilizo_nenhuma_ferramenta_de_bi_no_trabalho,2106,240.0,11.4
+2025-2026,ferramenta_de_bi,Ferramentas de BI,6,fazemos_todas_as_analises_utilizando_apenas_excel_ou_planilhas_do_google,2106,217.0,10.3
+2025-2026,ferramenta_de_bi,Ferramentas de BI,7,grafana,2106,183.0,8.7
+2025-2026,ferramenta_de_bi,Ferramentas de BI,8,metabase,2106,177.0,8.4
+2025-2026,ferramenta_de_bi,Ferramentas de BI,9,amazon_quicksight,2106,143.0,6.8
+2025-2026,ferramenta_de_bi,Ferramentas de BI,10,qlik_view_qlik_sense,2106,91.0,4.3
+2025-2026,ferramenta_de_bi,Ferramentas de BI,11,pentaho,2106,67.0,3.2
+2025-2026,ferramenta_de_bi,Ferramentas de BI,12,superset,2106,67.0,3.2
+2025-2026,ferramenta_de_bi,Ferramentas de BI,13,sap_business_objects_sap_analytics,2106,51.0,2.4
+2025-2026,ferramenta_de_bi,Ferramentas de BI,14,alteryx,2106,43.0,2.0
+2025-2026,ferramenta_de_bi,Ferramentas de BI,15,salesforce_einstein_analytics,2106,43.0,2.0
+2025-2026,ferramenta_de_bi,Ferramentas de BI,16,sas_visual_analytics,2106,36.0,1.7
+2025-2026,ferramenta_de_bi,Ferramentas de BI,17,oracle_business_intelligence,2106,19.0,0.9
+2025-2026,ferramenta_de_bi,Ferramentas de BI,18,redash,2106,13.0,0.6
+2025-2026,linguagem_preferida_2025_2026,Linguagem Preferida,1,python,2096,1929.0,92.0
+2025-2026,linguagem_preferida_2025_2026,Linguagem Preferida,2,sql,2096,1764.0,84.2
+2025-2026,linguagem_preferida_2025_2026,Linguagem Preferida,3,r,2096,328.0,15.6
+2025-2026,linguagem_preferida_2025_2026,Linguagem Preferida,4,scala,2096,70.0,3.3
+2025-2026,linguagem_preferida_2025_2026,Linguagem Preferida,5,c_c++_c#,2096,49.0,2.3
+2025-2026,linguagem_preferida_2025_2026,Linguagem Preferida,6,rust,2096,35.0,1.7
+2025-2026,linguagem_preferida_2025_2026,Linguagem Preferida,7,julia,2096,18.0,0.9
+2025-2026,linguagem_preferida_2025_2026,Linguagem Preferida,8,dax,2096,8.0,0.4

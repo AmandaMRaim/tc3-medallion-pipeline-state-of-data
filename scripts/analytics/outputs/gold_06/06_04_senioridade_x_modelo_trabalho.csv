@@ -1,0 +1,29 @@
+﻿edicao;nivel;ordem_nivel;modelo_trabalho;total_respondentes;faixa_salarial_mediana;faixa_salarial_p75;ordem_faixa_mediana;ordem_faixa_p75;ranking_no_nivel;status_amostra
+2024-2025;Júnior;1;100% remoto;292;de R$ 3.001/mês a R$ 4.000/mês;de R$ 4.001/mês a R$ 6.000/mês;4;5;1;OK
+2024-2025;Júnior;1;Híbrido com dias fixos;144;de R$ 3.001/mês a R$ 4.000/mês;de R$ 4.001/mês a R$ 6.000/mês;4;5;1;OK
+2024-2025;Júnior;1;Híbrido flexível;146;de R$ 3.001/mês a R$ 4.000/mês;de R$ 4.001/mês a R$ 6.000/mês;4;5;1;OK
+2024-2025;Júnior;1;100% presencial;271;de R$ 2.001/mês a R$ 3.000/mês;de R$ 3.001/mês a R$ 4.000/mês;3;4;2;OK
+2024-2025;Pleno;2;100% remoto;638;de R$ 6.001/mês a R$ 8.000/mês;de R$ 8.001/mês a R$ 12.000/mês;6;7;1;OK
+2024-2025;Pleno;2;Híbrido com dias fixos;251;de R$ 6.001/mês a R$ 8.000/mês;de R$ 8.001/mês a R$ 12.000/mês;6;7;1;OK
+2024-2025;Pleno;2;Híbrido flexível;232;de R$ 6.001/mês a R$ 8.000/mês;de R$ 8.001/mês a R$ 12.000/mês;6;7;1;OK
+2024-2025;Pleno;2;100% presencial;225;de R$ 4.001/mês a R$ 6.000/mês;de R$ 6.001/mês a R$ 8.000/mês;5;6;2;OK
+2024-2025;Sênior;3;100% remoto;884;de R$ 12.001/mês a R$ 16.000/mês;de R$ 16.001/mês a R$ 20.000/mês;8;9;1;OK
+2024-2025;Sênior;3;Híbrido flexível;286;de R$ 12.001/mês a R$ 16.000/mês;de R$ 16.001/mês a R$ 20.000/mês;8;9;1;OK
+2024-2025;Sênior;3;Híbrido com dias fixos;240;de R$ 8.001/mês a R$ 12.000/mês;de R$ 12.001/mês a R$ 16.000/mês;7;8;2;OK
+2024-2025;Sênior;3;100% presencial;114;de R$ 8.001/mês a R$ 12.000/mês;de R$ 8.001/mês a R$ 12.000/mês;7;7;3;OK
+2025-2026;Júnior;1;Híbrido flexível;77;de R$ 4.001/mês a R$ 6.000/mês;de R$ 6.001/mês a R$ 8.000/mês;5;6;1;OK
+2025-2026;Júnior;1;100% remoto;133;de R$ 3.001/mês a R$ 4.000/mês;de R$ 4.001/mês a R$ 6.000/mês;4;5;2;OK
+2025-2026;Júnior;1;Híbrido com dias fixos;112;de R$ 3.001/mês a R$ 4.000/mês;de R$ 4.001/mês a R$ 6.000/mês;4;5;2;OK
+2025-2026;Júnior;1;100% presencial;188;de R$ 2.001/mês a R$ 3.000/mês;de R$ 4.001/mês a R$ 6.000/mês;3;5;3;OK
+2025-2026;Pleno;2;100% remoto;304;de R$ 8.001/mês a R$ 12.000/mês;de R$ 8.001/mês a R$ 12.000/mês;7;7;1;OK
+2025-2026;Pleno;2;Híbrido com dias fixos;142;de R$ 6.001/mês a R$ 8.000/mês;de R$ 8.001/mês a R$ 12.000/mês;6;7;2;OK
+2025-2026;Pleno;2;Híbrido flexível;139;de R$ 6.001/mês a R$ 8.000/mês;de R$ 8.001/mês a R$ 12.000/mês;6;7;2;OK
+2025-2026;Pleno;2;100% presencial;171;de R$ 4.001/mês a R$ 6.000/mês;de R$ 8.001/mês a R$ 12.000/mês;5;7;3;OK
+2025-2026;Sênior;3;100% remoto;419;de R$ 12.001/mês a R$ 16.000/mês;de R$ 16.001/mês a R$ 20.000/mês;8;9;1;OK
+2025-2026;Sênior;3;Híbrido flexível;137;de R$ 12.001/mês a R$ 16.000/mês;de R$ 16.001/mês a R$ 20.000/mês;8;9;1;OK
+2025-2026;Sênior;3;Híbrido com dias fixos;152;de R$ 8.001/mês a R$ 12.000/mês;de R$ 12.001/mês a R$ 16.000/mês;7;8;2;OK
+2025-2026;Sênior;3;100% presencial;116;de R$ 8.001/mês a R$ 12.000/mês;de R$ 8.001/mês a R$ 12.000/mês;7;7;3;OK
+2025-2026;Especialista/Staff+;4;100% remoto;174;de R$ 16.001/mês a R$ 20.000/mês;de R$ 25.001/mês a R$ 30.000/mês;9;11;1;OK
+2025-2026;Especialista/Staff+;4;Híbrido flexível;70;de R$ 16.001/mês a R$ 20.000/mês;de R$ 20.001/mês a R$ 25.000/mês;9;10;2;OK
+2025-2026;Especialista/Staff+;4;Híbrido com dias fixos;62;de R$ 12.001/mês a R$ 16.000/mês;de R$ 20.001/mês a R$ 25.000/mês;8;10;3;OK
+2025-2026;Especialista/Staff+;4;100% presencial;32;de R$ 8.001/mês a R$ 12.000/mês;de R$ 12.001/mês a R$ 16.000/mês;7;8;4;OK

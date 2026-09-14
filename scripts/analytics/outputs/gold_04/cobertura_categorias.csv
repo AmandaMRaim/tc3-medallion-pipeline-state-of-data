@@ -1,0 +1,8 @@
+categoria,categoria_nome,qtd_edicoes,edicoes
+cloud,Cloud,3,"2023-2024, 2024-2025, 2025-2026"
+ferramenta_de_bi,Ferramentas de BI,3,"2023-2024, 2024-2025, 2025-2026"
+banco_de_dados,Bancos de Dados,2,"2024-2025, 2025-2026"
+ferramenta_etl_data_analyst,ETL - Data Analyst,2,"2024-2025, 2025-2026"
+ferramenta_etl_data_engineer,ETL - Data Engineer,2,"2024-2025, 2025-2026"
+linguagem_de_programacao,Linguagens de Programação,2,"2023-2024, 2024-2025"
+linguagem_preferida_2025_2026,Linguagem Preferida,1,2025-2026

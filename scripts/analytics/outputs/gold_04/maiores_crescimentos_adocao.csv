@@ -1,0 +1,29 @@
+categoria,categoria_nome,ranking_crescimento,opcao,primeira_edicao,ultima_edicao,pct_inicio,pct_fim,variacao_pp
+banco_de_dados,Bancos de Dados,1,sqlite,2024-2025,2025-2026,6.3,12.3,6.0
+banco_de_dados,Bancos de Dados,2,postgresql,2024-2025,2025-2026,31.4,36.8,5.4
+banco_de_dados,Bancos de Dados,3,mysql,2024-2025,2025-2026,23.2,28.5,5.3
+banco_de_dados,Bancos de Dados,4,s3,2024-2025,2025-2026,23.7,28.8,5.1
+banco_de_dados,Bancos de Dados,5,sql_server,2024-2025,2025-2026,29.3,33.5,4.2
+cloud,Cloud,1,amazon_web_services_aws,2024-2025,2025-2026,44.1,48.3,4.2
+cloud,Cloud,2,azure_microsoft,2024-2025,2025-2026,30.9,34.8,3.9
+cloud,Cloud,3,google_cloud_gcp,2024-2025,2025-2026,29.3,30.9,1.6
+cloud,Cloud,4,oracle_cloud,2024-2025,2025-2026,4.0,4.5,0.5
+cloud,Cloud,5,cloud_propria,2024-2025,2025-2026,5.3,5.4,0.1
+ferramenta_etl_data_analyst,ETL - Data Analyst,1,scripts_python,2024-2025,2025-2026,50.6,57.9,7.3
+ferramenta_etl_data_analyst,ETL - Data Analyst,2,sql_&_stored_procedures,2024-2025,2025-2026,48.0,53.3,5.3
+ferramenta_etl_data_analyst,ETL - Data Analyst,3,sql_server_integration_services_ssis,2024-2025,2025-2026,4.9,5.8,0.9
+ferramenta_etl_data_analyst,ETL - Data Analyst,4,databricks,2024-2025,2025-2026,22.8,23.5,0.7
+ferramenta_etl_data_analyst,ETL - Data Analyst,5,fivetran,2024-2025,2025-2026,0.5,0.9,0.4
+ferramenta_etl_data_engineer,ETL - Data Engineer,1,scripts_python,2024-2025,2025-2026,81.9,86.6,4.7
+ferramenta_etl_data_engineer,ETL - Data Engineer,2,aws_glue,2024-2025,2025-2026,19.5,21.7,2.2
+ferramenta_etl_data_engineer,ETL - Data Engineer,3,fivetran,2024-2025,2025-2026,2.2,3.5,1.3
+ferramenta_etl_data_engineer,ETL - Data Engineer,4,stitch,2024-2025,2025-2026,0.8,1.8,1.0
+ferramenta_etl_data_engineer,ETL - Data Engineer,5,google_dataflow,2024-2025,2025-2026,8.0,8.8,0.8
+ferramenta_de_bi,Ferramentas de BI,1,amazon_quicksight,2023-2024,2025-2026,3.7,6.8,3.1
+ferramenta_de_bi,Ferramentas de BI,2,microsoft_powerbi,2023-2024,2025-2026,57.1,59.0,1.9
+ferramenta_de_bi,Ferramentas de BI,3,grafana,2024-2025,2025-2026,8.0,8.7,0.7
+ferramenta_de_bi,Ferramentas de BI,4,nao_utilizo_nenhuma_ferramenta_de_bi_no_trabalho,2023-2024,2025-2026,10.8,11.4,0.6
+ferramenta_de_bi,Ferramentas de BI,5,superset,2024-2025,2025-2026,2.7,3.2,0.5
+linguagem_de_programacao,Linguagens de Programação,1,python,2023-2024,2024-2025,74.9,81.8,6.9
+linguagem_de_programacao,Linguagens de Programação,2,sql,2023-2024,2024-2025,83.7,87.7,4.0
+linguagem_de_programacao,Linguagens de Programação,3,rust,2023-2024,2024-2025,0.2,0.3,0.1

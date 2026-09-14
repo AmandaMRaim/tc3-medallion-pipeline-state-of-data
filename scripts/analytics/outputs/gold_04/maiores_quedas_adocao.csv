@@ -1,0 +1,23 @@
+categoria,categoria_nome,ranking_queda,opcao,primeira_edicao,ultima_edicao,pct_inicio,pct_fim,variacao_pp
+cloud,Cloud,1,servidores_on_premise_nao_utilizamos_cloud,2023-2024,2025-2026,16.1,14.3,-1.8
+cloud,Cloud,2,ibm,2024-2025,2025-2026,1.7,1.2,-0.5
+ferramenta_etl_data_analyst,ETL - Data Analyst,1,apache_airflow,2024-2025,2025-2026,9.0,6.2,-2.8
+ferramenta_etl_data_analyst,ETL - Data Analyst,2,nao_utilizo_ferramentas_de_etl,2024-2025,2025-2026,16.0,14.0,-2.0
+ferramenta_etl_data_analyst,ETL - Data Analyst,3,pentaho,2024-2025,2025-2026,4.5,2.8,-1.7
+ferramenta_etl_data_analyst,ETL - Data Analyst,4,qlik_sense,2024-2025,2025-2026,3.1,2.4,-0.7
+ferramenta_etl_data_analyst,ETL - Data Analyst,5,google_dataflow,2024-2025,2025-2026,2.5,2.2,-0.3
+ferramenta_etl_data_engineer,ETL - Data Engineer,1,oracle_data_integrator,2024-2025,2025-2026,3.0,1.2,-1.8
+ferramenta_etl_data_engineer,ETL - Data Engineer,2,sql_server_integration_services_ssis,2024-2025,2025-2026,8.3,6.7,-1.6
+ferramenta_etl_data_engineer,ETL - Data Engineer,3,apache_nifi,2024-2025,2025-2026,4.4,3.5,-0.9
+ferramenta_etl_data_engineer,ETL - Data Engineer,4,sas_data_integration,2024-2025,2025-2026,1.5,0.7,-0.8
+ferramenta_etl_data_engineer,ETL - Data Engineer,5,apache_airflow,2024-2025,2025-2026,43.8,43.1,-0.7
+ferramenta_de_bi,Ferramentas de BI,1,tableau,2024-2025,2025-2026,19.0,13.6,-5.4
+ferramenta_de_bi,Ferramentas de BI,2,looker_studiogoogle_data_studio,2023-2024,2025-2026,17.3,15.6,-1.7
+ferramenta_de_bi,Ferramentas de BI,3,looker,2023-2024,2025-2026,23.8,22.6,-1.2
+ferramenta_de_bi,Ferramentas de BI,4,redash,2023-2024,2025-2026,1.6,0.6,-1.0
+ferramenta_de_bi,Ferramentas de BI,5,qlik_view_qlik_sense,2023-2024,2025-2026,5.1,4.3,-0.8
+linguagem_de_programacao,Linguagens de Programação,1,visual_basic_vba,2023-2024,2024-2025,7.6,6.0,-1.6
+linguagem_de_programacao,Linguagens de Programação,2,javascript,2023-2024,2024-2025,7.5,6.2,-1.3
+linguagem_de_programacao,Linguagens de Programação,3,java,2023-2024,2024-2025,9.4,8.1,-1.3
+linguagem_de_programacao,Linguagens de Programação,4,r,2023-2024,2024-2025,10.8,9.8,-1.0
+linguagem_de_programacao,Linguagens de Programação,5,c_c++_c#,2023-2024,2024-2025,1.9,1.3,-0.6
