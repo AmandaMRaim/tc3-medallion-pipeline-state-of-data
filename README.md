@@ -5,7 +5,7 @@ Gold) sobre a pesquisa **State of Data Brasil** (Data Hackers + Bain),
 unificando as 3 últimas edições disponíveis (2023-2024, 2024-2025,
 2025-2026). Feito para o Tech Challenge da Fase 03 (Big Data & Analytics)
 da FIAP.
-PDF da Apresentação Executiva: <a href="POSTECH_DATA_ANALYTICS.pdf" target="_blank">POSTECH_DATA_ANALYTICS.pdf</a>
+* **PDF da Apresentação Executiva:** [POSTECH_DATA_ANALYTICS.pdf](POSTECH_DATA_ANALYTICS.pdf)
 
 ## Arquitetura
 
